@@ -1,0 +1,94 @@
+// @import '../../../../styles/variables.scss';
+// @import '../../../../styles/mixin.scss';
+
+// .side-drawer {
+//   position: fixed;
+//   width: 25rem;
+//   max-width: 65%;
+//   height: 100%;
+//   left: 0;
+//   top: 0;
+//   z-index: 300;
+//   background-color: rgba($color-secondary, 0.9);
+//   padding: 5rem 3rem 3rem 3rem;
+//   transition: transform 0.3s ease-out;
+//   display: grid;
+//   grid-template-rows: repeat(2, max-content) 1fr;
+//   text-transform: uppercase;
+
+//   &__title-wrapper {
+//     margin-bottom: 5rem;
+//   }
+
+//   &__title {
+//     font-size: 30px;
+//     color: $color-tertiary !important;
+
+//     &--en {
+//       // font-family: 'FranklinGothicStd-ExtraCond';
+//       font-family: 'TradeGothicLTStd-BoldExt';
+//       font-size: 25px;
+//       line-height: 1.1;
+
+//       @include respond(tab-port) {
+//         font-size: 22px;
+//       }
+//     }
+//   }
+
+//   &__sub-title {
+//     font-size: 16px;
+//     color: $color-tertiary !important;
+
+//     &--en {
+//       // font-family: 'FranklinGothicStd-ExtraCond';
+//       font-family: 'TradeGothicLTStd-BoldExt';
+//       font-size: 15px;
+
+//       @include respond(tab-port) {
+//         font-size: 12px;
+//       }
+//     }
+//   }
+
+//   // disable global waku text style
+//   &__sub-title > span {
+//     -webkit-text-stroke: 0.01px $color-primary;
+//   }
+
+//   &__nav {
+//     display: grid;
+//     row-gap: 2rem;
+//   }
+
+//   // 🇺🇸 + ©
+//   & > *:last-child {
+//     align-self: end;
+//   }
+
+//   // ©
+//   &__footer > p {
+//     font-size: 13px;
+//     font-weight: $font-weight-default;
+//   }
+// }
+
+// // CSSTransition
+// .slide-enter {
+//   transform: translateX(-100%);
+//   transition: 0.3s linear;
+//   opacity: 0;
+// }
+// .slide-enter-active {
+//   transform: translateX(0%);
+//   opacity: 1;
+// }
+// .slide-exit {
+//   transform: translateX(0%);
+//   transition: 0.3s linear;
+//   opacity: 1;
+// }
+// .slide-exit-active {
+//   transform: translateX(-100%);
+//   opacity: 0;
+// }

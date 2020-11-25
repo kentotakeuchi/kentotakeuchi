@@ -1,0 +1,29 @@
+@import '../../../../styles/mixin.scss';
+
+.related-items {
+  display: grid;
+  row-gap: 3rem;
+
+  @include respond(phone) {
+    margin: 0 2rem;
+  }
+
+  // title
+  & > h2 {
+    text-transform: capitalize;
+
+    @include respond(phone) {
+    }
+  }
+
+  &__items-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    column-gap: 2rem;
+
+    @include respond(phone) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem 1rem;
+    }
+  }
+}

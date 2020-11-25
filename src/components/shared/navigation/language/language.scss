@@ -1,0 +1,19 @@
+@import '../../../../styles/variables.scss';
+
+.language {
+  display: flex;
+  font-size: 3.5rem;
+  cursor: pointer;
+
+  & span {
+  }
+
+  &--header {
+  }
+
+  &--footer {
+  }
+
+  &--side-drawer {
+  }
+}

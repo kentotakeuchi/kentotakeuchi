@@ -1,0 +1,55 @@
+// @import '../../../../styles/variables.scss';
+
+// .button {
+//   display: inline-block;
+//   padding: 1rem 2rem;
+//   font-weight: $font-weight-active;
+//   border: 1px solid $color-transparent;
+//   box-shadow: $box-shadow-default;
+//   background: $color-primary;
+//   color: $color-secondary;
+//   text-decoration: none;
+//   text-align: center;
+//   text-transform: uppercase;
+//   transition: all 0.5s;
+
+//   &:hover,
+//   &:active {
+//     border: 1px solid $color-primary;
+//     background: $color-secondary;
+//     color: $color-primary;
+//   }
+
+//   // inverse
+//   &--inverse {
+//     border: 1px solid $color-primary;
+//     background: $color-secondary;
+//     color: $color-primary;
+//   }
+
+//   &--inverse:hover,
+//   &--inverse:active {
+//     color: $color-secondary;
+//     background: $color-primary;
+//   }
+
+//   // disabled
+//   &:disabled,
+//   &:hover:disabled,
+//   &:active:disabled {
+//     background: $color-grey-light-3;
+//     color: $color-grey-dark;
+//     border-color: $color-grey-light-3;
+//     opacity: 1;
+//     cursor: not-allowed;
+//   }
+
+//   &--small {
+//   }
+
+//   &--medium {
+//   }
+
+//   &--big {
+//   }
+// }

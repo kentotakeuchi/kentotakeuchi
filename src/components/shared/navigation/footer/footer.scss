@@ -1,0 +1,50 @@
+// @import '../../../../styles/variables.scss';
+// @import '../../../../styles/mixin.scss';
+
+// .footer {
+//   margin-top: 10rem;
+
+//   display: grid;
+//   grid-auto-flow: column;
+//   column-gap: 2rem;
+//   padding: 4rem;
+//   color: $color-secondary;
+//   background: $color-primary;
+
+//   @include respond(phone) {
+//     grid-auto-flow: row;
+//     row-gap: 5rem;
+//   }
+
+//   &__left-wrapper {
+//   }
+
+//   &__about-title {
+//     margin-bottom: 1rem;
+//     font-family: 'FranklinGothicStd-ExtraCond';
+//     text-transform: uppercase;
+//   }
+//   &__about-desc {
+//   }
+
+//   &__right-wrapper {
+//     display: grid;
+//     grid-template-columns: repeat(2, 1fr);
+//     justify-items: end;
+//     column-gap: 5rem;
+
+//     @include respond(phone) {
+//       grid-template-columns: none;
+//       justify-items: start;
+//       row-gap: 5rem;
+//     }
+//   }
+//   &__info-wrapper {
+//     display: grid;
+//     row-gap: 1rem;
+//     height: max-content;
+//   }
+//   &__info-wrapper > .contact-list {
+//     margin-bottom: 3rem;
+//   }
+// }

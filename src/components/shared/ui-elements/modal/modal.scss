@@ -1,0 +1,100 @@
+// @import '../../../../styles/variables.scss';
+// @import '../../../../styles/mixin.scss';
+
+// .modal {
+//   position: fixed;
+//   z-index: 250;
+//   top: 13vh;
+//   left: 20%;
+//   width: 60%;
+//   padding: 2.5rem 2rem;
+//   background-color: $color-secondary;
+//   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+//   text-align: center;
+
+//   @include respond(phone) {
+//     // top: 25vh;
+//     left: 0;
+//     bottom: 0;
+//     width: 100%;
+//     border-top-left-radius: 10px;
+//     border-top-right-radius: 10px;
+//   }
+// }
+
+// .modal__header {
+//   font-family: 'FranklinGothicStd-ExtraCond';
+//   font-size: 3rem;
+//   width: 100%;
+//   border-bottom: 1px solid rgba($color-primary, 0.5);
+//   padding-bottom: 1rem;
+//   text-transform: uppercase;
+// }
+
+// .modal form {
+//   display: grid;
+// }
+
+// .modal__content {
+//   display: grid;
+//   row-gap: 3rem;
+//   max-height: 35rem;
+//   padding: 3rem 0;
+//   overflow: auto;
+// }
+
+// .modal__footer {
+//   display: grid;
+//   grid-auto-flow: column;
+//   justify-content: center;
+//   column-gap: 5rem;
+//   padding-top: 2.5rem;
+//   border-top: 1px solid rgba($color-primary, 0.5);
+
+//   @include respond(phone) {
+//     grid-auto-flow: row;
+//     row-gap: 1rem;
+//   }
+// }
+
+// // SWITCH SAVE WITH CANCEL
+// .modal__footer > button:nth-child(2) {
+//   @include respond(phone) {
+//     grid-row: 1 / 2;
+//   }
+// }
+
+// .modal-enter {
+//   transform: translateY(-10rem);
+//   opacity: 0;
+
+//   @include respond(phone) {
+//     transform: translateY(100vh);
+//   }
+// }
+
+// .modal-enter-active {
+//   transform: translateY(0);
+//   opacity: 1;
+//   transition: all 200ms;
+
+//   @include respond(phone) {
+//     transition: all 300ms;
+//   }
+// }
+
+// .modal-exit {
+//   transform: translateY(0);
+//   opacity: 1;
+// }
+
+// .modal-exit-active {
+//   transform: translateY(-10rem);
+//   opacity: 0;
+//   transition: all 200ms;
+
+//   @include respond(phone) {
+//     transform: translateY(100vh);
+//     transition: all 300ms;
+//   }
+// }
