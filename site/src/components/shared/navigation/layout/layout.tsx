@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React /*useEffect*/ from 'react'
 // import { Link } from 'gatsby'
 // import PropTypes from 'prop-types'
 // import { Trans } from '@lingui/macro'
@@ -6,12 +6,8 @@ import React, { useEffect } from 'react'
 
 import './layout.scss'
 
-const Layout = (
-  {
-    /*children, pathname, currentLanguage*/
-  }
-) => {
-  return <div>hello from layout</div>
+const Layout = ({ children /*, pathname, currentLanguage*/ }) => {
+  return <div>{children}</div>
 }
 
 export default Layout
