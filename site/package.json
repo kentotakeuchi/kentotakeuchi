@@ -35,8 +35,8 @@
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@babel/preset-react": "^7.12.1",
-    "@lingui/cli": "^2.9.2",
-    "@lingui/macro": "^2.9.2",
+    "@lingui/cli": "^3.2.3",
+    "@lingui/macro": "^3.2.3",
     "babel-core": "^7.0.0-bridge.0",
     "babel-plugin-styled-components": "^1.11.1",
     "babel-preset-gatsby": "^0.5.14",

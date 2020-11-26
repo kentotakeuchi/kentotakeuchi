@@ -1,0 +1,58 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2020-11-26 03:22-0800\n"
+"Mime-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: ja\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: src/components/shared/navigation/pagination/pagination.js:22
+msgid "<0>« </0>前"
+msgstr ""
+
+#: src/components/shared/navigation/nav-links/nav-links.tsx:8
+#: src/components/shared/navigation/nav-links/nav-links.tsx:14
+msgid "all projects"
+msgstr "全てのプロジェクト"
+
+#: src/components/shared/navigation/nav-links/nav-links.tsx:11
+#: src/components/shared/navigation/nav-links/nav-links.tsx:17
+msgid "blog"
+msgstr "ブログ"
+
+#: src/components/shared/navigation/nav-links/nav-links.tsx:10
+#: src/components/shared/navigation/nav-links/nav-links.tsx:16
+msgid "contact"
+msgstr "お問い合わせ"
+
+#: src/components/shared/navigation/nav-links/nav-links.tsx:9
+#: src/components/shared/navigation/nav-links/nav-links.tsx:15
+msgid "profile"
+msgstr "プロフィール"
+
+#: src/components/shared/navigation/prev-next-pagination/prev-next-pagination.js:38
+msgid "トップ"
+msgstr ""
+
+#: src/components/shared/ui-elements/card/card.js:74
+msgid "在庫なし"
+msgstr ""
+
+#: src/components/shared/navigation/pagination/pagination.js:64
+msgid "次<0> »</0>"
+msgstr ""
+
+#: src/components/shared/ui-elements/card/card.js:69
+msgid "残りわずか"
+msgstr ""
+
+#: src/components/shared/form-elements/input/input.js:19
+msgid "選択して下さい（複数可）"
+msgstr ""

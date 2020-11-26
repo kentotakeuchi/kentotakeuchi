@@ -59,16 +59,16 @@ module.exports = {
       },
     },
     `gatsby-plugin-sass`,
-    // {
-    //   resolve: `gatsby-source-sanity`,
-    //   options: {
-    //     projectId: process.env.SANITY_PROJECT_ID,
-    //     dataset: `production`,
-    //     overlayDrafts: true,
-    //     watchMode: true,
-    //     token: process.env.SANITY_WATCH_MODE_TOKEN,
-    //   },
-    // },
+    {
+      resolve: `gatsby-source-sanity`,
+      options: {
+        projectId: process.env.SANITY_PROJECT_ID,
+        dataset: `production`,
+        overlayDrafts: true,
+        watchMode: true,
+        token: process.env.SANITY_WATCH_MODE_TOKEN,
+      },
+    },
     {
       resolve: `gatsby-plugin-i18n`,
       options: {
