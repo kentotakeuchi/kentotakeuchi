@@ -2,7 +2,15 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import useSiteMetadata from '../../hooks/site-metadata-hook'
 
-function SEO({ description, lang, meta, title }) {
+// interface Props {
+//   title: string
+//   lang: string
+//   description?: string
+//   meta?: any // TODO: type..
+// }
+
+// TODO: type..
+function SEO({ description, lang, meta, title }: any) {
   const metadata = useSiteMetadata()
   const metaTitle = lang === 'ja' ? metadata.titleJa : metadata.titleEn
   const metaDescription =

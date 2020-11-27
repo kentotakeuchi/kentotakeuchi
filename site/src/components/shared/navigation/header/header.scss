@@ -1,103 +1,47 @@
-// @import '../../../../styles/variables.scss';
-// @import '../../../../styles/mixin.scss';
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/mixin.scss';
 
-// .header {
-//   display: grid;
-//   grid-auto-flow: column;
-//   justify-content: space-between;
-//   align-items: center;
-//   height: 10rem;
-//   padding: 0 4rem;
+.header {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 10rem;
+  padding: 0 4rem;
 
-//   @include respond(phone) {
-//     padding: 0 3rem 0 2rem;
-//   }
+  @include respond(phone) {
+    padding: 0 3rem 0 2rem;
+  }
 
-//   &--active {
-//     // background-color: rgba($color-quaternary, 0.9);
-//     background-color: rgba($color-secondary, 0.9);
-//     border-bottom: 1px solid rgba($color-primary, 0.1);
-//   }
+  // toggle bg color in response with scroll position
+  &--active {
+  }
 
-//   &__title-wrapper {
-//   }
+  &__title-wrapper {
+  }
 
-//   // brand title
-//   &__title {
-//     font-size: 30px;
-//     text-transform: uppercase;
-//     line-height: 1.2;
-//     color: $color-tertiary !important;
+  // brand title
+  &__title {
+    // font-family: 'TradeGothicLTStd-BoldExt';
+    font-size: 16px;
+    // text-transform: uppercase;
+    line-height: 1.2;
 
-//     @include respond(phone) {
-//       font-size: 20px;
-//     }
+    @include respond(phone) {
+      font-size: 13px;
+    }
+  }
 
-//     &--en {
-//       // font-family: 'FranklinGothicStd-ExtraCond';
-//       font-family: 'TradeGothicLTStd-BoldExt';
-//       font-size: 25px;
+  &__nav {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    column-gap: 4rem;
+    font-size: 13px;
+    text-transform: uppercase;
 
-//       @include respond(tab-port) {
-//         font-size: 22px;
-//       }
-
-//       @include respond(phone) {
-//         font-size: 16px;
-//       }
-//     }
-//   }
-
-//   // brand sub title
-//   &__sub-title {
-//     font-family: 'TradeGothicLTStd-BoldExt';
-//     font-size: 16px;
-//     text-transform: capitalize;
-//     line-height: 1;
-//     color: $color-tertiary !important;
-
-//     @include respond(tab-port) {
-//       font-size: 13px;
-//     }
-
-//     &--en {
-//       // font-family: 'FranklinGothicStd-ExtraCond';
-//       font-family: 'TradeGothicLTStd-BoldExt';
-
-//       @include respond(tab-port) {
-//         font-size: 15px;
-//       }
-
-//       @include respond(phone) {
-//         font-size: 12px;
-//       }
-//     }
-//   }
-
-//   // disable global waku text style
-//   &__sub-title > span {
-//     -webkit-text-stroke: 0.01px $color-primary;
-//   }
-
-//   &__nav {
-//     display: grid;
-//     grid-auto-flow: column;
-//     align-items: center;
-//     column-gap: 4rem;
-
-//     @include respond(phone) {
-//       column-gap: 2rem;
-//     }
-//   }
-
-//   &__cart {
-//     display: flex;
-//     align-items: center;
-//     column-gap: 0.5rem;
-//     font-weight: $font-weight-active;
-
-//     @include respond(tab-port) {
-//       font-size: 22px;
-//     }
-//   }
-// }
+    @include respond(phone) {
+      column-gap: 2rem;
+    }
+  }
+}

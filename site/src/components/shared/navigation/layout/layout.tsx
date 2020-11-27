@@ -7,13 +7,13 @@ import useSiteMetadata from '../../../../hooks/site-metadata-hook'
 import './layout.scss'
 
 // import SideDrawer from '../side-drawer/side-drawer'
+import BG from '../../ui-elements/bg/particles/particles'
 import Header from '../header/header'
 import NavLinks from '../nav-links/nav-links'
 import Language from '../language/language'
 // import Burger from '../burger/burger'
-// import Footer from '../footer/footer'
-// import Language from '../language/language'
-// import SNS from '../sns/sns'
+import Footer from '../footer/footer'
+import SNS from '../sns/sns'
 // import Icon from '../../ui-elements/icon/icon'
 
 interface Props {
@@ -28,6 +28,7 @@ const Layout: FunctionComponent<Props> = ({ children, pathname }) => {
 
   return (
     <>
+      <BG />
       <div className="layout__header">
         <Header>
           <div className="header__title-wrapper">
@@ -49,7 +50,18 @@ const Layout: FunctionComponent<Props> = ({ children, pathname }) => {
         </Header>
       </div>
 
-      <main>{children}</main>
+      <main style={{ height: '200vh' }}>{children}</main>
+
+      <Footer>
+        <div className="footer__left-wrapper">
+          <small>
+            © {new Date().getFullYear()} {i18n._('kento takeuchi')}
+          </small>
+        </div>
+        <div className="footer__right-wrapper">
+          <SNS width={20} height={20} place="footer" />
+        </div>
+      </Footer>
     </>
   )
 }

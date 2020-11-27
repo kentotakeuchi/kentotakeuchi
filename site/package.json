@@ -29,6 +29,7 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
     "react-transition-group": "^4.4.1",
+    "react-tsparticles": "^1.18.11",
     "styled-components": "^5.2.1",
     "swiper": "^6.3.5"
   },
@@ -37,6 +38,7 @@
     "@babel/preset-react": "^7.12.1",
     "@lingui/cli": "^3.2.3",
     "@lingui/macro": "^3.2.3",
+    "@types/react-helmet": "^6.1.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-plugin-styled-components": "^1.11.1",
     "babel-preset-gatsby": "^0.5.14",

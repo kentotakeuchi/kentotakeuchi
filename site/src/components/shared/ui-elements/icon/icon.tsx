@@ -1,9 +1,14 @@
 import React from 'react'
 import { withPrefix } from 'gatsby'
-import sprite from '../../../../../static/sprite.svg'
 
-const Icon = ({ width, height, id, color }) => {
-  console.log({ sprite })
+interface Props {
+  width: number
+  height: number
+  id: string
+  color: string
+}
+
+const Icon = ({ width, height, id, color }: Props) => {
   return (
     <svg width={width} height={height} style={{ fill: color }}>
       <use xlinkHref={withPrefix(`sprite.svg#${id}`)}></use>

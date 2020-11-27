@@ -2,6 +2,8 @@ import React from 'react'
 import { navigate } from 'gatsby'
 import { useLingui } from '@lingui/react'
 import './language.scss'
+import flag_us from '../../../../asset/images/united-states.png'
+import flag_ja from '../../../../asset/images/japan.png'
 
 interface Props {
   place: string
@@ -26,12 +28,16 @@ const Language = ({ place, path }: Props) => {
     <ul className={`language language--${place}`}>
       {locale === 'en' && (
         <li>
-          <button onClick={() => toggleLangHandler(locale)}>🇯🇵</button>
+          <button onClick={() => toggleLangHandler(locale)}>
+            <img src={flag_ja} alt="japan" />
+          </button>
         </li>
       )}
       {locale === 'ja' && (
         <li>
-          <button onClick={() => toggleLangHandler(locale)}>🇺🇸</button>
+          <button onClick={() => toggleLangHandler(locale)}>
+            <img src={flag_us} alt="usa" />
+          </button>
         </li>
       )}
     </ul>

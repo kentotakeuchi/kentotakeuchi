@@ -1,3 +1,5 @@
+import { baseLanguage } from '../contentTypes/localeText';
+
 export default {
   name: 'author',
   title: 'Author',
@@ -6,7 +8,7 @@ export default {
     {
       name: 'name',
       title: 'Name',
-      type: 'string'
+      type: 'localeString',
     },
     {
       name: 'slug',
@@ -14,35 +16,27 @@ export default {
       type: 'slug',
       options: {
         source: 'name',
-        maxLength: 96
-      }
+        maxLength: 96,
+      },
     },
     {
       name: 'image',
       title: 'Image',
       type: 'image',
       options: {
-        hotspot: true
-      }
+        hotspot: true,
+      },
     },
     {
       name: 'bio',
       title: 'Bio',
-      type: 'array',
-      of: [
-        {
-          title: 'Block',
-          type: 'block',
-          styles: [{title: 'Normal', value: 'normal'}],
-          lists: []
-        }
-      ]
-    }
+      type: 'localeBlock',
+    },
   ],
   preview: {
     select: {
-      title: 'name',
-      media: 'image'
-    }
-  }
-}
+      title: `name.${baseLanguage.id}`,
+      media: 'image',
+    },
+  },
+};
