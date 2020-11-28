@@ -29,28 +29,27 @@ const Layout: FunctionComponent<Props> = ({ children, pathname }) => {
   return (
     <>
       <BG />
-      <div className="layout__header">
-        <Header>
-          <div className="header__title-wrapper">
-            <Link to={`/${locale}`}>
-              <h1
-                className={`header__title ${
-                  locale === 'en' && 'header__title--en'
-                }`}
-              >
-                {locale === 'ja' ? titleJa : titleEn}
-              </h1>
-            </Link>
-          </div>
-          <nav className="header__nav">
-            <NavLinks place="header" />
-            <Language place="header" path={pathname} />
-            {/* <Burger onClick={openDrawerHandler} isOpen={drawerIsOpen} /> */}
-          </nav>
-        </Header>
-      </div>
 
-      <main style={{ height: '200vh' }}>{children}</main>
+      <Header>
+        <div className="header__title-wrapper">
+          <Link to={`/${locale}`}>
+            <h1
+              className={`header__title ${
+                locale === 'en' && 'header__title--en'
+              }`}
+            >
+              {locale === 'ja' ? titleJa : titleEn}
+            </h1>
+          </Link>
+        </div>
+        <nav className="header__nav">
+          <NavLinks place="header" />
+          <Language place="header" path={pathname} />
+          {/* <Burger onClick={openDrawerHandler} isOpen={drawerIsOpen} /> */}
+        </nav>
+      </Header>
+
+      <main className="layout__main">{children}</main>
 
       <Footer>
         <div className="footer__left-wrapper">

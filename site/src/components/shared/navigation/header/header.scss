@@ -2,6 +2,11 @@
 @import '../../../../styles/mixin.scss';
 
 .header {
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+  width: 100%;
+
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;

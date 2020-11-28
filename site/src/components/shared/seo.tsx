@@ -2,15 +2,15 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import useSiteMetadata from '../../hooks/site-metadata-hook'
 
-// interface Props {
-//   title: string
-//   lang: string
-//   description?: string
-//   meta?: any // TODO: type..
-// }
+interface Props {
+  title: string
+  lang: string
+  description?: string
+  meta?: any // TODO: type..
+}
 
 // TODO: type..
-function SEO({ description, lang, meta, title }: any) {
+function SEO({ description, lang, /*meta,*/ title }: any) {
   const metadata = useSiteMetadata()
   const metaTitle = lang === 'ja' ? metadata.titleJa : metadata.titleEn
   const metaDescription =
@@ -25,40 +25,42 @@ function SEO({ description, lang, meta, title }: any) {
       }}
       title={title}
       titleTemplate={`%s | ${metaTitle}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: metaAuthor,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
+      meta={
+        [
+          {
+            name: `description`,
+            content: metaDescription,
+          },
+          {
+            property: `og:title`,
+            content: title,
+          },
+          {
+            property: `og:description`,
+            content: metaDescription,
+          },
+          {
+            property: `og:type`,
+            content: `website`,
+          },
+          {
+            name: `twitter:card`,
+            content: `summary`,
+          },
+          {
+            name: `twitter:creator`,
+            content: metaAuthor,
+          },
+          {
+            name: `twitter:title`,
+            content: title,
+          },
+          {
+            name: `twitter:description`,
+            content: metaDescription,
+          },
+        ] /*.concat(meta)*/
+      }
     />
   )
 }

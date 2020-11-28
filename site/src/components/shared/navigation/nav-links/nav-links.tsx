@@ -39,19 +39,19 @@ const NavLinks = ({ place }: Props) => {
       ))
       break
     case 'side-drawer':
-      navLinksJSX = SIDE_DRAWER_LINK_LIST.map(({ name, slug }) => (
-        <li key={slug}>
-          <Link
-            to={`/${locale}/${slug}`}
-            activeClassName="nav-links__link--active"
-          >
-            <p>
-              <Trans id={name} />
-            </p>
-          </Link>
-        </li>
-      ))
-      break
+    // navLinksJSX = SIDE_DRAWER_LINK_LIST.map(({ name, slug }) => (
+    //   <li key={slug}>
+    //     <Link
+    //       to={`/${locale}/${slug}`}
+    //       activeClassName="nav-links__link--active"
+    //     >
+    //       <p>
+    //         <Trans id={name} />
+    //       </p>
+    //     </Link>
+    //   </li>
+    // ))
+    // break
     case 'footer':
       // navLinksJSX = FOOTER_LINK_LIST.map(({ name, slug }) => (
       //   <li key={slug}>

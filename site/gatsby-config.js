@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    titleEn: `kento takeuchi`,
+    titleEn: `Kento Takeuchi`,
     titleJa: `竹内健人`,
     descEn: `The portfolio site of Kento Taekuchi`,
     descJa: `竹内健人ポートフォリオサイト`,

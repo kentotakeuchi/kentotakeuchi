@@ -1,2 +1,28 @@
+@import '../variables.scss';
+
 .projects-page {
+  &__list {
+    display: grid;
+    row-gap: 2rem;
+    text-transform: uppercase;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+  }
+
+  // date
+  &__item > span:first-child {
+    width: 6rem;
+    font-size: $font-size-small;
+  }
+
+  // client work || maintenance
+  &__item > span:not(:first-child) {
+    font-style: italic;
+    font-size: $font-size-small;
+    color: $text-secondary--dark;
+  }
 }

@@ -15400,6 +15400,11 @@ shell-quote@1.6.1:
     array-reduce "~0.0.0"
     jsonify "~0.0.0"
 
+shuffle-text@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/shuffle-text/-/shuffle-text-0.3.1.tgz#e4886cf6655254a0988539b6bf6172d04736b3e0"
+  integrity sha512-pbPX7Zng3gKrCmaHLsLSuhlOHBQ/clBF5to2jIPwrEZt5RKn3XFeKf1HUsNXGvlqEP0c6/PRKqJhVHNbXvtGDw==
+
 side-channel@^1.0.2, side-channel@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/side-channel/-/side-channel-1.0.3.tgz#cdc46b057550bbab63706210838df5d4c19519c3"
