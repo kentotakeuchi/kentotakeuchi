@@ -1,0 +1,88 @@
+.single-project {
+  width: 80%;
+  max-width: 80rem;
+  margin: auto;
+  margin-top: 20rem;
+  display: grid;
+  row-gap: 10rem;
+
+  &__header {
+    display: grid;
+    justify-items: center;
+  }
+
+  // title
+  &__header > h1 {
+    font-family: 'TradeGothicLTStd-BoldExt';
+    // font-family: 'Miller Banner';
+    font-size: 5rem;
+    text-align: center;
+  }
+
+  // date & tags
+  &__meta-wrapper {
+    display: flex;
+    column-gap: 2rem;
+    text-transform: capitalize;
+  }
+
+  // tags
+  &__tag {
+  }
+
+  &__tag > span:not(:last-child) {
+    margin-right: 1rem;
+  }
+
+  // client & tools & icon
+  &__info-wrapper {
+    display: grid;
+    row-gap: 2rem;
+    margin-top: 5rem;
+    text-transform: capitalize;
+
+    // icon
+    & > a {
+      justify-self: center;
+      margin-top: 3rem;
+      width: max-content;
+      transition: all 0.1s ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  // body
+  &__main {
+    display: grid;
+    row-gap: 5rem;
+  }
+
+  // desc
+  &__main > .block-content {
+    display: grid;
+    row-gap: 1.5ch;
+    width: 80%;
+    margin: auto;
+    line-height: 2;
+  }
+
+  // images
+  &__image-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 1rem;
+  }
+
+  &__image-wrapper > .gatsby-image-wrapper:nth-child(2),
+  .gatsby-image-wrapper:nth-child(3) {
+    height: 70rem;
+  }
+
+  &__image-wrapper
+    > .gatsby-image-wrapper:not(:nth-child(2)):not(:nth-child(3)) {
+    grid-column: 1 / -1;
+  }
+}

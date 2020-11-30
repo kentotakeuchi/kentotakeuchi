@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'gatsby'
-import { t, Trans } from '@lingui/macro'
+import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import './nav-links.scss'
+import shuffleText from '../../../../utils/suffle-text'
 
 // DATA
 const HEADER_LINK_LIST = [
@@ -29,12 +30,28 @@ const NavLinks = ({ place }: Props) => {
   const { i18n } = useLingui()
   const { locale } = i18n
 
+  useEffect(() => {
+    const n = HEADER_LINK_LIST.length
+    let ids = []
+    for (let i = 0; i < n; i++) {
+      ids.push(`header--${i}`)
+    }
+
+    console.log({ ids })
+
+    ids.forEach(id => {
+      shuffleText(id)
+    })
+  }, [])
+
   let navLinksJSX
   switch (place) {
     case 'header':
-      navLinksJSX = HEADER_LINK_LIST.map(({ name, slug }) => (
+      navLinksJSX = HEADER_LINK_LIST.map(({ name, slug }, i) => (
         <li key={slug}>
-          <Link to={`/${locale}/${slug}`}>{i18n._(name)}</Link>
+          <Link to={`/${locale}/${slug}`} id={`header--${i}`}>
+            {i18n._(name)}
+          </Link>
         </li>
       ))
       break

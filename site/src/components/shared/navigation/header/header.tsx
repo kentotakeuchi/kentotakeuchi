@@ -1,8 +1,12 @@
 import React, { FunctionComponent } from 'react'
 import './header.scss'
 
-const Header: FunctionComponent = ({ children }) => (
-  <header className={`header`}>{children}</header>
+interface Props {
+  className?: string
+}
+
+const Header: FunctionComponent<Props> = ({ children, className }) => (
+  <header className={`header ${className ? className : ''}`}>{children}</header>
 )
 
 export default Header

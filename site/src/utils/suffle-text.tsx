@@ -3,13 +3,13 @@ import ShuffleText from 'shuffle-text'
 const shuffleText = (id: string): void => {
   // Get element
   const element = document.getElementById(id)
-  console.log({ element })
 
   if (!element) {
     console.log('No id found.')
     return
   }
 
+  // Store original inner text to restore after collapsing the text
   const cache = element.innerText
 
   // Create instance
@@ -22,21 +22,21 @@ const shuffleText = (id: string): void => {
   element.addEventListener('mouseover', () => {
     // Create instance
     const shuffleText = new ShuffleText(element)
+
     // Set duration of the effect
-    shuffleText.duration = 600
+    shuffleText.duration = 400
+
+    // Set original text and the length
+    shuffleText.setText(cache)
+
     // Trigger effect
     shuffleText.start()
-    // Set text
-    console.log({ cache })
 
     // Set text to avoid collapsing text
-    // TODO: kinda hack and not good solution..
-    setTimeout(() => {
-      element.innerText = cache
-    }, 700)
+    // setTimeout(() => {
+    //   element.innerText = cache
+    // }, 650)
   })
-
-  element.addEventListener('mouseleave', () => {})
 }
 
 export default shuffleText

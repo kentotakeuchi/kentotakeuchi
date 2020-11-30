@@ -17,29 +17,45 @@ msgstr ""
 msgid "<0>« </0>前"
 msgstr ""
 
-#: src/components/shared/navigation/nav-links/nav-links.tsx:8
-#: src/components/shared/navigation/nav-links/nav-links.tsx:14
+#: src/components/shared/navigation/nav-links/nav-links.tsx:9
+#: src/components/shared/navigation/nav-links/nav-links.tsx:15
 msgid "all projects"
 msgstr "全てのプロジェクト"
 
-#: src/components/shared/navigation/nav-links/nav-links.tsx:11
-#: src/components/shared/navigation/nav-links/nav-links.tsx:17
+#: src/components/shared/navigation/nav-links/nav-links.tsx:12
+#: src/components/shared/navigation/nav-links/nav-links.tsx:18
 msgid "blog"
 msgstr "ブログ"
 
-#: src/components/shared/navigation/nav-links/nav-links.tsx:10
-#: src/components/shared/navigation/nav-links/nav-links.tsx:16
+#: src/components/project/single-project/single-project.tsx:25
+msgid "client"
+msgstr "クライアント"
+
+#: src/pages/projects.en.tsx:46
+msgid "client work"
+msgstr "クライアントワーク"
+
+#: src/components/shared/navigation/nav-links/nav-links.tsx:11
+#: src/components/shared/navigation/nav-links/nav-links.tsx:17
 msgid "contact"
 msgstr "お問い合わせ"
 
-#: src/components/shared/navigation/nav-links/nav-links.tsx:9
-#: src/components/shared/navigation/nav-links/nav-links.tsx:15
+#: src/components/shared/navigation/layout/layout.tsx:51
+msgid "kento takeuchi"
+msgstr "竹内健人"
+
+#: src/components/shared/navigation/nav-links/nav-links.tsx:10
+#: src/components/shared/navigation/nav-links/nav-links.tsx:16
 msgid "profile"
 msgstr "プロフィール"
 
+#: src/components/project/single-project/single-project.tsx:26
+msgid "tools"
+msgstr "ツール"
+
 #: src/components/shared/navigation/prev-next-pagination/prev-next-pagination.js:38
 msgid "トップ"
-msgstr ""
+msgstr "top"
 
 #: src/components/shared/ui-elements/card/card.js:74
 msgid "在庫なし"

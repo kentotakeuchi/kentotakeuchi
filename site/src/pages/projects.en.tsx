@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useEffect } from 'react'
 import { graphql, Link, PageProps } from 'gatsby'
 import { useLingui } from '@lingui/react'
+import { t } from '@lingui/macro'
 import '../styles/pages/projects.scss'
 import SEO from '../components/shared/seo'
 import shuffleText from '../utils/suffle-text'
@@ -18,9 +19,9 @@ const AllProjectsPage: FunctionComponent<PageProps> = ({ data }: any) => {
       tag: locale === 'en' ? p.tags[0]?.title.en : p.tags[0]?.title.ja, // TODO: ugly logic..
       client: locale === 'en' ? p.client?.en : p.client?.ja,
       slug: p.slug.current,
-      date: `${new Date(p.publishedAt).getFullYear()}.${new Date(
-        p.publishedAt
-      ).getMonth()}`,
+      date: `${new Date(p.publishedAt).getFullYear()}.${
+        new Date(p.publishedAt).getMonth() + 1
+      }`,
     }
   })
 
@@ -28,7 +29,10 @@ const AllProjectsPage: FunctionComponent<PageProps> = ({ data }: any) => {
     const n = projects.length
     let ids = []
     for (let i = 0; i < n; i++) {
+      ids.push(`date--${i}`)
       ids.push(`project--${i}`)
+      ids.push(`client--${i}`)
+      ids.push(`maintenance--${i}`)
     }
 
     console.log({ ids })
@@ -48,17 +52,17 @@ const AllProjectsPage: FunctionComponent<PageProps> = ({ data }: any) => {
         <ul className="projects-page__list">
           {newProjects.map((p: any, i: number) => (
             <li key={p.slug} className="projects-page__item">
-              <span>{p.date}</span>
+              <span id={`date--${i}`}>{p.date}</span>
               <Link to={`./${p.slug}`}>
                 <p id={`project--${i}`}>{p.title}</p>
               </Link>
               {
                 p.client && (
-                  <span>{i18n._('client work')}</span>
+                  <span id={`client--${i}`}>{i18n._(t`client work`)}</span>
                 ) /** client work */
               }
               {(p.tag === 'maintenance' || p.tag === 'メンテナンス中') && (
-                <span>{p.tag}</span> /** maintenance */
+                <span id={`maintenance--${i}`}>{p.tag}</span> /** maintenance */
               )}
             </li>
           ))}
