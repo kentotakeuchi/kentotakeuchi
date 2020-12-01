@@ -40,7 +40,7 @@ msgstr "client work"
 msgid "contact"
 msgstr "contact"
 
-#: src/components/shared/navigation/layout/layout.tsx:51
+#: src/components/shared/navigation/layout/layout.tsx:57
 msgid "kento takeuchi"
 msgstr "kento takeuchi"
 
@@ -58,17 +58,21 @@ msgid "トップ"
 msgstr "トップ"
 
 #: src/components/shared/ui-elements/card/card.js:74
-msgid "在庫なし"
-msgstr "在庫なし"
+#~ msgid "在庫なし"
+#~ msgstr "在庫なし"
 
 #: src/components/shared/navigation/pagination/pagination.js:64
 msgid "次<0> »</0>"
 msgstr "次<0> »</0>"
 
 #: src/components/shared/ui-elements/card/card.js:69
-msgid "残りわずか"
-msgstr "残りわずか"
+#~ msgid "残りわずか"
+#~ msgstr "残りわずか"
 
 #: src/components/shared/form-elements/input/input.js:19
 msgid "選択して下さい（複数可）"
 msgstr "選択して下さい（複数可）"
+
+#: src/templates/blog.en.tsx:64
+msgid "関連するブログ"
+msgstr "関連するブログ"

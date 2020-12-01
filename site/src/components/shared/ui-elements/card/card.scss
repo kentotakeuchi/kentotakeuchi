@@ -1,102 +1,32 @@
-// @import '../../../../styles/variables.scss';
+@import '../../../../styles/variables.scss';
 
-// .card {
-//   --gap: 2rem;
+.card {
+  display: grid;
 
-//   scroll-snap-align: start;
+  &__image-wrapper {
+  }
 
-//   display: grid;
-//   gap: 1rem;
-//   margin: 0;
-//   height: max-content;
+  &__text-wrapper {
+    position: relative;
+    display: grid;
+    row-gap: 2rem;
+  }
 
-//   position: relative;
-//   user-select: none;
+  &__category {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.3rem 0.5rem 0.3rem;
+    font-weight: $font-weight-bold;
+    text-transform: capitalize;
+  }
 
-//   // category + stock
-//   &__sub-info-wrapper {
-//     display: flex;
-//     justify-content: space-between;
-//     padding: 0 0.5rem 0.5rem;
-//     font-size: 13px;
-//   }
+  &__date {
+    justify-self: end;
+    padding-top: 0.5rem;
+    font-size: $font-size-small;
+  }
 
-//   // stock
-//   &__stock {
-//     color: $color-danger;
-//   }
-
-//   // PRODUCT
-//   &__prod-info-wrapper {
-//     text-align: center;
-//   }
-
-//   // title & price
-//   &__prod-info-wrapper > p {
-//     font-size: 16px;
-//     font-weight: $font-weight-active;
-//     text-transform: capitalize;
-//   }
-
-//   // add to cart
-//   & button {
-//   }
-
-//   // BLOG
-//   &__blog-info-wrapper {
-//     display: grid;
-//     grid-template-columns: 1fr max-content;
-//     align-items: start;
-//     gap: 1rem;
-//     padding: 1rem;
-//   }
-
-//   // title
-//   &__blog-info-wrapper > h3 {
-//     font-size: 16px;
-//   }
-
-//   // author image
-//   &__blog-info-wrapper > .gatsby-image-wrapper {
-//   }
-
-//   // description
-//   &__blog-info-wrapper > p {
-//     grid-column: 1 / -1;
-//     width: 95%;
-//     margin-right: auto;
-//     font-size: $font-size-small;
-//   }
-
-//   // icon
-//   &__blog-info-wrapper > a {
-//     grid-column: 1 / -1;
-//     justify-self: end;
-//   }
-
-//   // NEWS
-//   &__news-info-wrapper {
-//     display: grid;
-//     align-items: center;
-//     gap: 1rem;
-//   }
-
-//   // title
-//   &__news-info-wrapper > h3 {
-//     font-size: 16px;
-//   }
-
-//   // description
-//   &__news-info-wrapper > p {
-//     grid-column: 1 / -1;
-//     width: 95%;
-//     margin-right: auto;
-//     font-size: $font-size-small;
-//   }
-
-//   // icon
-//   &__news-info-wrapper > a {
-//     grid-column: 1 / -1;
-//     justify-self: end;
-//   }
-// }
+  &__title {
+  }
+}

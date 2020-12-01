@@ -30,13 +30,15 @@ const createSinglePage = async (
     reporter.panic('Error loading blog', JSON.stringify(errors))
   }
 
-  let items
+  let items, basePath
   switch (collection) {
     case 'project':
       items = data.project.edges.map(({ node }) => node)
+      basePath = `/${language}/${collection + 's'}`
       break
     case 'blog':
       items = data.blog.edges.map(({ node }) => node)
+      basePath = `/${language}/${collection}`
       break
     default:
       break
@@ -48,7 +50,7 @@ const createSinglePage = async (
 
   items.forEach(item => {
     createPage({
-      path: `/${language}/${collection + 's'}/${item.slug.current}`,
+      path: `${basePath}/${item.slug.current}`,
       component: path.resolve(`./src/templates/${collection}.${language}.tsx`),
       context: {
         slug: item.slug.current,
@@ -59,7 +61,7 @@ const createSinglePage = async (
   })
 }
 
-//
+// create pagination
 const paginate = async ({
   graphql,
   actions,
@@ -108,67 +110,31 @@ const paginate = async ({
   })
 }
 
-// // Tell plugins to add pages. This extension point is called only after the initial sourcing and transformation of nodes plus creation of the GraphQL schema are complete so you can query your data in order to create pages.
+// Tell plugins to add pages. This extension point is called only after the initial sourcing and transformation of nodes plus creation of the GraphQL schema are complete so you can query your data in order to create pages.
 exports.createPages = async ({ graphql, actions, reporter }) => {
   await Promise.all([
     createSinglePage({ graphql, actions, reporter }, 'en', 'project'),
     createSinglePage({ graphql, actions, reporter }, 'ja', 'project'),
-    // createSinglePage({ graphql, actions, reporter }, 'en', 'blog'),
-    // createSinglePage({ graphql, actions, reporter }, 'ja', 'blog'),
-    //     paginate({
-    //       graphql,
-    //       actions,
-    //       reporter,
-    //       collection: 'allSanityProduct',
-    //       pathPrefix: '/ja/store',
-    //       component: path.resolve('./src/templates/store.ja.js'),
-    //       language: 'ja',
-    //     }),
-    //     paginate({
-    //       graphql,
-    //       actions,
-    //       reporter,
-    //       collection: 'allSanityProduct',
-    //       pathPrefix: '/en/store',
-    //       component: path.resolve('./src/templates/store.en.js'),
-    //       language: 'en',
-    //     }),
-    //     paginate({
-    //       graphql,
-    //       actions,
-    //       reporter,
-    //       collection: 'allSanityBlog',
-    //       pathPrefix: '/ja/blog',
-    //       component: path.resolve('./src/templates/blog-list.ja.js'),
-    //       language: 'ja',
-    //     }),
-    //     paginate({
-    //       graphql,
-    //       actions,
-    //       reporter,
-    //       collection: 'allSanityBlog',
-    //       pathPrefix: '/en/blog',
-    //       component: path.resolve('./src/templates/blog-list.en.js'),
-    //       language: 'en',
-    //     }),
-    //     paginate({
-    //       graphql,
-    //       actions,
-    //       reporter,
-    //       collection: 'allSanityNews',
-    //       pathPrefix: '/ja/news',
-    //       component: path.resolve('./src/templates/news-list.ja.js'),
-    //       language: 'ja',
-    //     }),
-    //     paginate({
-    //       graphql,
-    //       actions,
-    //       reporter,
-    //       collection: 'allSanityNews',
-    //       pathPrefix: '/en/news',
-    //       component: path.resolve('./src/templates/news-list.en.js'),
-    //       language: 'en',
-    //     }),
+    createSinglePage({ graphql, actions, reporter }, 'en', 'blog'),
+    createSinglePage({ graphql, actions, reporter }, 'ja', 'blog'),
+    paginate({
+      graphql,
+      actions,
+      reporter,
+      collection: 'allSanityBlog',
+      pathPrefix: '/en/blog',
+      component: path.resolve('./src/templates/blogs.en.tsx'),
+      language: 'en',
+    }),
+    paginate({
+      graphql,
+      actions,
+      reporter,
+      collection: 'allSanityBlog',
+      pathPrefix: '/ja/blog',
+      component: path.resolve('./src/templates/blogs.ja.tsx'),
+      language: 'ja',
+    }),
   ])
 }
 

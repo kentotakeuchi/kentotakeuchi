@@ -24,3 +24,10 @@ export interface ProjectProps {
     current: string;
   };
 }
+
+/**
+ * 
+ */
+export interface BlogProps {
+  
+}
