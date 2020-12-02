@@ -1,0 +1,74 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixin.scss';
+
+.single-blog {
+  display: grid;
+  row-gap: 3rem;
+  width: 80%;
+  max-width: 60rem;
+  margin: auto;
+  margin-top: 20rem;
+  margin-bottom: 10rem;
+
+  &__header {
+    display: grid;
+    justify-items: center;
+    row-gap: 3rem;
+    padding: 8rem 0;
+    border-top: 1px solid rgba($text-primary--dark, 0.5);
+    border-bottom: 1px solid rgba($text-primary--dark, 0.5);
+
+    @include respond(phone) {
+    }
+  }
+
+  // title
+  &__header > h1 {
+    display: grid;
+    justify-items: center;
+    width: 80%;
+    max-width: 60rem;
+    margin: auto;
+    font-family: 'TradeGothicLTStd-BoldExt';
+    font-size: 4rem;
+    text-align: center;
+  }
+
+  // meta
+  &__meta-wrapper {
+    display: flex;
+    column-gap: 2rem;
+    text-transform: capitalize;
+  }
+
+  // main
+  &__main {
+    margin-top: 8rem;
+    display: grid;
+    row-gap: 10rem;
+  }
+
+  // description
+  &__main .block-content {
+    display: grid;
+    row-gap: 1.5ch;
+    line-height: 2;
+  }
+
+  // images
+  &__image-wrapper {
+    display: grid;
+    gap: 5rem;
+
+    @include respond(phone) {
+    }
+  }
+
+  & .gatsby-image-wrapper {
+    height: 50rem;
+
+    @include respond(phone) {
+      height: 40rem;
+    }
+  }
+}

@@ -4,7 +4,7 @@ import { useLingui } from '@lingui/react'
 import { t } from '@lingui/macro'
 import '../styles/pages/blog.scss'
 import SEO from '../components/shared/seo'
-// import SingleBlog from '../components/blog/single-blog/single-blog'
+import SingleBlog from '../components/blog/single-blog/single-blog'
 import PrevNextPagination from '../components/shared/navigation/prev-next-pagination/prev-next-pagination'
 import RelatedItems from '../components/shared/ui-elements/related-items/related-items'
 import Card from '../components/shared/ui-elements/card/card'
@@ -29,6 +29,7 @@ export default ({ data, ...props }: any) => {
     description:
       locale === 'en' ? blog.description._rawEn : blog.description._rawJa,
     thumbnail: blog.thumbnail.asset.fluid,
+    subImages: blog.subImages,
   }
 
   // For legible code
@@ -61,14 +62,14 @@ export default ({ data, ...props }: any) => {
     <>
       <SEO title={newBlog.title} lang={locale} />
       <div className="blog-page">
-        {/* <SingleBlog blog={newBlog} /> */}
+        <SingleBlog blog={newBlog} />
         <PrevNextPagination
           items={newBlogs}
           curSlug={newBlog.slug}
           prefix={prefix}
         />
-        <RelatedItems title={i18n._(t`関連するブログ`)}>
-          {filteredBlogs.slice(0, 10).map((blog: any, i: number) => (
+        <RelatedItems title={i18n._(t`related articles`)}>
+          {filteredBlogs.slice(0, 3).map((blog: any, i: number) => (
             <Card key={i} item={blog} place="blog-page" />
           ))}
         </RelatedItems>

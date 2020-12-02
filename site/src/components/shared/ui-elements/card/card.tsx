@@ -60,7 +60,9 @@ const Card = ({ item, place }: Props) => {
           {category}
         </span>
         <span className="card__date">{date}</span>
-        <h3 className="card__title">{title}</h3>
+        <h3 className="card__title">
+          {title.length > 20 ? `${title.substring(0, 20)}..` : title}
+        </h3>
       </div>
     </div>
   )

@@ -1,10 +1,13 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { Trans } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
+import { t } from '@lingui/macro'
 import './pagination.scss'
 
-const Pagination = ({ context }) => {
+const Pagination = ({ context }: any) => {
   const { currentPage, totalPages, pathPrefix } = context
+
+  const { i18n } = useLingui()
 
   const isFirst = currentPage === 1
   const isLast = currentPage === totalPages
@@ -19,9 +22,8 @@ const Pagination = ({ context }) => {
     <ul className="pagination">
       {!isFirst && (
         <Link to={`${pathPrefix}/${prevPage}`} rel="prev">
-          <Trans>
-            <span>«&nbsp;</span>前
-          </Trans>
+          <span>«&nbsp;</span>
+          {i18n._(t`prev`)}
         </Link>
       )}
 
@@ -61,9 +63,8 @@ const Pagination = ({ context }) => {
 
       {!isLast && (
         <Link to={`${pathPrefix}/${nextPage}`} rel="next">
-          <Trans>
-            次<span>&nbsp;»</span>
-          </Trans>
+          {i18n._(t`next`)}
+          <span>&nbsp;»</span>
         </Link>
       )}
     </ul>

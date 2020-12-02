@@ -89,7 +89,7 @@ const paginate = async ({
 
   const { totalCount } = data[collection]
 
-  const itemsPerPage = 3
+  const itemsPerPage = 9
   const totalPages = Math.ceil(totalCount / itemsPerPage)
 
   Array.from({ length: totalPages }).forEach((_, i) => {

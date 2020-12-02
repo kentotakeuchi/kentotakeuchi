@@ -1,12 +1,14 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { Trans } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
+import { t } from '@lingui/macro'
 import './prev-next-pagination.scss'
 
 // TODO: ugly logic..
-const PrevNextPagination = ({ items, curSlug, prefix }) => {
-  console.log({ items })
-  const curIndex = items.findIndex(item => item.slug === curSlug)
+const PrevNextPagination = ({ items, curSlug, prefix }: any) => {
+  const { i18n } = useLingui()
+
+  const curIndex = items.findIndex((item: any) => item.slug === curSlug)
   const isFirst = curIndex === 0
   const isLast = curIndex === items.length - 1
   const prevIndex = curIndex - 1 === 0 ? 0 : curIndex - 1
@@ -18,7 +20,7 @@ const PrevNextPagination = ({ items, curSlug, prefix }) => {
         <li className="prev-next-pagination__link prev-next-pagination__link--prev">
           <Link to={`${prefix}/${items[prevIndex].slug}`} rel="prev">
             <span>«&nbsp;</span>
-            {`${items[prevIndex].title.substring(0, 15)}..`}
+            {`${items[prevIndex].title.substring(0, 20)}..`}
           </Link>
         </li>
       ) : (
@@ -35,14 +37,14 @@ const PrevNextPagination = ({ items, curSlug, prefix }) => {
             })
           }
         >
-          <Trans>トップ</Trans>
+          {i18n._(t`top`)}
         </button>
       </li>
 
       {!isLast && (
         <li className="prev-next-pagination__link prev-next-pagination__link--next">
           <Link to={`${prefix}/${items[nextIndex].slug}`} rel="next">
-            {`${items[nextIndex].title.substring(0, 15)}..`}
+            {`${items[nextIndex].title.substring(0, 20)}..`}
             <span>&nbsp;»</span>
           </Link>
         </li>

@@ -39,10 +39,12 @@ const BlogsPage = ({ data, pageContext }: any) => {
 export default BlogsPage
 
 export const pageQuery = graphql`
-  query {
+  query($skip: Int! = 0, $limit: Int! = 3) {
     allSanityBlog(
       filter: { active: { eq: true } }
       sort: { fields: [publishedAt], order: DESC }
+      limit: $limit
+      skip: $skip
     ) {
       edges {
         node {

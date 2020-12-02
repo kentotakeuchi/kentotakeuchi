@@ -13,9 +13,6 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/shared/navigation/pagination/pagination.js:22
-msgid "<0>« </0>前"
-msgstr "<0>« </0>前"
 
 #: src/components/shared/navigation/nav-links/nav-links.tsx:9
 #: src/components/shared/navigation/nav-links/nav-links.tsx:15
@@ -31,6 +28,8 @@ msgstr "blog"
 msgid "client"
 msgstr "client"
 
+#: src/pages/index.en.tsx:46
+#: src/pages/index.ja.tsx:46
 #: src/pages/projects.en.tsx:46
 msgid "client work"
 msgstr "client work"
@@ -44,35 +43,28 @@ msgstr "contact"
 msgid "kento takeuchi"
 msgstr "kento takeuchi"
 
+#: src/components/shared/navigation/pagination/pagination.tsx:55
+msgid "next"
+msgstr "next"
+
+#: src/components/shared/navigation/pagination/pagination.tsx:20
+msgid "prev"
+msgstr "prev"
+
 #: src/components/shared/navigation/nav-links/nav-links.tsx:10
 #: src/components/shared/navigation/nav-links/nav-links.tsx:16
 msgid "profile"
 msgstr "profile"
 
+#: src/templates/blog.en.tsx:65
+#: src/templates/blog.ja.tsx:65
+msgid "related articles"
+msgstr "related articles"
+
 #: src/components/project/single-project/single-project.tsx:26
 msgid "tools"
 msgstr "tools"
 
-#: src/components/shared/navigation/prev-next-pagination/prev-next-pagination.js:38
-msgid "トップ"
-msgstr "トップ"
-
-#: src/components/shared/ui-elements/card/card.js:74
-#~ msgid "在庫なし"
-#~ msgstr "在庫なし"
-
-#: src/components/shared/navigation/pagination/pagination.js:64
-msgid "次<0> »</0>"
-msgstr "次<0> »</0>"
-
-#: src/components/shared/ui-elements/card/card.js:69
-#~ msgid "残りわずか"
-#~ msgstr "残りわずか"
-
-#: src/components/shared/form-elements/input/input.js:19
-msgid "選択して下さい（複数可）"
-msgstr "選択して下さい（複数可）"
-
-#: src/templates/blog.en.tsx:64
-msgid "関連するブログ"
-msgstr "関連するブログ"
+#: src/components/shared/navigation/prev-next-pagination/prev-next-pagination.tsx:28
+msgid "top"
+msgstr "top"

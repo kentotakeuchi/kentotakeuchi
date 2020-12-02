@@ -1,5 +1,5 @@
 import React from 'react'
-import { Trans } from '@lingui/macro'
+// import { Trans } from '@lingui/macro'
 import './input.scss'
 
 // TODO: how to translate placeholder?
@@ -16,7 +16,7 @@ const Input = ({ element, label, type, name, placeholder, options }) => {
       inputJSX = (
         <select name={name} multiple>
           <option value="">
-            <Trans>選択して下さい（複数可）</Trans>
+            {/* <Trans>選択して下さい（複数可）</Trans> */}
           </option>
           {options.map(opt => (
             <option key={opt.value} value={opt.value}>
@@ -32,9 +32,7 @@ const Input = ({ element, label, type, name, placeholder, options }) => {
 
   return (
     <div className="form-control">
-      <label>
-        <Trans id={label} />: {inputJSX}
-      </label>
+      <label>{/* <Trans id={label} />: {inputJSX} */}</label>
     </div>
   )
 }
