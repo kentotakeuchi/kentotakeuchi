@@ -2,7 +2,13 @@ import React from 'react'
 import './sns.scss'
 import Icon from '../../ui-elements/icon/icon'
 
-const SNS = ({ width, height, place }) => {
+interface Props {
+  width: number
+  height: number
+  place: string
+}
+
+const SNS = ({ width, height, place }: Props) => {
   let iconColor
   if (place === 'footer') iconColor = 'rgb(245, 245, 245)'
   else iconColor = 'rgb(0, 0, 0)'

@@ -1,0 +1,42 @@
+.contact-page {
+  display: grid;
+  place-items: center;
+  row-gap: 2rem;
+  height: calc(100vh - 20rem);
+
+  &__preference {
+    align-self: end;
+  }
+
+  &__preference > li {
+    // beat animation
+    animation: beat 0.25s infinite alternate;
+    transform-origin: center;
+
+    // hover
+    transition: all 0.1s ease-in-out;
+  }
+  &__preference > li:hover {
+    transform: translateY(-0.5rem);
+  }
+
+  &__list {
+    align-self: start;
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 2rem;
+  }
+
+  &__list > li {
+    transition: all 0.1s ease-in-out;
+  }
+  &__list > li:hover {
+    transform: translateY(0.5rem);
+  }
+
+  @keyframes beat {
+    to {
+      transform: scale(1.1);
+    }
+  }
+}

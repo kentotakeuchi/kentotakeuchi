@@ -13,6 +13,57 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: src/pages/profile.en.tsx:20
+#: src/pages/profile.ja.tsx:20
+msgid "<0>JavaScript / </0><1>TypeScript / </1><2>React / </2><3>Gatsby / </3><4>Node.js / </4><5>soccer / </5><6>Surfing</6>"
+msgstr "<0>JavaScript / </0><1>TypeScript / </1><2>React / </2><3>Gatsby / </3><4>Node.js / </4><5>サッカー / </5><6>サーフィン</6>"
+
+#: src/pages/profile.en.tsx:35
+#: src/pages/profile.ja.tsx:35
+msgid "Born in Yamaguchi in 1984. Graduated from Doshisha University in Kyoto with a degree in economics. Spent 8 years working as a sales person at various supermarkets in Tokyo and pursued his passion for soccer and surfing. Came to the U.S. and completed the Certificate Program in Computer Programming of University of California, Santa Cruz, Silicon Valley Extension in 2018."
+msgstr "1984年山口県生まれ。京都の同志社大学経済学部卒業。都内の様々なスーパーで販売員として8年間働き、サッカーとサーフィンに情熱を注ぐ。渡米し、2018年カリフォルニア大学サンタクルーズ校シリコンバレーエクステンションのコンピュータプログラミングのサーティフィケートプログラムを修了。"
+
+#: src/pages/contact.en.tsx:14
+#: src/pages/contact.ja.tsx:14
+msgid "Contact"
+msgstr "お問い合わせ"
+
+#: src/pages/404.en.tsx:24
+#: src/pages/404.ja.tsx:24
+msgid "Go back to home"
+msgstr "ホームへ戻る"
+
+#: src/pages/profile.en.tsx:44
+#: src/pages/profile.ja.tsx:44
+msgid "His family, friends and people he meets are his greatest source of support, without which he couldn't grow and challenge himself to the fullest extent. His passion for his career drives him to excel in his professional endeavors."
+msgstr "彼の最大の支えは、家族、友人、そして彼が出会った全ての人々であり、それなしでは彼は成長できず、自分自身を最大限に成長させ、挑戦することができませんでした。彼のキャリアに対する情熱が、彼のプロとしての活動を成功させる原動力となっています。"
+
+#: src/pages/profile.en.tsx:20
+#~ msgid "JavaScript/TypeScript/React/Gatsby/Node.js/Soccer/Surfing"
+#~ msgstr "JavaScript/TypeScript/React/Gatsby/Node.js/サッカー/サーフィン"
+
+#: src/pages/profile.en.tsx:38
+#: src/pages/profile.ja.tsx:38
+msgid "Kento, JavaScript web developer, has worked hard to do useful things for others with his current skills. As of now, a new project is created and developed as a result of his aspiration to grow as a professional web developer. Recently, he has learned new tools and knowledge related to web development, and also random stuffs in order to broaden his possibility to support others."
+msgstr "JavaScriptウェブ開発者の彼は、今のスキルで可能な限り人の役に立てるよう、日々試行錯誤を続けています。現在、プロのウェブ開発者として成長したいという思いから、新たなプロジェクトを立ち上げ、開発を行っています。最近では、ウェブ開発に関連した新しいツールや知識の習得、さらには、人をサポートする可能性を広げるために、ウェブ開発に限らず、様々なことも学んでいます"
+
+#: src/pages/profile.en.tsx:41
+#: src/pages/profile.ja.tsx:41
+msgid "Outside of his professional career, Kento is an enthusiastic soccer player. Playing soccer seriously helps him not only to work on his technical skills, but also reminds him of the importance of respecting others while teaching himself discipline and finding joy in his life. He used to belong to a soccer team consisting of mainly Japanese players in the San Francisco Premier League, and currently belongs to two multinational local soccer teams in Santa Clara and Hayward."
+msgstr "仕事以外では、熱狂的なサッカー選手として日々トレーニングを続けています。真剣にサッカーをすることで技術を磨くだけでなく、人を大切にすることの大切さ、自分を律することの大切さ、人生に喜びを見出すことの大切さ、をサッカーは教えてくれます。以前はサンフランシスコ・プレミアリーグの日本人選手を中心としたサッカーチームに所属していましたが、現在はサンタクララとヘイワードの2つの多国籍ローカルサッカーチームに所属しています。"
+
+#: src/pages/404.en.tsx:19
+#: src/pages/404.en.tsx:21
+#: src/pages/404.ja.tsx:19
+#: src/pages/404.ja.tsx:21
+msgid "Page Not Found"
+msgstr "ページが見つかりませんでした"
+
+#: src/pages/profile.en.tsx:13
+#: src/pages/profile.ja.tsx:13
+msgid "Profile"
+msgstr "プロフィール"
+
 #: src/components/shared/navigation/nav-links/nav-links.tsx:9
 #: src/components/shared/navigation/nav-links/nav-links.tsx:15
 msgid "all projects"
@@ -39,6 +90,10 @@ msgid "contact"
 msgstr "お問い合わせ"
 
 #: src/components/shared/navigation/layout/layout.tsx:57
+#: src/pages/profile.en.tsx:17
+#: src/pages/profile.en.tsx:31
+#: src/pages/profile.ja.tsx:17
+#: src/pages/profile.ja.tsx:31
 msgid "kento takeuchi"
 msgstr "竹内健人"
 
@@ -67,3 +122,11 @@ msgstr "ツール"
 #: src/components/shared/navigation/prev-next-pagination/prev-next-pagination.tsx:28
 msgid "top"
 msgstr "トップ"
+
+#: src/pages/profile.en.tsx:18
+#~ msgid "web developer"
+#~ msgstr "ウェブ開発者"
+
+#: src/pages/profile.ja.tsx:18
+msgid "web developer | soccer player & coach"
+msgstr "ウェブ開発者 | サッカー選手 & コーチ"

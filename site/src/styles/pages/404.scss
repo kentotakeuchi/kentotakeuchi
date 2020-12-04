@@ -1,0 +1,24 @@
+.not-found-page {
+  // page not found
+  & > h1 {
+  }
+
+  // go back to home
+  &__link-wrapper {
+    display: flex;
+    column-gap: 1rem;
+    height: max-content;
+  }
+
+  &__link-wrapper > a {
+    width: max-content;
+  }
+
+  &__link-wrapper > a + svg {
+    transition: all 0.3s;
+  }
+
+  &__link-wrapper > a:hover + svg {
+    transform: translateX(0.5rem);
+  }
+}

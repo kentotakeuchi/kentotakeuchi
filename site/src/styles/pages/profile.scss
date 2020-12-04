@@ -1,0 +1,59 @@
+@import '../variables.scss';
+
+.profile-page {
+  display: grid;
+  row-gap: 10rem;
+  width: 80%;
+  max-width: 80rem;
+  margin: auto;
+
+  &__header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 5rem;
+    border-bottom: 1px solid $text-secondary--dark;
+    height: 50rem;
+  }
+
+  &__text-wrapper {
+    display: grid;
+    align-content: start;
+    text-transform: capitalize;
+  }
+
+  // name
+  &__text-wrapper > h1 {
+    font-family: 'TradeGothicLTStd-BoldExt';
+    font-size: 4rem;
+  }
+
+  // skills
+  &__text-wrapper > p {
+    padding-top: 1ch;
+    font-style: italic;
+  }
+
+  &__header > .gatsby-image-wrapper {
+    border: 5px solid $text-primary--dark;
+    filter: sepia(0.7);
+    position: relative;
+
+    &::after {
+      content: '12 23 2017';
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      font-family: 'Date Stamp';
+      color: orange;
+    }
+  }
+
+  &__main {
+    display: grid;
+    row-gap: 1.5ch;
+    width: 80%;
+    max-width: 60rem;
+    margin: auto;
+    line-height: 2;
+  }
+}
