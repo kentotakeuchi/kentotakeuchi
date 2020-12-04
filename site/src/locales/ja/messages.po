@@ -30,6 +30,7 @@ msgstr "お問い合わせ"
 
 #: src/pages/404.en.tsx:24
 #: src/pages/404.ja.tsx:24
+#: src/pages/404.tsx:24
 msgid "Go back to home"
 msgstr "ホームへ戻る"
 
@@ -37,6 +38,10 @@ msgstr "ホームへ戻る"
 #: src/pages/profile.ja.tsx:44
 msgid "His family, friends and people he meets are his greatest source of support, without which he couldn't grow and challenge himself to the fullest extent. His passion for his career drives him to excel in his professional endeavors."
 msgstr "彼の最大の支えは、家族、友人、そして彼が出会った全ての人々であり、それなしでは彼は成長できず、自分自身を最大限に成長させ、挑戦することができませんでした。彼のキャリアに対する情熱が、彼のプロとしての活動を成功させる原動力となっています。"
+
+#: src/pages/index.tsx:17
+msgid "Home"
+msgstr "ホーム"
 
 #: src/pages/profile.en.tsx:20
 #~ msgid "JavaScript/TypeScript/React/Gatsby/Node.js/Soccer/Surfing"
@@ -56,6 +61,8 @@ msgstr "仕事以外では、熱狂的なサッカー選手として日々トレ
 #: src/pages/404.en.tsx:21
 #: src/pages/404.ja.tsx:19
 #: src/pages/404.ja.tsx:21
+#: src/pages/404.tsx:19
+#: src/pages/404.tsx:21
 msgid "Page Not Found"
 msgstr "ページが見つかりませんでした"
 
@@ -63,6 +70,10 @@ msgstr "ページが見つかりませんでした"
 #: src/pages/profile.ja.tsx:13
 msgid "Profile"
 msgstr "プロフィール"
+
+#: src/pages/index.tsx:18
+msgid "Redirecting to home.."
+msgstr "ホームにリダイレクトしています.."
 
 #: src/components/shared/navigation/nav-links/nav-links.tsx:9
 #: src/components/shared/navigation/nav-links/nav-links.tsx:15
@@ -78,8 +89,8 @@ msgstr "ブログ"
 msgid "client"
 msgstr "クライアント"
 
-#: src/pages/index.en.tsx:46
-#: src/pages/index.ja.tsx:46
+#: src/pages/index.en.tsx:45
+#: src/pages/index.ja.tsx:45
 #: src/pages/projects.en.tsx:46
 msgid "client work"
 msgstr "クライアントワーク"
@@ -127,6 +138,7 @@ msgstr "トップ"
 #~ msgid "web developer"
 #~ msgstr "ウェブ開発者"
 
+#: src/pages/profile.en.tsx:18
 #: src/pages/profile.ja.tsx:18
 msgid "web developer | soccer player & coach"
 msgstr "ウェブ開発者 | サッカー選手 & コーチ"

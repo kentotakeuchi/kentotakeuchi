@@ -34,6 +34,7 @@ msgstr "Contact"
 
 #: src/pages/404.en.tsx:24
 #: src/pages/404.ja.tsx:24
+#: src/pages/404.tsx:24
 msgid "Go back to home"
 msgstr "Go back to home"
 
@@ -41,6 +42,10 @@ msgstr "Go back to home"
 #: src/pages/profile.ja.tsx:44
 msgid "His family, friends and people he meets are his greatest source of support, without which he couldn't grow and challenge himself to the fullest extent. His passion for his career drives him to excel in his professional endeavors."
 msgstr "His family, friends and people he meets are his greatest source of support, without which he couldn't grow and challenge himself to the fullest extent. His passion for his career drives him to excel in his professional endeavors."
+
+#: src/pages/index.tsx:17
+msgid "Home"
+msgstr "Home"
 
 #: src/pages/profile.en.tsx:20
 #~ msgid "JavaScript/TypeScript/React/Gatsby/Node.js/Soccer/Surfing"
@@ -60,6 +65,8 @@ msgstr "Outside of his professional career, Kento is an enthusiastic soccer play
 #: src/pages/404.en.tsx:21
 #: src/pages/404.ja.tsx:19
 #: src/pages/404.ja.tsx:21
+#: src/pages/404.tsx:19
+#: src/pages/404.tsx:21
 msgid "Page Not Found"
 msgstr "Page Not Found"
 
@@ -67,6 +74,10 @@ msgstr "Page Not Found"
 #: src/pages/profile.ja.tsx:13
 msgid "Profile"
 msgstr "Profile"
+
+#: src/pages/index.tsx:18
+msgid "Redirecting to home.."
+msgstr "Redirecting to home.."
 
 #: src/components/shared/navigation/nav-links/nav-links.tsx:9
 #: src/components/shared/navigation/nav-links/nav-links.tsx:15
@@ -82,8 +93,8 @@ msgstr "blog"
 msgid "client"
 msgstr "client"
 
-#: src/pages/index.en.tsx:46
-#: src/pages/index.ja.tsx:46
+#: src/pages/index.en.tsx:45
+#: src/pages/index.ja.tsx:45
 #: src/pages/projects.en.tsx:46
 msgid "client work"
 msgstr "client work"
@@ -135,10 +146,11 @@ msgstr "top"
 #~ msgid "web developer | soccer player"
 #~ msgstr "web developer | soccer player"
 
+#: src/pages/profile.en.tsx:18
 #: src/pages/profile.ja.tsx:18
 msgid "web developer | soccer player & coach"
 msgstr "web developer | soccer player & coach"
 
 #: src/pages/profile.en.tsx:18
-msgid "web developer | soccer player&coach"
-msgstr "web developer | soccer player&coach"
+#~ msgid "web developer | soccer player&coach"
+#~ msgstr "web developer | soccer player&coach"

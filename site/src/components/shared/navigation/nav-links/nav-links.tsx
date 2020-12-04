@@ -37,8 +37,6 @@ const NavLinks = ({ place }: Props) => {
       ids.push(`header--${i}`)
     }
 
-    console.log({ ids })
-
     ids.forEach(id => {
       shuffleText(id)
     })

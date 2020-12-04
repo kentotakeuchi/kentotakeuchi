@@ -19,7 +19,7 @@ const ProfilePage = () => {
         <header className="profile-page__header">
           <div className="profile-page__text-wrapper">
             <h1>{i18n._(t`kento takeuchi`)}</h1>
-            <h3>{i18n._(t`web developer | soccer player&coach`)}</h3>
+            <h3>{i18n._(t`web developer | soccer player & coach`)}</h3>
             <p>
               <Trans>
                 <span>JavaScript / </span>

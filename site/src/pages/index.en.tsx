@@ -35,8 +35,6 @@ const AllProjectsPage: FunctionComponent<PageProps> = ({ data }: any) => {
       ids.push(`maintenance--${i}`)
     }
 
-    console.log({ ids })
-
     ids.forEach(id => {
       shuffleText(id)
     })

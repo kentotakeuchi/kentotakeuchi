@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     titleEn: `Kento Takeuchi`,
     titleJa: `竹内健人`,
-    descEn: `The portfolio site of Kento Taekuchi`,
+    descEn: `The portfolio site of Kento Takeuchi`,
     descJa: `竹内健人ポートフォリオサイト`,
     authorEn: `Kento Takeuchi`,
     authorJa: `竹内健人`,
@@ -72,7 +72,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-i18n`,
       options: {
-        langKeyDefault: `ja`,
+        langKeyDefault: `en`,
         useLangKeyLayout: false,
         prefixDefault: true,
       },
