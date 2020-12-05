@@ -1,0 +1,14 @@
+@import '../../../../styles/mixin.scss';
+
+.brand {
+  @include respond(phone) {
+    position: fixed;
+    top: 3rem;
+    left: 2rem;
+    z-index: 1000;
+
+    & h1 {
+      font-size: 20px;
+    }
+  }
+}

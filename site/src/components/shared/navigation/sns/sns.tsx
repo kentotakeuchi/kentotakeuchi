@@ -9,9 +9,7 @@ interface Props {
 }
 
 const SNS = ({ width, height, place }: Props) => {
-  let iconColor
-  if (place === 'footer') iconColor = 'rgb(245, 245, 245)'
-  else iconColor = 'rgb(0, 0, 0)'
+  let iconColor = 'rgb(245, 245, 245)'
 
   return (
     <ul className={`sns sns--${place}`}>

@@ -18,7 +18,7 @@ const Redirect = (props: any) => {
     return null
   }
 
-  navigate('/en')
+  navigate(`/${locale}`)
 
   return (
     <>

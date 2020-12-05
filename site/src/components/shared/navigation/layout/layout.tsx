@@ -5,16 +5,18 @@ import { t } from '@lingui/macro'
 
 import useSiteMetadata from '../../../../hooks/site-metadata-hook'
 import useScroll from '../../../../hooks/scroll-hook'
+import useSideDrawer from '../../../../hooks/side-drawer-hook'
 
 import './layout.scss'
-// import SideDrawer from '../side-drawer/side-drawer'
 import BG from '../../ui-elements/bg/particles/particles'
+import SideDrawer from '../side-drawer/side-drawer'
 import Header from '../header/header'
 import NavLinks from '../nav-links/nav-links'
 import Language from '../language/language'
-// import Burger from '../burger/burger'
+import Burger from '../burger/burger'
 import Footer from '../footer/footer'
 import SNS from '../sns/sns'
+import Brand from '../brand/brand'
 // import Icon from '../../ui-elements/icon/icon'
 import shuffleText from '../../../../utils/suffle-text'
 
@@ -25,12 +27,16 @@ interface Props {
 const Layout: FunctionComponent<Props> = ({ children, pathname }) => {
   // Hooks
   const { i18n } = useLingui()
-  const { locale } = i18n
-  const { titleJa, titleEn } = useSiteMetadata()
   const { isShow, setIsShow, scrollDownHideUpShow } = useScroll()
+  const {
+    drawerIsOpen,
+    openDrawerHandler,
+    closeDrawerHandler,
+  } = useSideDrawer()
 
   scrollDownHideUpShow()
 
+  // Show header when re-rendering happens
   useEffect(() => {
     setIsShow(false)
   }, [])
@@ -46,24 +52,27 @@ const Layout: FunctionComponent<Props> = ({ children, pathname }) => {
   return (
     <>
       <BG />
+      <Brand />
+      <Burger onClick={openDrawerHandler} isOpen={drawerIsOpen} />
+
+      <SideDrawer show={drawerIsOpen} onCancel={closeDrawerHandler}>
+        <nav className="side-drawer__nav">
+          <NavLinks place="side-drawer" />
+          <SNS width={20} height={20} place="side-drawer" />
+        </nav>
+        <div className="side-drawer__footer">
+          <Language place="side-drawer" path={pathname} />
+          <small id={`copyright`}>
+            © {new Date().getFullYear()} {i18n._(t`kento takeuchi`)}
+          </small>
+        </div>
+      </SideDrawer>
 
       <Header className={isShow ? 'hide' : ''}>
-        <div className={`header__title-wrapper`}>
-          <Link to={`/${locale}`}>
-            <h1
-              className={`header__title ${
-                locale === 'en' && 'header__title--en'
-              }`}
-              id={`brand-title`}
-            >
-              {locale === 'ja' ? titleJa : titleEn}
-            </h1>
-          </Link>
-        </div>
+        <Brand />
         <nav className="header__nav">
           <NavLinks place="header" />
           <Language place="header" path={pathname} />
-          {/* <Burger onClick={openDrawerHandler} isOpen={drawerIsOpen} /> */}
         </nav>
       </Header>
 

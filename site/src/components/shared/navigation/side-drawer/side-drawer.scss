@@ -1,94 +1,70 @@
-// @import '../../../../styles/variables.scss';
-// @import '../../../../styles/mixin.scss';
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/mixin.scss';
 
-// .side-drawer {
-//   position: fixed;
-//   width: 25rem;
-//   max-width: 65%;
-//   height: 100%;
-//   left: 0;
-//   top: 0;
-//   z-index: 300;
-//   background-color: rgba($color-secondary, 0.9);
-//   padding: 5rem 3rem 3rem 3rem;
-//   transition: transform 0.3s ease-out;
-//   display: grid;
-//   grid-template-rows: repeat(2, max-content) 1fr;
-//   text-transform: uppercase;
+.side-drawer {
+  position: fixed;
+  width: 100vw;
+  max-width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1001;
+  background-color: rgba($bg-primary--dark, 0.5);
+  padding: 10rem 3rem 0 2rem;
+  transition: transform 0.3s ease-out;
+  display: grid;
+  align-items: start;
+  text-transform: uppercase;
+  text-align: end;
 
-//   &__title-wrapper {
-//     margin-bottom: 5rem;
-//   }
+  &__nav {
+    display: grid;
+    justify-content: end;
+    row-gap: 3ch;
+  }
 
-//   &__title {
-//     font-size: 30px;
-//     color: $color-tertiary !important;
+  &__nav > .nav-links {
+    display: grid;
+    row-gap: 1.5ch;
+    font-size: 16px;
+  }
 
-//     &--en {
-//       // font-family: 'FranklinGothicStd-ExtraCond';
-//       font-family: 'TradeGothicLTStd-BoldExt';
-//       font-size: 25px;
-//       line-height: 1.1;
+  &__nav > .sns {
+  }
 
-//       @include respond(tab-port) {
-//         font-size: 22px;
-//       }
-//     }
-//   }
+  &__footer {
+    align-self: end;
+    padding-bottom: 3rem;
 
-//   &__sub-title {
-//     font-size: 16px;
-//     color: $color-tertiary !important;
+    display: grid;
+    justify-items: end;
+  }
 
-//     &--en {
-//       // font-family: 'FranklinGothicStd-ExtraCond';
-//       font-family: 'TradeGothicLTStd-BoldExt';
-//       font-size: 15px;
+  &__footer > .language {
+  }
 
-//       @include respond(tab-port) {
-//         font-size: 12px;
-//       }
-//     }
-//   }
+  // ©
+  &__footer > small {
+    color: $text-secondary--dark;
+  }
+}
 
-//   // disable global waku text style
-//   &__sub-title > span {
-//     -webkit-text-stroke: 0.01px $color-primary;
-//   }
-
-//   &__nav {
-//     display: grid;
-//     row-gap: 2rem;
-//   }
-
-//   // 🇺🇸 + ©
-//   & > *:last-child {
-//     align-self: end;
-//   }
-
-//   // ©
-//   &__footer > p {
-//     font-size: 13px;
-//     font-weight: $font-weight-default;
-//   }
-// }
-
-// // CSSTransition
-// .slide-enter {
-//   transform: translateX(-100%);
-//   transition: 0.3s linear;
-//   opacity: 0;
-// }
-// .slide-enter-active {
-//   transform: translateX(0%);
-//   opacity: 1;
-// }
-// .slide-exit {
-//   transform: translateX(0%);
-//   transition: 0.3s linear;
-//   opacity: 1;
-// }
-// .slide-exit-active {
-//   transform: translateX(-100%);
-//   opacity: 0;
-// }
+// CSSTransition
+.slide-enter {
+  transform: translateY(-100%);
+  transition: 0.2s linear;
+  opacity: 0;
+}
+.slide-enter-active {
+  transform: translateY(0%);
+  opacity: 1;
+}
+.slide-exit {
+  transform: translateY(0%);
+  transition: 0.3s linear;
+  opacity: 1;
+}
+.slide-exit-active {
+  transform: translateY(-100%);
+  opacity: 0;
+}

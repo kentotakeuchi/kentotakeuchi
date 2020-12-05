@@ -14,15 +14,12 @@
   height: 10rem;
   padding: 0 4rem;
 
+  // No header on mobile
   @include respond(phone) {
-    padding: 0 3rem 0 2rem;
+    display: none;
   }
 
-  // toggle bg color in response with scroll position
-  &--active {
-  }
-
-  &__title-wrapper {
+  &__brand-wrapper {
   }
 
   // brand title
@@ -31,10 +28,6 @@
     font-size: 16px;
     // text-transform: uppercase;
     line-height: 1.2;
-
-    @include respond(phone) {
-      font-size: 13px;
-    }
   }
 
   &__nav {
@@ -46,7 +39,6 @@
     text-transform: uppercase;
 
     @include respond(phone) {
-      column-gap: 2rem;
     }
   }
 }

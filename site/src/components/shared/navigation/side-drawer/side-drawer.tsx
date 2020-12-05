@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import ReactDOM from 'react-dom'
 import { CSSTransition } from 'react-transition-group'
 
@@ -6,7 +6,12 @@ import './side-drawer.scss'
 import Backdrop from '../../ui-elements/backdrop/backdrop'
 import useHasMounted from '../../../../hooks/client-only-hook'
 
-const SideDrawer = ({ show, onCancel, children }) => {
+interface Props {
+  show: boolean
+  onCancel: () => void
+}
+
+const SideDrawer: FunctionComponent<Props> = ({ show, onCancel, children }) => {
   const hasMounted = useHasMounted()
 
   if (!hasMounted) {
@@ -14,7 +19,7 @@ const SideDrawer = ({ show, onCancel, children }) => {
   }
 
   const content = (
-    <React.Fragment>
+    <>
       {show && <Backdrop onClick={onCancel} />}
       <CSSTransition
         in={show}
@@ -32,10 +37,13 @@ const SideDrawer = ({ show, onCancel, children }) => {
           {children}
         </aside>
       </CSSTransition>
-    </React.Fragment>
+    </>
   )
 
-  return ReactDOM.createPortal(content, document.getElementById('drawer-hook'))
+  return ReactDOM.createPortal(
+    content,
+    document.getElementById('drawer-hook') as HTMLElement
+  )
 }
 
 export default SideDrawer

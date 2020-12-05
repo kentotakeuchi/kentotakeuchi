@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react'
-import { PageProps } from 'gatsby'
+import { PageProps, navigate } from 'gatsby'
 import { setupI18n } from '@lingui/core'
 import { I18nProvider } from '@lingui/react'
 import { en, ja } from 'make-plural/plurals'
@@ -12,9 +12,13 @@ const AppContainer: FunctionComponent<PageProps> = ({
   children,
   location,
   ...props
-}) => {
+}: any) => {
+  console.log({ location, props })
+  console.log(props.pageContext.langKey)
+
   const { pathname } = location
-  const curLang = pathname.split('/')[1] // "en" || "ja"
+  // const curLang = pathname.split('/')[1] // "en" || "ja"
+  const curLang = props.pageContext.langKey
 
   const i18n = setupI18n()
   i18n.loadLocaleData('en', { plurals: en })
@@ -24,6 +28,7 @@ const AppContainer: FunctionComponent<PageProps> = ({
     ja: catalogJa,
   })
   i18n.activate(curLang)
+  console.log({ i18n })
 
   // Merge props, and pathname (inefficient but legible and maintainable <-- destructure & merge)
   const newProps = { ...props, pathname }

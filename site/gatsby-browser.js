@@ -22,6 +22,6 @@ export const onRouteUpdate = ({ location, prevLocation }) => {
 }
 
 export const wrapPageElement = ({ element, props }) => {
-  // console.log({ element, props })
+  console.log({ element, props })
   return <AppContainer {...props}>{element}</AppContainer>
 }

@@ -19,6 +19,10 @@
   // ©
   &__left-wrapper {
     color: $color-gray--dark;
+
+    @include respond(phone) {
+      display: none;
+    }
   }
 
   // sns
@@ -26,6 +30,7 @@
     justify-self: end;
 
     @include respond(phone) {
+      display: none;
     }
   }
 }
