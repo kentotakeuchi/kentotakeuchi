@@ -1,11 +1,10 @@
 import React, { FunctionComponent, useEffect } from 'react'
-import { Link } from 'gatsby'
 import { useLingui } from '@lingui/react'
 import { t } from '@lingui/macro'
 
-import useSiteMetadata from '../../../../hooks/site-metadata-hook'
 import useScroll from '../../../../hooks/scroll-hook'
 import useSideDrawer from '../../../../hooks/side-drawer-hook'
+import useHasMounted from '../../../../hooks/client-only-hook'
 
 import './layout.scss'
 import BG from '../../ui-elements/bg/particles/particles'
@@ -48,6 +47,11 @@ const Layout: FunctionComponent<Props> = ({ children, pathname }) => {
       shuffleText(id)
     })
   }, [])
+
+  const hasMounted = useHasMounted()
+  if (!hasMounted) {
+    return null
+  }
 
   const mq = window.matchMedia('(max-width: 37.5em)')
 
