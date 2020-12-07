@@ -8,6 +8,7 @@ import SingleBlog from '../components/blog/single-blog/single-blog'
 import PrevNextPagination from '../components/shared/navigation/prev-next-pagination/prev-next-pagination'
 import RelatedItems from '../components/shared/ui-elements/related-items/related-items'
 import Card from '../components/shared/ui-elements/card/card'
+import shuffleArray from '../utils/suffle-array'
 
 export default ({ data, ...props }: any) => {
   console.log({ data, props })
@@ -53,10 +54,13 @@ export default ({ data, ...props }: any) => {
   temp.pop()
   const prefix = temp.join('/') // ex: "/ja/blog"
 
-  // Create new blog array filtered by "the same category" "excluding current blog"
+  // Filtered by "the same category" "excluding current blog"
   const filteredBlogs = newBlogs.filter(
     (nb: any) => nb.category === newBlog.category && nb.slug !== newBlog.slug
   )
+
+  // Shuffle related items
+  shuffleArray(filteredBlogs)
 
   return (
     <>
@@ -69,9 +73,15 @@ export default ({ data, ...props }: any) => {
           prefix={prefix}
         />
         <RelatedItems title={i18n._(t`related articles`)}>
-          {filteredBlogs.slice(0, 3).map((blog: any, i: number) => (
-            <Card key={i} item={blog} place="blog-page" />
-          ))}
+          {filteredBlogs.length > 0 ? (
+            filteredBlogs
+              .slice(0, 3)
+              .map((blog: any, i: number) => (
+                <Card key={i} item={blog} place="blog-page" />
+              ))
+          ) : (
+            <p>{i18n._(t`No item found..`)}</p>
+          )}
         </RelatedItems>
       </div>
     </>

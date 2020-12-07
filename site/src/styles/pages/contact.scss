@@ -1,8 +1,14 @@
+@import '../mixin.scss';
+
 .contact-page {
   display: grid;
   place-items: center;
   row-gap: 2rem;
   height: calc(100vh - 20rem);
+
+  @include respond(phone) {
+    height: calc(100vh - 30rem);
+  }
 
   &__preference {
     align-self: end;

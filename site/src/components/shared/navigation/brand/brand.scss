@@ -1,13 +1,20 @@
 @import '../../../../styles/mixin.scss';
 
 .brand {
+  &__title {
+    // font-family: 'TradeGothicLTStd-BoldExt';
+    font-size: 16px;
+    // text-transform: uppercase;
+    line-height: 1.2;
+  }
+
   @include respond(phone) {
     position: fixed;
     top: 3rem;
     left: 2rem;
     z-index: 1000;
 
-    & h1 {
+    &__title {
       font-size: 20px;
     }
   }

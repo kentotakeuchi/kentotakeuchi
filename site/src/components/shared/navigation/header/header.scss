@@ -19,17 +19,6 @@
     display: none;
   }
 
-  &__brand-wrapper {
-  }
-
-  // brand title
-  &__title {
-    // font-family: 'TradeGothicLTStd-BoldExt';
-    font-size: 16px;
-    // text-transform: uppercase;
-    line-height: 1.2;
-  }
-
   &__nav {
     display: grid;
     grid-auto-flow: column;

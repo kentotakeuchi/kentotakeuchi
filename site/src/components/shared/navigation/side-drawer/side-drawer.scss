@@ -51,8 +51,8 @@
 
 // CSSTransition
 .slide-enter {
-  transform: translateY(-100%);
-  transition: 0.2s linear;
+  transform: translateY(-30%);
+  transition: 0.3s linear;
   opacity: 0;
 }
 .slide-enter-active {
@@ -65,6 +65,6 @@
   opacity: 1;
 }
 .slide-exit-active {
-  transform: translateY(-100%);
+  transform: translateY(-30%);
   opacity: 0;
 }

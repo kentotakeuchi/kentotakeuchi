@@ -1,4 +1,10 @@
+@import '../mixin.scss';
+
 .blog-page {
   display: grid;
   row-gap: 10rem;
+
+  @include respond(phone) {
+    row-gap: 5rem;
+  }
 }

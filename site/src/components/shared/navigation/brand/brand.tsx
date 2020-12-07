@@ -10,9 +10,9 @@ const Brand = () => {
   const { titleJa, titleEn } = useSiteMetadata()
 
   return (
-    <div className={`brand header__brand-wrapper`}>
+    <div className={`brand`}>
       <Link to={`/${locale}`}>
-        <h1 className={`header__title`} id={`brand-title`}>
+        <h1 className={`brand__title`} id={`brand-title`}>
           {locale === 'en' ? titleEn : titleJa}
         </h1>
       </Link>

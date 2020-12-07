@@ -24,5 +24,8 @@
   "include": [
     "src/**/*" // *** The files TypeScript should type check ***
   ],
-  "exclude": ["node_modules", "build"] // *** The files to not type check ***
+  "exclude": ["node_modules", "build"], // *** The files to not type check ***
+  "files": [
+    "@types/block-content-to-react.d.ts"
+  ],
 }

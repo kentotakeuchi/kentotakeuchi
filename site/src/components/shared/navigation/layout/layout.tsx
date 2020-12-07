@@ -49,10 +49,12 @@ const Layout: FunctionComponent<Props> = ({ children, pathname }) => {
     })
   }, [])
 
+  const mq = window.matchMedia('(max-width: 37.5em)')
+
   return (
     <>
       <BG />
-      <Brand />
+      {mq.matches && <Brand />}
       <Burger onClick={openDrawerHandler} isOpen={drawerIsOpen} />
 
       <SideDrawer show={drawerIsOpen} onCancel={closeDrawerHandler}>

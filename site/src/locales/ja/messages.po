@@ -39,7 +39,7 @@ msgstr "ホームへ戻る"
 msgid "His family, friends and people he meets are his greatest source of support, without which he couldn't grow and challenge himself to the fullest extent. His passion for his career drives him to excel in his professional endeavors."
 msgstr "彼の最大の支えは、家族、友人、そして彼が出会った全ての人々であり、それなしでは彼は成長できず、自分自身を最大限に成長させ、挑戦することができませんでした。彼のキャリアに対する情熱が、彼のプロとしての活動を成功させる原動力となっています。"
 
-#: src/pages/index.tsx:17
+#: src/pages/index.tsx:18
 msgid "Home"
 msgstr "ホーム"
 
@@ -51,6 +51,11 @@ msgstr "ホーム"
 #: src/pages/profile.ja.tsx:38
 msgid "Kento, JavaScript web developer, has worked hard to do useful things for others with his current skills. As of now, a new project is created and developed as a result of his aspiration to grow as a professional web developer. Recently, he has learned new tools and knowledge related to web development, and also random stuffs in order to broaden his possibility to support others."
 msgstr "JavaScriptウェブ開発者の彼は、今のスキルで可能な限り人の役に立てるよう、日々試行錯誤を続けています。現在、プロのウェブ開発者として成長したいという思いから、新たなプロジェクトを立ち上げ、開発を行っています。最近では、ウェブ開発に関連した新しいツールや知識の習得、さらには、人をサポートする可能性を広げるために、ウェブ開発に限らず、様々なことも学んでいます"
+
+#: src/templates/blog.en.tsx:71
+#: src/templates/blog.ja.tsx:71
+msgid "No item found.."
+msgstr "該当なし.."
 
 #: src/pages/profile.en.tsx:41
 #: src/pages/profile.ja.tsx:41
@@ -71,7 +76,7 @@ msgstr "ページが見つかりませんでした"
 msgid "Profile"
 msgstr "プロフィール"
 
-#: src/pages/index.tsx:18
+#: src/pages/index.tsx:19
 msgid "Redirecting to home.."
 msgstr "ホームにリダイレクトしています.."
 
@@ -100,7 +105,8 @@ msgstr "クライアントワーク"
 msgid "contact"
 msgstr "お問い合わせ"
 
-#: src/components/shared/navigation/layout/layout.tsx:57
+#: src/components/shared/navigation/layout/layout.tsx:48
+#: src/components/shared/navigation/layout/layout.tsx:66
 #: src/pages/profile.en.tsx:17
 #: src/pages/profile.en.tsx:31
 #: src/pages/profile.ja.tsx:17
@@ -121,8 +127,8 @@ msgstr "前"
 msgid "profile"
 msgstr "プロフィール"
 
-#: src/templates/blog.en.tsx:65
-#: src/templates/blog.ja.tsx:65
+#: src/templates/blog.en.tsx:68
+#: src/templates/blog.ja.tsx:68
 msgid "related articles"
 msgstr "関連する記事"
 

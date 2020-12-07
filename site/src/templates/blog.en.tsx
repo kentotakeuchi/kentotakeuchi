@@ -73,9 +73,15 @@ export default ({ data, ...props }: any) => {
           prefix={prefix}
         />
         <RelatedItems title={i18n._(t`related articles`)}>
-          {filteredBlogs.slice(0, 3).map((blog: any, i: number) => (
-            <Card key={i} item={blog} place="blog-page" />
-          ))}
+          {filteredBlogs.length > 0 ? (
+            filteredBlogs
+              .slice(0, 3)
+              .map((blog: any, i: number) => (
+                <Card key={i} item={blog} place="blog-page" />
+              ))
+          ) : (
+            <p>{i18n._(t`No item found..`)}</p>
+          )}
         </RelatedItems>
       </div>
     </>
