@@ -1,6 +1,4 @@
 import React, { FunctionComponent, useEffect } from 'react'
-import { useLingui } from '@lingui/react'
-import { t } from '@lingui/macro'
 
 import useScroll from '../../../../hooks/scroll-hook'
 import useSideDrawer from '../../../../hooks/side-drawer-hook'
@@ -16,8 +14,7 @@ import Burger from '../burger/burger'
 import Footer from '../footer/footer'
 import SNS from '../sns/sns'
 import Brand from '../brand/brand'
-// import Icon from '../../ui-elements/icon/icon'
-import shuffleText from '../../../../utils/suffle-text'
+import Copyright from '../../ui-elements/copyright/copyright'
 
 interface Props {
   pathname: string
@@ -25,7 +22,6 @@ interface Props {
 
 const Layout: FunctionComponent<Props> = ({ children, pathname }) => {
   // Hooks
-  const { i18n } = useLingui()
   const { isShow, setIsShow, scrollDownHideUpShow } = useScroll()
   const {
     drawerIsOpen,
@@ -40,25 +36,16 @@ const Layout: FunctionComponent<Props> = ({ children, pathname }) => {
     setIsShow(false)
   }, [])
 
-  useEffect(() => {
-    let ids = ['brand-title', 'copyright']
-
-    ids.forEach(id => {
-      shuffleText(id)
-    })
-  }, [])
-
+  let mq
   const hasMounted = useHasMounted()
-  if (!hasMounted) {
-    return null
+  if (hasMounted) {
+    mq = window.matchMedia('(max-width: 37.5em)')
   }
-
-  const mq = window.matchMedia('(max-width: 37.5em)')
 
   return (
     <>
       <BG />
-      {mq.matches && <Brand />}
+      {mq?.matches && <Brand place="layout" />}
       <Burger onClick={openDrawerHandler} isOpen={drawerIsOpen} />
 
       <SideDrawer show={drawerIsOpen} onCancel={closeDrawerHandler}>
@@ -68,14 +55,12 @@ const Layout: FunctionComponent<Props> = ({ children, pathname }) => {
         </nav>
         <div className="side-drawer__footer">
           <Language place="side-drawer" path={pathname} />
-          <small id={`copyright`}>
-            © {new Date().getFullYear()} {i18n._(t`kento takeuchi`)}
-          </small>
+          <Copyright place="side-drawer" />
         </div>
       </SideDrawer>
 
       <Header className={isShow ? 'hide' : ''}>
-        <Brand />
+        <Brand place="header" />
         <nav className="header__nav">
           <NavLinks place="header" />
           <Language place="header" path={pathname} />
@@ -86,9 +71,7 @@ const Layout: FunctionComponent<Props> = ({ children, pathname }) => {
 
       <Footer>
         <div className="footer__left-wrapper">
-          <small id={`copyright`}>
-            © {new Date().getFullYear()} {i18n._(t`kento takeuchi`)}
-          </small>
+          <Copyright place="footer" />
         </div>
         <div className="footer__right-wrapper">
           <SNS width={20} height={20} place="footer" />
