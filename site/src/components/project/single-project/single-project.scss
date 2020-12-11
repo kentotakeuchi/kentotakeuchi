@@ -27,7 +27,8 @@
 
   // date & tags
   &__meta-wrapper {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
     column-gap: 2rem;
     text-transform: capitalize;
   }

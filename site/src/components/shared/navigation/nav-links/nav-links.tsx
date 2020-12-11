@@ -29,7 +29,6 @@ interface Props {
 const NavLinks = ({ place }: Props) => {
   const { i18n } = useLingui()
   const { locale } = i18n
-  console.log({ i18n, locale })
 
   useEffect(() => {
     const n = HEADER_LINK_LIST.length

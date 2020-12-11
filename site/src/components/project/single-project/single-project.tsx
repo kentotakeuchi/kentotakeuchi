@@ -4,9 +4,9 @@ import BlockContent from '@sanity/block-content-to-react'
 import { useLingui } from '@lingui/react'
 import { t } from '@lingui/macro'
 import './single-project.scss'
-// import { ProjectProps } from '../../../types/types'
 import Icon from '../../shared/ui-elements/icon/icon'
 import Video from '../../shared/ui-elements/video/video'
+// import { ProjectProps } from '../../../types/types'
 
 const SingleProject = ({ project }: any) => {
   console.log({ project })
@@ -31,13 +31,15 @@ const SingleProject = ({ project }: any) => {
         <h1>{title}</h1>
         <div className="single-project__meta-wrapper">
           <p>{date}</p>
-          <span>|</span>
           {tags.length > 0 && (
-            <p className="single-project__tag">
-              {tags.map((tag: string, i: number) => (
-                <span key={i}>{tag}</span>
-              ))}
-            </p>
+            <>
+              <span>|</span>
+              <p className="single-project__tag">
+                {tags.map((tag: string, i: number) => (
+                  <span key={i}>{tag}</span>
+                ))}
+              </p>
+            </>
           )}
         </div>
         <div className="single-project__info-wrapper">
