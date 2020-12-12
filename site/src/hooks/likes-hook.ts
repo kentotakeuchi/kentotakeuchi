@@ -12,6 +12,7 @@ type Mode = 'inc' | 'dec'
 
 const useLikes = () => {
   const [hasLikes, setHasLikes] = useState<boolean>(false)
+  const [isClicked, setIsClicked] = useState<boolean>(false)
 
   const checkLikesHandler = (id: string): void => {
     const storedData = localStorage.getItem(id)
@@ -43,12 +44,13 @@ const useLikes = () => {
         setHasLikes(false)
       }
       console.log({response});
+      setIsClicked(true)
     } catch (err) {
       console.log({err});
     }
   }
 
-  return { hasLikes, checkLikesHandler, updateLikesHandler }
+  return { hasLikes, isClicked, checkLikesHandler, updateLikesHandler }
 }
 
 export default useLikes

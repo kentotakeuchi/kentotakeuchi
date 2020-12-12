@@ -17,9 +17,15 @@ const Card = ({ item, place }: Props) => {
   const { i18n } = useLingui()
   const { locale } = i18n
 
-  const { title, date, category, slug, thumbnail, likes, id } = item
+  const { title, date, category, slug, thumbnail, id } = item
+  let { likes } = item
 
-  const { hasLikes, checkLikesHandler, updateLikesHandler } = useLikes()
+  const {
+    hasLikes,
+    isClicked,
+    checkLikesHandler,
+    updateLikesHandler,
+  } = useLikes()
 
   useEffect(() => {
     checkLikesHandler(id)
@@ -88,7 +94,7 @@ const Card = ({ item, place }: Props) => {
               color={hasLikes ? 'rgb(255, 69, 58)' : 'rgba(255, 69, 58, .5)'}
             />
           </button>
-          <span>{likes}</span>
+          <span>{isClicked ? ++likes : likes /** TODO: ugly logic.. */}</span>
         </div>
       </div>
     </div>
