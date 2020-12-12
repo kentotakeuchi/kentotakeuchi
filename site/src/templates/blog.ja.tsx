@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { graphql } from 'gatsby'
 import { useLingui } from '@lingui/react'
 import { t } from '@lingui/macro'
@@ -31,6 +31,8 @@ export default ({ data, ...props }: any) => {
       locale === 'en' ? blog.description._rawEn : blog.description._rawJa,
     thumbnail: blog.thumbnail.asset.fluid,
     subImages: blog.subImages,
+    likes: blog.likes,
+    id: blog._id,
   }
 
   // For legible code
@@ -45,6 +47,8 @@ export default ({ data, ...props }: any) => {
       thumbnail: blog.thumbnail.asset.fluid,
       category:
         locale === 'en' ? blog.category.title.en : blog.category.title.ja,
+      likes: blog.likes,
+      id: blog._id,
     }
   })
 
@@ -60,7 +64,9 @@ export default ({ data, ...props }: any) => {
   )
 
   // Shuffle related items
-  shuffleArray(filteredBlogs)
+  useEffect(() => {
+    shuffleArray(filteredBlogs)
+  }, [])
 
   return (
     <>
@@ -124,6 +130,7 @@ export const query = graphql`
         }
       }
       likes
+      _id
     }
 
     allSanityBlog(
@@ -154,6 +161,7 @@ export const query = graphql`
             }
           }
           likes
+          _id
         }
       }
     }

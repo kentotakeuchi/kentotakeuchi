@@ -1,10 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Image from 'gatsby-image'
 import BlockContent from '@sanity/block-content-to-react'
 import './single-blog.scss'
+import Icon from '../../shared/ui-elements/icon/icon'
+import useLikes from '../../../hooks/likes-hook'
 
 const SingleBlog = ({ blog }: any) => {
-  const { title, description, date, thumbnail, subImages, category } = blog
+  const {
+    title,
+    description,
+    date,
+    thumbnail,
+    subImages,
+    category,
+    likes,
+    id,
+  } = blog
+
+  const { hasLikes, checkLikesHandler, updateLikesHandler } = useLikes()
+
+  useEffect(() => {
+    checkLikesHandler(id)
+  }, [hasLikes])
 
   return (
     <article className="single-blog">
@@ -14,6 +31,23 @@ const SingleBlog = ({ blog }: any) => {
           <p className="single-blog__date">{date}</p>
           <span>|</span>
           <p className="single-blog__category">{category}</p>
+        </div>
+        <div className="single-blog__likes-wrapper">
+          <button
+            onClick={() =>
+              !hasLikes
+                ? updateLikesHandler(id, 'inc')
+                : updateLikesHandler(id, 'dec')
+            }
+          >
+            <Icon
+              width={20}
+              height={20}
+              id="icon-heart"
+              color={hasLikes ? 'rgb(255, 69, 58)' : 'rgba(255, 69, 58, .5)'}
+            />
+          </button>
+          <span>{likes}</span>
         </div>
       </header>
       <main className="single-blog__main">

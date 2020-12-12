@@ -25,6 +25,8 @@ const BlogsPage = ({ data, pageContext }: any) => {
               thumbnail: b.thumbnail.asset.fluid,
               category:
                 language === 'en' ? b.category.title.en : b.category.title.ja,
+              likes: b.likes,
+              id: b._id,
             }
 
             return <Card key={i} item={newBlog} place="blogs-page" />
@@ -39,10 +41,12 @@ const BlogsPage = ({ data, pageContext }: any) => {
 export default BlogsPage
 
 export const pageQuery = graphql`
-  query {
+  query($skip: Int! = 0, $limit: Int! = 3) {
     allSanityBlog(
       filter: { active: { eq: true } }
       sort: { fields: [publishedAt], order: DESC }
+      limit: $limit
+      skip: $skip
     ) {
       edges {
         node {
@@ -68,6 +72,7 @@ export const pageQuery = graphql`
             }
           }
           likes
+          _id
         }
       }
     }

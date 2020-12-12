@@ -12,6 +12,8 @@ interface Props {
 }
 
 const Card = ({ item, place }: Props) => {
+  console.log({ item })
+
   const { i18n } = useLingui()
   const { locale } = i18n
 
@@ -22,7 +24,6 @@ const Card = ({ item, place }: Props) => {
   useEffect(() => {
     checkLikesHandler(id)
   }, [hasLikes])
-  console.log({ hasLikes })
 
   let cateColor
   switch (category) {
