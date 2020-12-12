@@ -25,6 +25,8 @@ const BlogsPage = ({ data, pageContext }: any) => {
               thumbnail: b.thumbnail.asset.fluid,
               category:
                 language === 'en' ? b.category.title.en : b.category.title.ja,
+              likes: b.likes,
+              id: b._id,
             }
 
             return <Card key={i} item={newBlog} place="blogs-page" />
@@ -69,6 +71,8 @@ export const pageQuery = graphql`
               }
             }
           }
+          likes
+          _id
         }
       }
     }

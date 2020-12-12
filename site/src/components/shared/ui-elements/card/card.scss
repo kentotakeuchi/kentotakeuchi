@@ -29,4 +29,13 @@
 
   &__title {
   }
+
+  &__likes-wrapper {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    align-items: center;
+    column-gap: 1rem;
+    margin-top: -1rem;
+  }
 }

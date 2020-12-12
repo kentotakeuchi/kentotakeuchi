@@ -123,6 +123,7 @@ export const query = graphql`
           en
         }
       }
+      likes
     }
 
     allSanityBlog(
@@ -152,6 +153,7 @@ export const query = graphql`
               }
             }
           }
+          likes
         }
       }
     }

@@ -31,11 +31,6 @@ const shuffleText = (id: string): void => {
 
     // Trigger effect
     shuffleText.start()
-
-    // Set text to avoid collapsing text
-    // setTimeout(() => {
-    //   element.innerText = cache
-    // }, 650)
   })
 }
 

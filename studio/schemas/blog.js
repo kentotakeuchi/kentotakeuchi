@@ -63,6 +63,11 @@ export default {
       title: 'description',
       type: 'localeBlock',
     },
+    {
+      name: 'likes',
+      title: 'Likes',
+      type: 'number',
+    },
   ],
 
   preview: {

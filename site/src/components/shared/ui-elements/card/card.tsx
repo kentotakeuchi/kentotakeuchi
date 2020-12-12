@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'gatsby'
 import Image from 'gatsby-image'
 import { useLingui } from '@lingui/react'
 import './card.scss'
+import Icon from '../icon/icon'
+import useLikes from '../../../../hooks/likes-hook'
 
 interface Props {
   item: any
@@ -13,7 +15,14 @@ const Card = ({ item, place }: Props) => {
   const { i18n } = useLingui()
   const { locale } = i18n
 
-  const { title, date, category, slug, thumbnail } = item
+  const { title, date, category, slug, thumbnail, likes, id } = item
+
+  const { hasLikes, checkLikesHandler, updateLikesHandler } = useLikes()
+
+  useEffect(() => {
+    checkLikesHandler(id)
+  }, [hasLikes])
+  console.log({ hasLikes })
 
   let cateColor
   switch (category) {
@@ -63,6 +72,23 @@ const Card = ({ item, place }: Props) => {
         <h3 className="card__title">
           {title.length > 20 ? `${title.substring(0, 20)}..` : title}
         </h3>
+        <div className="card__likes-wrapper">
+          <button
+            onClick={() =>
+              !hasLikes
+                ? updateLikesHandler(id, 'inc')
+                : updateLikesHandler(id, 'dec')
+            }
+          >
+            <Icon
+              width={20}
+              height={20}
+              id="icon-heart"
+              color={hasLikes ? 'rgb(255, 69, 58)' : 'rgba(255, 69, 58, .5)'}
+            />
+          </button>
+          <span>{likes}</span>
+        </div>
       </div>
     </div>
   )
