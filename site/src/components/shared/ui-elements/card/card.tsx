@@ -26,10 +26,12 @@ const Card = ({ item, place }: Props) => {
     checkLikesHandler,
     updateLikesHandler,
   } = useLikes()
+  console.log({ curLikes })
 
   useEffect(() => {
-    setLikes(likes)
-  }, [])
+    // 999 means initial render
+    setLikes(curLikes === 999 ? likes : curLikes)
+  }, [curLikes])
 
   useEffect(() => {
     checkLikesHandler(id)
@@ -44,6 +46,10 @@ const Card = ({ item, place }: Props) => {
     case 'soccer':
     case 'サッカー':
       cateColor = 'red'
+      break
+    case 'test':
+    case 'テスト':
+      cateColor = 'gray'
       break
     default:
       break

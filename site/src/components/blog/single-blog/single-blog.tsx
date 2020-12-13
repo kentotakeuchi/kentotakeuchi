@@ -26,8 +26,9 @@ const SingleBlog = ({ blog }: any) => {
   } = useLikes()
 
   useEffect(() => {
-    setLikes(likes)
-  }, [])
+    // 999 means initial render
+    setLikes(curLikes === 999 ? likes : curLikes)
+  }, [curLikes])
 
   useEffect(() => {
     checkLikesHandler(id)

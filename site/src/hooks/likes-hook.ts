@@ -14,7 +14,7 @@ const useLikes = () => {
   // if there is id in local storage
   const [hasLikes, setHasLikes] = useState<boolean>(false)
   // current likes
-  const [curLikes, setCurLikes] = useState<number>(0)
+  const [curLikes, setCurLikes] = useState<number>(999)
 
   // set current value of likes
   // used when initial render occurs
