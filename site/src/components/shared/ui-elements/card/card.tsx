@@ -51,6 +51,10 @@ const Card = ({ item, place }: Props) => {
     case 'テスト':
       cateColor = 'gray'
       break
+    case 'random':
+    case 'ランダム':
+      cateColor = 'blue'
+      break
     default:
       break
   }
