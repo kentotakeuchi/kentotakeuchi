@@ -17,11 +17,21 @@ const SingleBlog = ({ blog }: any) => {
     id,
   } = blog
 
-  const { hasLikes, checkLikesHandler, updateLikesHandler } = useLikes()
+  const {
+    hasLikes,
+    curLikes,
+    setLikes,
+    checkLikesHandler,
+    updateLikesHandler,
+  } = useLikes()
+
+  useEffect(() => {
+    setLikes(likes)
+  }, [])
 
   useEffect(() => {
     checkLikesHandler(id)
-  }, [hasLikes])
+  }, [])
 
   return (
     <article className="single-blog">
@@ -47,7 +57,7 @@ const SingleBlog = ({ blog }: any) => {
               color={hasLikes ? 'rgb(255, 69, 58)' : 'rgba(255, 69, 58, .5)'}
             />
           </button>
-          <span>{likes}</span>
+          <span>{curLikes}</span>
         </div>
       </header>
       <main className="single-blog__main">

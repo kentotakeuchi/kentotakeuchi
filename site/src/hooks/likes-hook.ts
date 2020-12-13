@@ -11,14 +11,25 @@ const client = sanityClient({
 type Mode = 'inc' | 'dec'
 
 const useLikes = () => {
+  // if there is id in local storage
   const [hasLikes, setHasLikes] = useState<boolean>(false)
-  const [isClicked, setIsClicked] = useState<boolean>(false)
+  // current likes
+  const [curLikes, setCurLikes] = useState<number>(0)
 
+  // set current value of likes
+  // used when initial render occurs
+  const setLikes = (likes: number): void => {
+    setCurLikes(likes)
+  }
+
+  // check if there is id in local storage & set state accordingly
   const checkLikesHandler = (id: string): void => {
     const storedData = localStorage.getItem(id)
     storedData === 'yes' ? setHasLikes(true) : setHasLikes(false)
   }
 
+  // triggered when user click heart icon
+  // update(inc or dec) value of likes
   const updateLikesHandler = async (id: string, mode: Mode): Promise<void> => {
     try {
       let response
@@ -43,14 +54,14 @@ const useLikes = () => {
               .commit()
         setHasLikes(false)
       }
+      setCurLikes(response.likes)
       console.log({response});
-      setIsClicked(true)
     } catch (err) {
       console.log({err});
     }
   }
 
-  return { hasLikes, isClicked, checkLikesHandler, updateLikesHandler }
+  return { hasLikes, curLikes, setLikes, checkLikesHandler, updateLikesHandler }
 }
 
 export default useLikes
