@@ -61,6 +61,13 @@ function SEO({ description, lang, /*meta,*/ title }: any) {
           },
         ] /*.concat(meta)*/
       }
+      link={[
+        {
+          rel: `canonical`,
+          href: `/web/tweet-button`,
+        },
+      ]}
+      script={[{ src: `https://platform.twitter.com/widgets.js` }]}
     />
   )
 }

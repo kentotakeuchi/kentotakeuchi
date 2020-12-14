@@ -5,7 +5,7 @@ import './single-blog.scss'
 import Icon from '../../shared/ui-elements/icon/icon'
 import useLikes from '../../../hooks/likes-hook'
 
-const SingleBlog = ({ blog }: any) => {
+const SingleBlog = ({ blog, url }: any) => {
   const {
     title,
     description,
@@ -24,6 +24,7 @@ const SingleBlog = ({ blog }: any) => {
     checkLikesHandler,
     updateLikesHandler,
   } = useLikes()
+  console.log({ likes, curLikes })
 
   useEffect(() => {
     // 999 means initial render
@@ -59,6 +60,19 @@ const SingleBlog = ({ blog }: any) => {
             />
           </button>
           <span>{curLikes}</span>
+        </div>
+        <div className="single-blog__social-wrapper">
+          <a
+            className="twitter-share-button"
+            href={`https://twitter.com/intent/tweet`}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-size="large"
+            data-text={title}
+            data-url={url}
+            data-via="KentoTakeuchi"
+            data-related="web,soccer"
+          />
         </div>
       </header>
       <main className="single-blog__main">

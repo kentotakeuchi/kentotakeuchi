@@ -72,7 +72,7 @@ export default ({ data, ...props }: any) => {
     <>
       <SEO title={newBlog.title} lang={locale} />
       <div className="blog-page">
-        <SingleBlog blog={newBlog} />
+        <SingleBlog blog={newBlog} url={props.location.href} />
         <PrevNextPagination
           items={newBlogs}
           curSlug={newBlog.slug}
