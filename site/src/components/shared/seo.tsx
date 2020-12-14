@@ -10,13 +10,15 @@ interface Props {
 }
 
 // TODO: type..
-function SEO({ description, lang, /*meta,*/ title }: any) {
+function SEO({ description, lang, /*meta,*/ title, url }: any) {
   const metadata = useSiteMetadata()
   const metaTitle = lang === 'ja' ? metadata.titleJa : metadata.titleEn
   const metaDescription =
     description || lang === 'ja' ? metadata.descJa : metadata.descEn
   const metaAuthor =
     description || lang === 'ja' ? metadata.authorJa : metadata.authorEn
+
+  const canonical = url ? url : null
 
   return (
     <Helmet
@@ -62,12 +64,24 @@ function SEO({ description, lang, /*meta,*/ title }: any) {
         ] /*.concat(meta)*/
       }
       link={[
+        // {
+        //   rel: `canonical`,
+        //   href: `/web/tweet-button`,
+        // },
+        canonical
+          ? {
+              rel: 'canonical',
+              href: canonical,
+            }
+          : {},
+      ]}
+      script={[
         {
-          rel: `canonical`,
-          href: `/web/tweet-button`,
+          type: `text/javascript`,
+          async: true,
+          src: `https://platform.twitter.com/widgets.js`,
         },
       ]}
-      script={[{ src: `https://platform.twitter.com/widgets.js` }]}
     />
   )
 }

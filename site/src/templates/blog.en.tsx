@@ -53,7 +53,7 @@ export default ({ data, ...props }: any) => {
   })
 
   // To get a current "prefix" of url
-  const { pathname } = props.location
+  const { pathname, href } = props.location
   const temp = pathname.split('/')
   temp.pop()
   const prefix = temp.join('/') // ex: "/ja/blog"
@@ -70,7 +70,7 @@ export default ({ data, ...props }: any) => {
 
   return (
     <>
-      <SEO title={newBlog.title} lang={locale} />
+      <SEO title={newBlog.title} lang={locale} url={href} />
       <div className="blog-page">
         <SingleBlog blog={newBlog} url={props.location.href} />
         <PrevNextPagination

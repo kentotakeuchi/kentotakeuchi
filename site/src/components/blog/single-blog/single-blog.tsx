@@ -72,7 +72,9 @@ const SingleBlog = ({ blog, url }: any) => {
             data-url={url}
             data-via="KentoTakeuchi"
             data-related="web,soccer"
-          />
+          >
+            Tweet
+          </a>
         </div>
       </header>
       <main className="single-blog__main">
