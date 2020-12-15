@@ -28,7 +28,9 @@ export interface BlogProps {
 }
 
 /**
- * 
+ * @type
+ *
+ * pageContext come from "templates folder" and "pagination" function
  */
 export interface TemplatePageContextProps {
   currentPage: number;
@@ -37,4 +39,26 @@ export interface TemplatePageContextProps {
   pathPrefix: string;
   skip: number;
   totalPages: number;
+}
+
+/**
+ * @type
+ *
+ * pageContext come from "templates folder" and "createSinglePage" function
+ */
+export interface SinglePageContextProps {
+  collection: string
+  language: string
+  slug: string
+}
+
+/**
+ * @type
+ *
+ * pageContext come from "page folder"
+ */
+export interface PageContextProps {
+  langKey: string
+  memo: string
+  slug: string
 }
