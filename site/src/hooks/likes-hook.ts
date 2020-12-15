@@ -6,6 +6,7 @@ const client = sanityClient({
   dataset: 'production',
   useCdn: false,
   token: process.env.GATSBY_SANITY_UPDATE_LIKES_TOKEN,
+  useProjectHostname: false
 })
 
 type Mode = 'inc' | 'dec'
@@ -14,11 +15,11 @@ const useLikes = () => {
   // if there is id in local storage
   const [hasLikes, setHasLikes] = useState<boolean>(false)
   // current likes
-  const [curLikes, setCurLikes] = useState<number>(999)
+  const [curLikes, setCurLikes] = useState<number|undefined|null>(999)
 
   // set current value of likes
   // used when initial render occurs
-  const setLikes = (likes: number): void => {
+  const setLikes = (likes: number|undefined|null): void => {
     setCurLikes(likes)
   }
 

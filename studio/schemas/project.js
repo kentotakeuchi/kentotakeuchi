@@ -20,11 +20,13 @@ export default {
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'title',
       title: 'Title',
       type: 'localeString',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'slug',
@@ -34,6 +36,7 @@ export default {
         source: 'name',
         maxLength: 96,
       },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'client',
@@ -54,6 +57,7 @@ export default {
         Rule.uri({
           scheme: ['http', 'https', 'mailto', 'tel'],
         }),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'videoUrl',
@@ -63,6 +67,7 @@ export default {
         Rule.uri({
           scheme: ['http', 'https', 'mailto', 'tel'],
         }),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'images',
@@ -72,11 +77,13 @@ export default {
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'description',
       title: 'Description',
       type: 'localeBlock',
+      validation: (Rule) => Rule.required(),
     },
   ],
 

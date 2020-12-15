@@ -3,14 +3,16 @@ import { Helmet } from 'react-helmet'
 import useSiteMetadata from '../../hooks/site-metadata-hook'
 
 interface Props {
-  title: string
+  // TODO: type.. conflict sanity and helmet
+  // title?: string | null
+  title?: any
   lang: string
   description?: string
-  meta?: any // TODO: type..
+  meta?: any[]
+  url?: string
 }
 
-// TODO: type..
-function SEO({ description, lang, /*meta,*/ title, url }: any) {
+function SEO({ description, lang, meta, title, url }: Props) {
   const metadata = useSiteMetadata()
   const metaTitle = lang === 'ja' ? metadata.titleJa : metadata.titleEn
   const metaDescription =
@@ -20,6 +22,41 @@ function SEO({ description, lang, /*meta,*/ title, url }: any) {
 
   const canonical = url ? url : null
 
+  const baseMeta = [
+    {
+      name: `description`,
+      content: metaDescription,
+    },
+    {
+      property: `og:title`,
+      content: title,
+    },
+    {
+      property: `og:description`,
+      content: metaDescription,
+    },
+    {
+      property: `og:type`,
+      content: `website`,
+    },
+    {
+      name: `twitter:card`,
+      content: `summary`,
+    },
+    {
+      name: `twitter:creator`,
+      content: metaAuthor,
+    },
+    {
+      name: `twitter:title`,
+      content: title,
+    },
+    {
+      name: `twitter:description`,
+      content: metaDescription,
+    },
+  ]
+
   return (
     <Helmet
       htmlAttributes={{
@@ -27,42 +64,7 @@ function SEO({ description, lang, /*meta,*/ title, url }: any) {
       }}
       title={title}
       titleTemplate={`%s | ${metaTitle}`}
-      meta={
-        [
-          {
-            name: `description`,
-            content: metaDescription,
-          },
-          {
-            property: `og:title`,
-            content: title,
-          },
-          {
-            property: `og:description`,
-            content: metaDescription,
-          },
-          {
-            property: `og:type`,
-            content: `website`,
-          },
-          {
-            name: `twitter:card`,
-            content: `summary`,
-          },
-          {
-            name: `twitter:creator`,
-            content: metaAuthor,
-          },
-          {
-            name: `twitter:title`,
-            content: title,
-          },
-          {
-            name: `twitter:description`,
-            content: metaDescription,
-          },
-        ] /*.concat(meta)*/
-      }
+      meta={meta ? baseMeta.concat(meta) : baseMeta}
       link={[
         // {
         //   rel: `canonical`,

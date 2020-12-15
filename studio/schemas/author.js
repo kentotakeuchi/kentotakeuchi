@@ -9,6 +9,7 @@ export default {
       name: 'name',
       title: 'Name',
       type: 'localeString',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'slug',
@@ -18,6 +19,7 @@ export default {
         source: 'name',
         maxLength: 96,
       },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'image',

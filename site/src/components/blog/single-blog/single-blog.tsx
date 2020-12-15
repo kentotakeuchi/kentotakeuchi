@@ -4,12 +4,19 @@ import BlockContent from '@sanity/block-content-to-react'
 import './single-blog.scss'
 import Icon from '../../shared/ui-elements/icon/icon'
 import useLikes from '../../../hooks/likes-hook'
+// import { SanityBlog } from '../../../../types/graphql-types'
 
-const SingleBlog = ({ blog, url }: any) => {
+// TODO: type..
+interface Props {
+  blog: any
+  url: string
+}
+
+const SingleBlog = ({ blog, url }: Props) => {
   const {
     title,
     description,
-    date,
+    publishedAt,
     thumbnail,
     subImages,
     category,
@@ -40,7 +47,7 @@ const SingleBlog = ({ blog, url }: any) => {
       <header className="single-blog__header">
         <h1>{title}</h1>
         <div className="single-blog__meta-wrapper">
-          <p className="single-blog__date">{date}</p>
+          <p className="single-blog__date">{publishedAt}</p>
           <span>|</span>
           <p className="single-blog__category">{category}</p>
         </div>
@@ -84,8 +91,8 @@ const SingleBlog = ({ blog, url }: any) => {
           renderContainerOnSingleChild
         />
         <div className="single-blog__image-wrapper">
-          <Image fluid={thumbnail} alt={title} />
-          {subImages.map((img: any, i: number) => (
+          <Image fluid={thumbnail} alt={`main photo of ${title}`} />
+          {subImages?.map((img: any, i: number) => (
             <Image key={i} fluid={img.asset.fluid} alt={title} />
           ))}
         </div>

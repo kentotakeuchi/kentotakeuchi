@@ -6,16 +6,21 @@ import { t } from '@lingui/macro'
 import './single-project.scss'
 import Icon from '../../shared/ui-elements/icon/icon'
 import Video from '../../shared/ui-elements/video/video'
-// import { ProjectProps } from '../../../types/types'
+import { SanityProject } from '../../../../types/graphql-types'
 
-const SingleProject = ({ project }: any) => {
+interface Props {
+  // TODO: type.. since i formatted project
+  project: SanityProject | any
+}
+
+const SingleProject = ({ project }: Props) => {
   console.log({ project })
 
   const { i18n } = useLingui()
 
   const {
     title,
-    date,
+    publishedAt,
     tags,
     client,
     tools,
@@ -30,12 +35,12 @@ const SingleProject = ({ project }: any) => {
       <header className="single-project__header">
         <h1>{title}</h1>
         <div className="single-project__meta-wrapper">
-          <p>{date}</p>
-          {tags.length > 0 && (
+          <p>{publishedAt}</p>
+          {tags && tags.length > 0 && (
             <>
               <span>|</span>
               <p className="single-project__tag">
-                {tags.map((tag: string, i: number) => (
+                {tags?.map((tag: string, i: number) => (
                   <span key={i}>{tag}</span>
                 ))}
               </p>
@@ -44,12 +49,16 @@ const SingleProject = ({ project }: any) => {
         </div>
         <div className="single-project__info-wrapper">
           {client && <p>{`${i18n._(t`client`)}: ${client}`}</p>}
-          {tools.length > 0 && (
+          {tools && tools.length > 0 && (
             <p>{`${i18n._(t`tools`)}: ${tools.map(
               (tool: string) => ` ${tool}`
             )}`}</p>
           )}
-          <a href={url} target="_blank" rel="noopener noreferrer">
+          <a
+            href={url ? url : undefined}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Icon
               width={30}
               height={30}
@@ -67,7 +76,7 @@ const SingleProject = ({ project }: any) => {
           renderContainerOnSingleChild
         />
         <div className="single-project__image-wrapper">
-          {images.map((img: any, i: number) => (
+          {images?.map((img: any, i: number) => (
             <Image key={i} fluid={img.asset.fluid} alt={`${title}`} />
           ))}
         </div>

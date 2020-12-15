@@ -3,8 +3,15 @@ import { Link } from 'gatsby'
 import { useLingui } from '@lingui/react'
 import { t } from '@lingui/macro'
 import './pagination.scss'
+import { TemplatePageContextProps } from '../../../../types/types'
 
-const Pagination = ({ context }: any) => {
+interface Props {
+  context: TemplatePageContextProps
+}
+
+const Pagination = ({ context }: Props) => {
+  console.log({ context })
+
   const { currentPage, totalPages, pathPrefix } = context
 
   const { i18n } = useLingui()

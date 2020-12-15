@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { graphql } from 'gatsby'
+import { graphql, PageProps } from 'gatsby'
 import { useLingui } from '@lingui/react'
 import { t } from '@lingui/macro'
 import '../styles/pages/blog.scss'
@@ -9,8 +9,18 @@ import PrevNextPagination from '../components/shared/navigation/prev-next-pagina
 import RelatedItems from '../components/shared/ui-elements/related-items/related-items'
 import Card from '../components/shared/ui-elements/card/card'
 import shuffleArray from '../utils/suffle-array'
+import { SanityBlog, SanityBlogGroupConnection } from '../../graphql-types'
 
-export default ({ data, ...props }: any) => {
+interface Props {
+  data: {
+    sanityBlog: SanityBlog
+    allSanityBlog: SanityBlogGroupConnection
+  }
+  location: Location
+  props: PageProps
+}
+
+export default ({ data, location, ...props }: Props) => {
   console.log({ data, props })
   const blog = data.sanityBlog // selected blog
   const blogs = data.allSanityBlog.edges // all blog
@@ -20,40 +30,41 @@ export default ({ data, ...props }: any) => {
 
   // For legible code
   const newBlog = {
-    title: locale === 'en' ? blog.title.en : blog.title.ja,
-    slug: blog.slug.current,
-    date:
+    title: locale === 'en' ? blog.title?.en : blog.title?.ja,
+    slug: blog.slug?.current,
+    publishedAt:
       locale === 'en'
         ? new Date(blog.publishedAt).toLocaleDateString('en-US')
         : new Date(blog.publishedAt).toLocaleDateString('ja-JP'),
-    category: locale === 'en' ? blog.category.title.en : blog.category.title.ja,
+    category:
+      locale === 'en' ? blog.category?.title?.en : blog.category?.title?.ja,
     description:
-      locale === 'en' ? blog.description._rawEn : blog.description._rawJa,
-    thumbnail: blog.thumbnail.asset.fluid,
+      locale === 'en' ? blog.description?._rawEn : blog.description?._rawJa,
+    thumbnail: blog.thumbnail?.asset?.fluid,
     subImages: blog.subImages,
     likes: blog.likes,
     id: blog._id,
   }
 
   // For legible code
-  const newBlogs = blogs.map(({ node: blog }: any) => {
+  const newBlogs = blogs.map(({ node: blog }) => {
     return {
-      title: locale === 'en' ? blog.title.en : blog.title.ja,
-      slug: blog.slug.current,
+      title: locale === 'en' ? blog.title?.en : blog.title?.ja,
+      slug: blog.slug?.current,
       date:
         locale === 'en'
           ? new Date(blog.publishedAt).toLocaleDateString('en-US')
           : new Date(blog.publishedAt).toLocaleDateString('ja-JP'),
-      thumbnail: blog.thumbnail.asset.fluid,
+      thumbnail: blog.thumbnail?.asset?.fluid,
       category:
-        locale === 'en' ? blog.category.title.en : blog.category.title.ja,
+        locale === 'en' ? blog.category?.title?.en : blog.category?.title?.ja,
       likes: blog.likes,
       id: blog._id,
     }
   })
 
   // To get a current "prefix" of url
-  const { pathname, href } = props.location
+  const { pathname, href } = location
   const temp = pathname.split('/')
   temp.pop()
   const prefix = temp.join('/') // ex: "/ja/blog"
@@ -72,7 +83,7 @@ export default ({ data, ...props }: any) => {
     <>
       <SEO title={newBlog.title} lang={locale} url={href} />
       <div className="blog-page">
-        <SingleBlog blog={newBlog} url={props.location.href} />
+        <SingleBlog blog={newBlog} url={href} />
         <PrevNextPagination
           items={newBlogs}
           curSlug={newBlog.slug}

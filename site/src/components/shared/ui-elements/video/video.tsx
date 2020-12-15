@@ -1,6 +1,7 @@
 import React from 'react'
 import './video.scss'
 
+// TODO: type.. src
 interface Props {
   width?: number
   height?: number
@@ -8,7 +9,7 @@ interface Props {
   autoPlay?: boolean
   loop?: boolean
   className?: string
-  src: string
+  src: any
   type?: string
 }
 

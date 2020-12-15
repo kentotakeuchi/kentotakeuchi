@@ -3,20 +3,29 @@ import { graphql } from 'gatsby'
 import '../styles/pages/project.scss'
 import SEO from '../components/shared/seo'
 import SingleProject from '../components/project/single-project/single-project'
+import { SanityProject } from '../../types/graphql-types'
+import { TemplatePageContextProps } from '../types/types'
 
-const ProjectPage = ({ data, ...props }: any) => {
-  console.log({ data, props })
+interface Props {
+  data: {
+    sanityProject: SanityProject
+  }
+  pageContext: TemplatePageContextProps
+}
+
+const ProjectPage = ({ data, pageContext }: Props) => {
+  console.log({ data })
   const project = data.sanityProject // selected project
-  const { language } = props.pageContext
+  const { language } = pageContext
 
   // For legible code
   const newProject = {
-    title: language === 'en' ? project.title.en : project.title.ja,
-    date: `${new Date(project.publishedAt).getFullYear()}.${
+    title: language === 'en' ? project.title?.en : project.title?.ja,
+    publishedAt: `${new Date(project.publishedAt).getFullYear()}.${
       new Date(project.publishedAt).getMonth() + 1
     }`,
-    tags: project.tags.map((tag: any) => {
-      return language === 'en' ? tag.title.en : tag.title.ja
+    tags: project.tags?.map(tag => {
+      return language === 'en' ? tag?.title?.en : tag?.title?.ja
     }),
     client: language === 'en' ? project.client?.en : project.client?.ja,
     tools: project.tools,
@@ -24,10 +33,10 @@ const ProjectPage = ({ data, ...props }: any) => {
     videoUrl: project.videoUrl,
     description:
       language === 'en'
-        ? project.description._rawEn
-        : project.description._rawJa,
+        ? project.description?._rawEn
+        : project.description?._rawJa,
     images: project.images,
-    slug: project.slug.current,
+    slug: project.slug?.current,
   }
 
   return (

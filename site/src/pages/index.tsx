@@ -1,13 +1,13 @@
 import React from 'react'
 import SEO from '../components/shared/seo'
-import { navigate } from 'gatsby'
+import { navigate, PageProps } from 'gatsby'
 import { useLingui } from '@lingui/react'
 import { t } from '@lingui/macro'
 
 import useHasMounted from '../hooks/client-only-hook'
 
 // IF user comes from "/" --> redirect to /en
-const Redirect = (props: any) => {
+const Redirect = (props: PageProps) => {
   console.log({ props })
 
   const { i18n } = useLingui()

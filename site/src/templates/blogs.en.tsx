@@ -4,8 +4,17 @@ import '../styles/pages/blogs.scss'
 import SEO from '../components/shared/seo'
 import Pagination from '../components/shared/navigation/pagination/pagination'
 import Card from '../components/shared/ui-elements/card/card'
+import { SanityBlogGroupConnection } from '../../graphql-types'
+import { TemplatePageContextProps } from '../types/types'
 
-const BlogsPage = ({ data, pageContext }: any) => {
+interface Props {
+  data: {
+    allSanityBlog: SanityBlogGroupConnection
+  }
+  pageContext: TemplatePageContextProps
+}
+
+const BlogsPage: React.FC<Props> = ({ data, pageContext }) => {
   const { language } = pageContext
   const blogs = data.allSanityBlog.edges
 
@@ -14,17 +23,19 @@ const BlogsPage = ({ data, pageContext }: any) => {
       <SEO title={language === 'en' ? 'Blog' : 'ブログ'} lang={language} />
       <div className="blogs-page">
         <ul className="blogs-page__list">
-          {blogs.map(({ node: b }: any, i: number) => {
+          {blogs.map(({ node: b }, i) => {
             const newBlog = {
-              title: language === 'en' ? b.title.en : b.title.ja,
-              slug: b.slug.current,
+              title: language === 'en' ? b.title?.en : b.title?.ja,
+              slug: b.slug?.current,
               date:
                 language === 'en'
                   ? new Date(b.publishedAt).toLocaleDateString('en-US')
                   : new Date(b.publishedAt).toLocaleDateString('ja-JP'),
-              thumbnail: b.thumbnail.asset.fluid,
+              thumbnail: b.thumbnail?.asset?.fluid,
               category:
-                language === 'en' ? b.category.title.en : b.category.title.ja,
+                language === 'en'
+                  ? b.category?.title?.en
+                  : b.category?.title?.ja,
               likes: b.likes,
               id: b._id,
             }

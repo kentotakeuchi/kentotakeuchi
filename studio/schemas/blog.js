@@ -14,6 +14,7 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'localeString',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'slug',
@@ -23,6 +24,7 @@ export default {
         source: 'title',
         maxLength: 96,
       },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'author',
@@ -37,6 +39,7 @@ export default {
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'subImages',
@@ -52,21 +55,25 @@ export default {
       title: 'Category',
       type: 'reference',
       to: { type: 'blog-category' },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'description',
       title: 'description',
       type: 'localeBlock',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'likes',
       title: 'Likes',
       type: 'number',
+      validation: (Rule) => Rule.required(),
     },
   ],
 
