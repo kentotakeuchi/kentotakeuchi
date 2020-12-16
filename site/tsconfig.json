@@ -22,7 +22,7 @@
     "noFallthroughCasesInSwitch": true // Report errors for fallthrough cases in switch statement
   },
   "include": [
-    "src/**/*", "graphql-types.ts" // *** The files TypeScript should type check ***
+    "src/**/*", "graphql-types.ts", "functions/**/*" // *** The files TypeScript should type check ***
   ],
   "exclude": ["node_modules", "build"], // *** The files to not type check ***
   "files": [

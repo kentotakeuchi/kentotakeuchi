@@ -1,27 +1,42 @@
 import { useState } from 'react'
-import sanityClient from '@sanity/client'
-
-const client = sanityClient({
-  projectId: process.env.GATSBY_SANITY_PROJECT_ID,
-  dataset: 'production',
-  useCdn: false,
-  token: process.env.GATSBY_SANITY_UPDATE_LIKES_TOKEN,
-  useProjectHostname: false
-})
+import { graphql, useStaticQuery } from 'gatsby'
 
 type Mode = 'inc' | 'dec'
 
 const useLikes = () => {
+  // query "id" and "likes"
+  const data = useStaticQuery(graphql`
+    query {
+      allSanityBlog(filter: { active: { eq: true } }) {
+        edges {
+          node {
+            _id
+            likes
+          }
+        }
+      }
+    }
+  `)
+  // formatted query data into { id: likes }
+  const likesObj: any = {}
+  data.allSanityBlog.edges.forEach(({node: blog}: any) => {
+    likesObj[blog._id] = blog.likes
+  })
+  // put all values of likes as state
+  const [allLikes, setAllLikes] = useState(likesObj)
+
+  // update a value of likes
+  const setLikesHandler = (id: string, likes: number) => {
+    setAllLikes((prevState: any) => {
+      return {
+        ...prevState,
+        [id]: likes,
+      }
+    })
+  }
+
   // if there is id in local storage
   const [hasLikes, setHasLikes] = useState<boolean>(false)
-  // current likes
-  const [curLikes, setCurLikes] = useState<number|undefined|null>(999)
-
-  // set current value of likes
-  // used when initial render occurs
-  const setLikes = (likes: number|undefined|null): void => {
-    setCurLikes(likes)
-  }
 
   // check if there is id in local storage & set state accordingly
   const checkLikesHandler = (id: string): void => {
@@ -29,40 +44,44 @@ const useLikes = () => {
     storedData === 'yes' ? setHasLikes(true) : setHasLikes(false)
   }
 
+  // state of loading spinner
+  const [loading, setLoading] = useState<boolean>(false)
+
   // triggered when user click heart icon
   // update(inc or dec) value of likes
   const updateLikesHandler = async (id: string, mode: Mode): Promise<void> => {
     try {
-      let response
+      setLoading(true)
+
+      // Send to serverless function to create the Checkout Session.
+      const response = await fetch('/.netlify/functions/update-likes', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({id, mode}),
+      }).then(res => res.json())
+
       // if user likes the article
       if(mode === 'inc') {
         localStorage.setItem(id, 'yes')
-        response = await client
-              .patch(id)
-              .inc({
-                likes: 1,
-              })
-              .commit()
         setHasLikes(true)
       // if user dislike the article
       } else {
         localStorage.removeItem(id)
-        response = await client
-              .patch(id)
-              .dec({
-                likes: 1,
-              })
-              .commit()
         setHasLikes(false)
       }
-      setCurLikes(response.likes)
-      console.log({response});
+      console.log({response})
+      // setLikesHandler(response._id, response.likes)
+      setLoading(false)
     } catch (err) {
-      console.log({err});
+      console.log({err})
+      setLoading(false)
     }
   }
 
-  return { hasLikes, curLikes, setLikes, checkLikesHandler, updateLikesHandler }
+  return { allLikes, hasLikes, loading, setLikesHandler, checkLikesHandler, updateLikesHandler }
 }
 
 export default useLikes

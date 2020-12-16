@@ -4,8 +4,15 @@ import { useLingui } from '@lingui/react'
 import { t } from '@lingui/macro'
 import './prev-next-pagination.scss'
 
+interface Props {
+  // TODO: type..
+  items: any
+  curSlug?: string | null
+  prefix: string
+}
+
 // TODO: ugly logic..
-const PrevNextPagination = ({ items, curSlug, prefix }: any) => {
+const PrevNextPagination = ({ items, curSlug, prefix }: Props) => {
   const { i18n } = useLingui()
 
   const curIndex = items.findIndex((item: any) => item.slug === curSlug)

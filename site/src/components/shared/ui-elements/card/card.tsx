@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Link } from 'gatsby'
 import Image from 'gatsby-image'
 import { useLingui } from '@lingui/react'
 import './card.scss'
 import Icon from '../icon/icon'
 import useLikes from '../../../../hooks/likes-hook'
+import likesContext from '../../../../contexts/likes-context'
 
 interface Props {
   item: any
@@ -17,21 +18,13 @@ const Card = ({ item, place }: Props) => {
   const { i18n } = useLingui()
   const { locale } = i18n
 
-  const { title, date, category, slug, thumbnail, likes, id } = item
+  const { title, date, category, slug, thumbnail, /*likes,*/ id } = item
 
-  const {
-    hasLikes,
-    curLikes,
-    setLikes,
-    checkLikesHandler,
-    updateLikesHandler,
-  } = useLikes()
-  console.log({ curLikes })
+  const { hasLikes, checkLikesHandler, updateLikesHandler } = useLikes()
+  const { allLikes } = useContext(likesContext)
+  console.log({ allLikes })
 
-  useEffect(() => {
-    // 999 means initial render
-    setLikes(curLikes === 999 ? likes : curLikes)
-  }, [curLikes])
+  useEffect(() => {}, [])
 
   useEffect(() => {
     checkLikesHandler(id)
@@ -108,7 +101,7 @@ const Card = ({ item, place }: Props) => {
               color={hasLikes ? 'rgb(255, 69, 58)' : 'rgba(255, 69, 58, .5)'}
             />
           </button>
-          <span>{curLikes}</span>
+          <span>{allLikes[id]}</span>
         </div>
       </div>
     </div>

@@ -20,23 +20,13 @@ const SingleBlog = ({ blog, url }: Props) => {
     thumbnail,
     subImages,
     category,
-    likes,
+    // likes,
     id,
   } = blog
 
-  const {
-    hasLikes,
-    curLikes,
-    setLikes,
-    checkLikesHandler,
-    updateLikesHandler,
-  } = useLikes()
-  console.log({ likes, curLikes })
+  const { hasLikes, checkLikesHandler, updateLikesHandler } = useLikes()
 
-  useEffect(() => {
-    // 999 means initial render
-    setLikes(curLikes === 999 ? likes : curLikes)
-  }, [curLikes])
+  useEffect(() => {}, [])
 
   useEffect(() => {
     checkLikesHandler(id)
@@ -66,7 +56,7 @@ const SingleBlog = ({ blog, url }: Props) => {
               color={hasLikes ? 'rgb(255, 69, 58)' : 'rgba(255, 69, 58, .5)'}
             />
           </button>
-          <span>{curLikes}</span>
+          <span>{0}</span>
         </div>
         <div className="single-blog__social-wrapper">
           <a
