@@ -5,34 +5,33 @@ const client = sanityClient({
   dataset: 'production',
   useCdn: false,
   token: process.env.SANITY_UPDATE_LIKES_TOKEN,
-  useProjectHostname: false,
+  // useProjectHostname: false,
 })
 
 exports.handler = async ({ headers, body }) => {
-  console.log({ headers, body })
+  const { id, mode } = JSON.parse(body)
 
   try {
-    // let response
-    // if(mode === 'inc') {
-    //   response = await client
-    //         .patch(id)
-    //         .inc({
-    //           likes: 1,
-    //         })
-    //         .commit()
-    // } else {
-    //   response = await client
-    //         .patch(id)
-    //         .dec({
-    //           likes: 1,
-    //         })
-    //         .commit()
-    // }
+    let response
+    if (mode === 'inc') {
+      response = await client
+        .patch(id)
+        .inc({
+          likes: 1,
+        })
+        .commit()
+    } else {
+      response = await client
+        .patch(id)
+        .dec({
+          likes: 1,
+        })
+        .commit()
+    }
 
     return {
       statusCode: 200,
-      // body: JSON.stringify(response),
-      body: JSON.stringify({ received: true }),
+      body: JSON.stringify(response),
     }
   } catch (err) {
     console.log({ err })

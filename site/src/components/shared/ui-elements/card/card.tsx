@@ -4,7 +4,6 @@ import Image from 'gatsby-image'
 import { useLingui } from '@lingui/react'
 import './card.scss'
 import Icon from '../icon/icon'
-import useLikes from '../../../../hooks/likes-hook'
 import likesContext from '../../../../contexts/likes-context'
 
 interface Props {
@@ -13,22 +12,18 @@ interface Props {
 }
 
 const Card = ({ item, place }: Props) => {
-  console.log({ item })
-
   const { i18n } = useLingui()
   const { locale } = i18n
 
   const { title, date, category, slug, thumbnail, /*likes,*/ id } = item
 
-  const { hasLikes, checkLikesHandler, updateLikesHandler } = useLikes()
-  const { allLikes } = useContext(likesContext)
-  console.log({ allLikes })
-
-  useEffect(() => {}, [])
+  const { allLikes, hasLikes, checkLikes, updateLikes } = useContext(
+    likesContext
+  )
 
   useEffect(() => {
-    checkLikesHandler(id)
-  }, [hasLikes])
+    checkLikes(id)
+  }, [])
 
   let cateColor
   switch (category) {
@@ -89,16 +84,16 @@ const Card = ({ item, place }: Props) => {
         <div className="card__likes-wrapper">
           <button
             onClick={() =>
-              !hasLikes
-                ? updateLikesHandler(id, 'inc')
-                : updateLikesHandler(id, 'dec')
+              !hasLikes[id] ? updateLikes(id, 'inc') : updateLikes(id, 'dec')
             }
           >
             <Icon
               width={20}
               height={20}
               id="icon-heart"
-              color={hasLikes ? 'rgb(255, 69, 58)' : 'rgba(255, 69, 58, .5)'}
+              color={
+                hasLikes[id] ? 'rgb(255, 69, 58)' : 'rgba(255, 69, 58, .5)'
+              }
             />
           </button>
           <span>{allLikes[id]}</span>

@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
 import Image from 'gatsby-image'
 import BlockContent from '@sanity/block-content-to-react'
 import './single-blog.scss'
 import Icon from '../../shared/ui-elements/icon/icon'
-import useLikes from '../../../hooks/likes-hook'
-// import { SanityBlog } from '../../../../types/graphql-types'
+import likesContext from '../../../contexts/likes-context'
 
 // TODO: type..
 interface Props {
@@ -24,12 +23,12 @@ const SingleBlog = ({ blog, url }: Props) => {
     id,
   } = blog
 
-  const { hasLikes, checkLikesHandler, updateLikesHandler } = useLikes()
-
-  useEffect(() => {}, [])
+  const { allLikes, hasLikes, checkLikes, updateLikes } = useContext(
+    likesContext
+  )
 
   useEffect(() => {
-    checkLikesHandler(id)
+    checkLikes(id)
   }, [])
 
   return (
@@ -44,19 +43,19 @@ const SingleBlog = ({ blog, url }: Props) => {
         <div className="single-blog__likes-wrapper">
           <button
             onClick={() =>
-              !hasLikes
-                ? updateLikesHandler(id, 'inc')
-                : updateLikesHandler(id, 'dec')
+              !hasLikes[id] ? updateLikes(id, 'inc') : updateLikes(id, 'dec')
             }
           >
             <Icon
               width={20}
               height={20}
               id="icon-heart"
-              color={hasLikes ? 'rgb(255, 69, 58)' : 'rgba(255, 69, 58, .5)'}
+              color={
+                hasLikes[id] ? 'rgb(255, 69, 58)' : 'rgba(255, 69, 58, .5)'
+              }
             />
           </button>
-          <span>{0}</span>
+          <span>{allLikes[id]}</span>
         </div>
         <div className="single-blog__social-wrapper">
           <a

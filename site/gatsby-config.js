@@ -1,4 +1,5 @@
 module.exports = {
+  flags: { PRESERVE_WEBPACK_CACHE: true },
   siteMetadata: {
     titleEn: `Kento Takeuchi`,
     titleJa: `竹内健人`,

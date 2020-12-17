@@ -1,33 +1,20 @@
 import { useState } from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import { LikesProps } from '../types/types'
 
 type Mode = 'inc' | 'dec'
 
 const useLikes = () => {
-  // query "id" and "likes"
-  const data = useStaticQuery(graphql`
-    query {
-      allSanityBlog(filter: { active: { eq: true } }) {
-        edges {
-          node {
-            _id
-            likes
-          }
-        }
-      }
-    }
-  `)
-  // formatted query data into { id: likes }
-  const likesObj: any = {}
-  data.allSanityBlog.edges.forEach(({node: blog}: any) => {
-    likesObj[blog._id] = blog.likes
-  })
   // put all values of likes as state
-  const [allLikes, setAllLikes] = useState(likesObj)
+  const [allLikes, setAllLikes] = useState({})
+
+  // set an initial value of likes
+  const setInitialLikesHandler = (initialData: LikesProps): void => {
+    setAllLikes(initialData)
+  }
 
   // update a value of likes
-  const setLikesHandler = (id: string, likes: number) => {
-    setAllLikes((prevState: any) => {
+  const setLikesHandler = (id: string, likes: number): void => {
+    setAllLikes(prevState => {
       return {
         ...prevState,
         [id]: likes,
@@ -36,52 +23,67 @@ const useLikes = () => {
   }
 
   // if there is id in local storage
-  const [hasLikes, setHasLikes] = useState<boolean>(false)
+  const [hasLikes, setHasLikes] = useState({})
 
   // check if there is id in local storage & set state accordingly
   const checkLikesHandler = (id: string): void => {
-    const storedData = localStorage.getItem(id)
-    storedData === 'yes' ? setHasLikes(true) : setHasLikes(false)
+    const data = localStorage.getItem(id)
+
+    setHasLikes(prevState => {
+      return {
+        ...prevState,
+        [id]: data === 'yes' ? true : false,
+      }
+    })
   }
 
-  // state of loading spinner
-  const [loading, setLoading] = useState<boolean>(false)
+  // set updated hasLikes
+  const setHasLikesHandler = (id: string, updated: boolean): void => {
+    setHasLikes(prevState => {
+      return {
+        ...prevState,
+        [id]: updated,
+      }
+    })
+  }
 
   // triggered when user click heart icon
   // update(inc or dec) value of likes
   const updateLikesHandler = async (id: string, mode: Mode): Promise<void> => {
     try {
-      setLoading(true)
-
       // Send to serverless function to update likes
-      const response = await fetch('/.netlify/functions/update-likes', {
+      const { _id, likes } = await fetch('/.netlify/functions/update-likes', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
         },
-        body: JSON.stringify({id, mode}),
+        body: JSON.stringify({ id, mode }),
       }).then(res => res.json())
 
       // if user likes the article
-      if(mode === 'inc') {
+      if (mode === 'inc') {
         localStorage.setItem(id, 'yes')
-        setHasLikes(true)
-      // if user dislike the article
+        setHasLikesHandler(id, true)
+        // if user dislike the article
       } else {
         localStorage.removeItem(id)
-        setHasLikes(false)
+        setHasLikesHandler(id, false)
       }
-      console.log({response})
-      // setLikesHandler(response._id, response.likes)
-      setLoading(false)
+      setLikesHandler(_id, likes)
     } catch (err) {
-      console.log({err})
-      setLoading(false)
+      console.log({ err })
     }
   }
 
-  return { allLikes, hasLikes, loading, setLikesHandler, checkLikesHandler, updateLikesHandler }
+  return {
+    allLikes,
+    hasLikes,
+    setInitialLikesHandler,
+    setLikesHandler,
+    checkLikesHandler,
+    updateLikesHandler,
+  }
 }
 
 export default useLikes

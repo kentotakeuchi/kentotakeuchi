@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, useEffect } from 'react'
 import { PageProps } from 'gatsby'
 import { I18nProvider } from '@lingui/react'
 
@@ -6,6 +6,8 @@ import Layout from './navigation/layout/layout'
 import useI18n from '../../hooks/i18n-hook'
 import likesContext from '../../contexts/likes-context'
 import useLikes from '../../hooks/likes-hook'
+import useLikesQuery from '../../hooks/likes-query-hook'
+
 import {
   PageContextProps,
   SinglePageContextProps,
@@ -26,16 +28,26 @@ const AppContainer: FunctionComponent<Props> = ({
   pageContext,
   ...props
 }) => {
-  console.log({ location, props, pageContext })
-  console.log(pageContext.langKey, pageContext.language)
-
   const { pathname } = location
   const curLang = pageContext.langKey || pageContext.language
 
   // set up i18n stuff
   const { i18n } = useI18n(curLang)
 
-  const { allLikes, setLikesHandler } = useLikes()
+  const {
+    allLikes,
+    hasLikes,
+    setInitialLikesHandler,
+    setLikesHandler,
+    checkLikesHandler,
+    updateLikesHandler,
+  } = useLikes()
+  const initialData = useLikesQuery()
+
+  // set initial values of likes at the first render
+  useEffect(() => {
+    setInitialLikesHandler(initialData)
+  }, [])
 
   // Merge props, and pathname (inefficient but legible and maintainable <-- destructure & merge)
   const newProps = { ...props, pathname }
@@ -44,7 +56,10 @@ const AppContainer: FunctionComponent<Props> = ({
       <likesContext.Provider
         value={{
           allLikes: allLikes,
-          setLikes: setLikesHandler,
+          hasLikes: hasLikes,
+          setUpdatedLikes: setLikesHandler,
+          checkLikes: checkLikesHandler,
+          updateLikes: updateLikesHandler,
         }}
       >
         <Layout {...newProps}>{children}</Layout>

@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 export interface ProjectFormattedProps {
   title?: string
@@ -14,17 +14,17 @@ export interface ProjectFormattedProps {
 }
 
 /**
- * 
+ *
  */
 export interface BlogProps {
-  id?: string;
-  title?: string;
-  description?: any;
-  date?: Date;
-  thumbnail?: any;
-  subImages?: any;
-  category?: string;
-  likes?: number;
+  id?: string
+  title?: string
+  description?: any
+  date?: Date
+  thumbnail?: any
+  subImages?: any
+  category?: string
+  likes?: number
 }
 
 /**
@@ -33,12 +33,12 @@ export interface BlogProps {
  * pageContext come from "templates folder" and "pagination" function
  */
 export interface TemplatePageContextProps {
-  currentPage: number;
-  language: string;
-  limit: number;
-  pathPrefix: string;
-  skip: number;
-  totalPages: number;
+  currentPage: number
+  language: string
+  limit: number
+  pathPrefix: string
+  skip: number
+  totalPages: number
 }
 
 /**
@@ -61,4 +61,14 @@ export interface PageContextProps {
   langKey: string
   memo: string
   slug: string
+}
+
+/**
+ * @type
+ *
+ * Likes
+ */
+export interface LikesProps {
+  id: string
+  likes?: number
 }
