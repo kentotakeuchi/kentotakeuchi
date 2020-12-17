@@ -8,7 +8,7 @@ const client = sanityClient({
   useProjectHostname: false,
 })
 
-exports.handler = async ({ headers, body }: any) => {
+exports.handler = async ({ headers, body }) => {
   console.log({ headers, body })
 
   try {
