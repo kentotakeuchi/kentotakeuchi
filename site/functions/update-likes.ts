@@ -1,4 +1,3 @@
-
 const sanityClient = require('@sanity/client')
 
 const client = sanityClient({
@@ -6,11 +5,11 @@ const client = sanityClient({
   dataset: 'production',
   useCdn: false,
   token: process.env.SANITY_UPDATE_LIKES_TOKEN,
-  useProjectHostname: false
+  useProjectHostname: false,
 })
 
 exports.handler = async ({ headers, body }: any) => {
-  console.log({headers, body});
+  console.log({ headers, body })
 
   try {
     // let response
@@ -33,10 +32,10 @@ exports.handler = async ({ headers, body }: any) => {
     return {
       statusCode: 200,
       // body: JSON.stringify(response),
-      body: JSON.stringify({received: true}),
+      body: JSON.stringify({ received: true }),
     }
   } catch (err) {
-    console.log({err})
+    console.log({ err })
     return {
       statusCode: 400,
       body: `error: ${err.message}`,
