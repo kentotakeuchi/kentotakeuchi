@@ -53,7 +53,7 @@ const useLikes = () => {
     try {
       setLoading(true)
 
-      // Send to serverless function to create the Checkout Session.
+      // Send to serverless function to update likes
       const response = await fetch('/.netlify/functions/update-likes', {
         method: 'POST',
         headers: {
