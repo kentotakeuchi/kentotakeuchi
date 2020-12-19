@@ -1,6 +1,12 @@
 import React, { useEffect, useContext } from 'react'
 import Image from 'gatsby-image'
 import BlockContent from '@sanity/block-content-to-react'
+import {
+  TwitterShareButton,
+  TwitterIcon,
+  FacebookShareButton,
+  FacebookIcon,
+} from 'react-share'
 import './single-blog.scss'
 import Icon from '../../shared/ui-elements/icon/icon'
 import likesContext from '../../../contexts/likes-context'
@@ -58,19 +64,17 @@ const SingleBlog = ({ blog, url }: Props) => {
           <span>{allLikes[id]}</span>
         </div>
         <div className="single-blog__social-wrapper">
-          <a
-            className="twitter-share-button"
-            href={`https://twitter.com/intent/tweet`}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-size="large"
-            data-text={title}
-            data-url={url}
-            data-via="KentoTakeuchi"
-            data-related="web,soccer"
+          <TwitterShareButton
+            title={title}
+            url={url}
+            via="KentoTakeuchi"
+            related={['web', 'soccer']}
           >
-            Tweet
-          </a>
+            <TwitterIcon round size={30} />
+          </TwitterShareButton>
+          <FacebookShareButton url={url} quote={`${title} by Kento Takeuchi`}>
+            <FacebookIcon round size={30} />
+          </FacebookShareButton>
         </div>
       </header>
       <main className="single-blog__main">

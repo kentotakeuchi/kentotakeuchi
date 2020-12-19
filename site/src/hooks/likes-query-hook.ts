@@ -20,7 +20,6 @@ const useLikesQuery = () => {
   data.allSanityBlog.edges.forEach(({ node: blog }: any): void => {
     likesObj[blog._id] = blog.likes
   })
-  console.log({ likesObj })
 
   return likesObj
 }

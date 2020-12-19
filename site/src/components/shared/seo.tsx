@@ -77,13 +77,13 @@ function SEO({ description, lang, meta, title, url }: Props) {
             }
           : {},
       ]}
-      script={[
-        {
-          type: `text/javascript`,
-          async: true,
-          src: `https://platform.twitter.com/widgets.js`,
-        },
-      ]}
+      // script={[
+      //   {
+      //     type: `text/javascript`,
+      //     async: true,
+      //     src: `https://platform.twitter.com/widgets.js`,
+      //   },
+      // ]}
     />
   )
 }

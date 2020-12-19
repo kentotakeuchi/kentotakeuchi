@@ -4,21 +4,31 @@ import ReactDOM from 'react-dom'
 import './backdrop.scss'
 import useHasMounted from '../../../../hooks/client-only-hook'
 
-const Backdrop = props => {
+interface Props {
+  onClick: () => void
+}
+
+const Backdrop = ({ onClick }: Props) => {
   const hasMounted = useHasMounted()
 
   if (!hasMounted) {
     return null
   }
 
+  const backdrop = document.getElementById('backdrop-hook')
+
+  if (!backdrop) {
+    throw new Error('Backdrop element not found')
+  }
+
   return ReactDOM.createPortal(
     <div
       className="backdrop"
-      onClick={props.onClick}
-      onKeyDown={props.onClick} // dealt with "jsx-a11y/click-events-have-key-events"
+      onClick={onClick}
+      onKeyDown={onClick} // dealt with "jsx-a11y/click-events-have-key-events"
       role="presentation" // dealt with "jsx-a11y/no-noninteractive-element-interactions"
     ></div>,
-    document.getElementById('backdrop-hook')
+    backdrop
   )
 }
 
