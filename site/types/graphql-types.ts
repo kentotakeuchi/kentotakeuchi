@@ -6116,86 +6116,70 @@ export type Unnamed_5_Query = { allSanityProject: { edges: Array<{ node: (
         & { title?: Maybe<Pick<SanityLocaleString, 'en' | 'ja'>>, tags?: Maybe<Array<Maybe<{ title?: Maybe<Pick<SanityLocaleString, 'en' | 'ja'>> }>>>, client?: Maybe<Pick<SanityLocaleString, 'en' | 'ja'>>, slug?: Maybe<Pick<SanitySlug, 'current'>> }
       ) }> } };
 
-export type Unnamed_6_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type Unnamed_6_Query = { allSanityProject: { edges: Array<{ node: (
-        Pick<SanityProject, 'publishedAt'>
-        & { title?: Maybe<Pick<SanityLocaleString, 'en' | 'ja'>>, tags?: Maybe<Array<Maybe<{ title?: Maybe<Pick<SanityLocaleString, 'en' | 'ja'>> }>>>, client?: Maybe<Pick<SanityLocaleString, 'en' | 'ja'>>, slug?: Maybe<Pick<SanitySlug, 'current'>> }
-      ) }> } };
-
-export type Unnamed_7_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type Unnamed_7_Query = { allSanityProject: { edges: Array<{ node: (
-        Pick<SanityProject, 'publishedAt'>
-        & { title?: Maybe<Pick<SanityLocaleString, 'en' | 'ja'>>, tags?: Maybe<Array<Maybe<{ title?: Maybe<Pick<SanityLocaleString, 'en' | 'ja'>> }>>>, client?: Maybe<Pick<SanityLocaleString, 'en' | 'ja'>>, slug?: Maybe<Pick<SanitySlug, 'current'>> }
-      ) }> } };
-
-export type Unnamed_8_QueryVariables = Exact<{
+export type Unnamed_6_QueryVariables = Exact<{
   slug?: Maybe<Scalars['String']>;
 }>;
 
 
-export type Unnamed_8_Query = { sanityBlog?: Maybe<(
+export type Unnamed_6_Query = { sanityBlog?: Maybe<(
     Pick<SanityBlog, 'publishedAt' | 'likes' | '_id'>
     & { title?: Maybe<Pick<SanityLocaleString, 'en' | 'ja'>>, description?: Maybe<Pick<SanityLocaleBlock, '_rawEn' | '_rawJa'>>, slug?: Maybe<Pick<SanitySlug, 'current'>>, thumbnail?: Maybe<{ asset?: Maybe<{ fluid?: Maybe<GatsbySanityImageFluidFragment> }> }>, subImages?: Maybe<Array<Maybe<{ asset?: Maybe<{ fluid?: Maybe<GatsbySanityImageFluidFragment> }> }>>>, category?: Maybe<{ title?: Maybe<Pick<SanityLocaleString, 'ja' | 'en'>> }> }
   )>, allSanityBlog: { edges: Array<{ node: (
+        Pick<SanityBlog, 'publishedAt' | 'likes' | '_id'>
+        & { title?: Maybe<Pick<SanityLocaleString, 'en' | 'ja'>>, category?: Maybe<{ title?: Maybe<Pick<SanityLocaleString, 'en' | 'ja'>> }>, slug?: Maybe<Pick<SanitySlug, 'current'>>, thumbnail?: Maybe<{ asset?: Maybe<{ fluid?: Maybe<GatsbySanityImageFluidFragment> }> }> }
+      ) }> } };
+
+export type Unnamed_7_QueryVariables = Exact<{
+  slug?: Maybe<Scalars['String']>;
+}>;
+
+
+export type Unnamed_7_Query = { sanityBlog?: Maybe<(
+    Pick<SanityBlog, 'publishedAt' | 'likes' | '_id'>
+    & { title?: Maybe<Pick<SanityLocaleString, 'en' | 'ja'>>, description?: Maybe<Pick<SanityLocaleBlock, '_rawEn' | '_rawJa'>>, slug?: Maybe<Pick<SanitySlug, 'current'>>, thumbnail?: Maybe<{ asset?: Maybe<{ fluid?: Maybe<GatsbySanityImageFluidFragment> }> }>, subImages?: Maybe<Array<Maybe<{ asset?: Maybe<{ fluid?: Maybe<GatsbySanityImageFluidFragment> }> }>>>, category?: Maybe<{ title?: Maybe<Pick<SanityLocaleString, 'ja' | 'en'>> }> }
+  )>, allSanityBlog: { edges: Array<{ node: (
+        Pick<SanityBlog, 'publishedAt' | 'likes' | '_id'>
+        & { title?: Maybe<Pick<SanityLocaleString, 'en' | 'ja'>>, category?: Maybe<{ title?: Maybe<Pick<SanityLocaleString, 'en' | 'ja'>> }>, slug?: Maybe<Pick<SanitySlug, 'current'>>, thumbnail?: Maybe<{ asset?: Maybe<{ fluid?: Maybe<GatsbySanityImageFluidFragment> }> }> }
+      ) }> } };
+
+export type Unnamed_8_QueryVariables = Exact<{
+  skip?: Scalars['Int'];
+  limit?: Scalars['Int'];
+}>;
+
+
+export type Unnamed_8_Query = { allSanityBlog: { edges: Array<{ node: (
         Pick<SanityBlog, 'publishedAt' | 'likes' | '_id'>
         & { title?: Maybe<Pick<SanityLocaleString, 'en' | 'ja'>>, category?: Maybe<{ title?: Maybe<Pick<SanityLocaleString, 'en' | 'ja'>> }>, slug?: Maybe<Pick<SanitySlug, 'current'>>, thumbnail?: Maybe<{ asset?: Maybe<{ fluid?: Maybe<GatsbySanityImageFluidFragment> }> }> }
       ) }> } };
 
 export type Unnamed_9_QueryVariables = Exact<{
-  slug?: Maybe<Scalars['String']>;
+  skip?: Scalars['Int'];
+  limit?: Scalars['Int'];
 }>;
 
 
-export type Unnamed_9_Query = { sanityBlog?: Maybe<(
-    Pick<SanityBlog, 'publishedAt' | 'likes' | '_id'>
-    & { title?: Maybe<Pick<SanityLocaleString, 'en' | 'ja'>>, description?: Maybe<Pick<SanityLocaleBlock, '_rawEn' | '_rawJa'>>, slug?: Maybe<Pick<SanitySlug, 'current'>>, thumbnail?: Maybe<{ asset?: Maybe<{ fluid?: Maybe<GatsbySanityImageFluidFragment> }> }>, subImages?: Maybe<Array<Maybe<{ asset?: Maybe<{ fluid?: Maybe<GatsbySanityImageFluidFragment> }> }>>>, category?: Maybe<{ title?: Maybe<Pick<SanityLocaleString, 'ja' | 'en'>> }> }
-  )>, allSanityBlog: { edges: Array<{ node: (
+export type Unnamed_9_Query = { allSanityBlog: { edges: Array<{ node: (
         Pick<SanityBlog, 'publishedAt' | 'likes' | '_id'>
         & { title?: Maybe<Pick<SanityLocaleString, 'en' | 'ja'>>, category?: Maybe<{ title?: Maybe<Pick<SanityLocaleString, 'en' | 'ja'>> }>, slug?: Maybe<Pick<SanitySlug, 'current'>>, thumbnail?: Maybe<{ asset?: Maybe<{ fluid?: Maybe<GatsbySanityImageFluidFragment> }> }> }
       ) }> } };
 
 export type Unnamed_10_QueryVariables = Exact<{
-  skip?: Scalars['Int'];
-  limit?: Scalars['Int'];
-}>;
-
-
-export type Unnamed_10_Query = { allSanityBlog: { edges: Array<{ node: (
-        Pick<SanityBlog, 'publishedAt' | 'likes' | '_id'>
-        & { title?: Maybe<Pick<SanityLocaleString, 'en' | 'ja'>>, category?: Maybe<{ title?: Maybe<Pick<SanityLocaleString, 'en' | 'ja'>> }>, slug?: Maybe<Pick<SanitySlug, 'current'>>, thumbnail?: Maybe<{ asset?: Maybe<{ fluid?: Maybe<GatsbySanityImageFluidFragment> }> }> }
-      ) }> } };
-
-export type Unnamed_11_QueryVariables = Exact<{
-  skip?: Scalars['Int'];
-  limit?: Scalars['Int'];
-}>;
-
-
-export type Unnamed_11_Query = { allSanityBlog: { edges: Array<{ node: (
-        Pick<SanityBlog, 'publishedAt' | 'likes' | '_id'>
-        & { title?: Maybe<Pick<SanityLocaleString, 'en' | 'ja'>>, category?: Maybe<{ title?: Maybe<Pick<SanityLocaleString, 'en' | 'ja'>> }>, slug?: Maybe<Pick<SanitySlug, 'current'>>, thumbnail?: Maybe<{ asset?: Maybe<{ fluid?: Maybe<GatsbySanityImageFluidFragment> }> }> }
-      ) }> } };
-
-export type Unnamed_12_QueryVariables = Exact<{
   slug?: Maybe<Scalars['String']>;
 }>;
 
 
-export type Unnamed_12_Query = { sanityProject?: Maybe<(
+export type Unnamed_10_Query = { sanityProject?: Maybe<(
     Pick<SanityProject, 'tools' | 'url' | 'videoUrl' | 'publishedAt'>
     & { title?: Maybe<Pick<SanityLocaleString, 'en' | 'ja'>>, description?: Maybe<Pick<SanityLocaleBlock, '_rawEn' | '_rawJa'>>, tags?: Maybe<Array<Maybe<{ title?: Maybe<Pick<SanityLocaleString, 'en' | 'ja'>> }>>>, client?: Maybe<Pick<SanityLocaleString, 'en' | 'ja'>>, slug?: Maybe<Pick<SanitySlug, 'current'>>, images?: Maybe<Array<Maybe<{ asset?: Maybe<{ fluid?: Maybe<GatsbySanityImageFluidFragment> }> }>>> }
   )> };
 
-export type Unnamed_13_QueryVariables = Exact<{
+export type Unnamed_11_QueryVariables = Exact<{
   slug?: Maybe<Scalars['String']>;
 }>;
 
 
-export type Unnamed_13_Query = { sanityProject?: Maybe<(
+export type Unnamed_11_Query = { sanityProject?: Maybe<(
     Pick<SanityProject, 'tools' | 'url' | 'videoUrl' | 'publishedAt'>
     & { title?: Maybe<Pick<SanityLocaleString, 'en' | 'ja'>>, description?: Maybe<Pick<SanityLocaleBlock, '_rawEn' | '_rawJa'>>, tags?: Maybe<Array<Maybe<{ title?: Maybe<Pick<SanityLocaleString, 'en' | 'ja'>> }>>>, client?: Maybe<Pick<SanityLocaleString, 'en' | 'ja'>>, slug?: Maybe<Pick<SanitySlug, 'current'>>, images?: Maybe<Array<Maybe<{ asset?: Maybe<{ fluid?: Maybe<GatsbySanityImageFluidFragment> }> }>>> }
   )> };

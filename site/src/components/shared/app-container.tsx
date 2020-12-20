@@ -34,6 +34,7 @@ const AppContainer: FunctionComponent<Props> = ({
   // set up i18n stuff
   const { i18n } = useI18n(curLang)
 
+  // set likes value and function as global context
   const {
     allLikes,
     hasLikes,

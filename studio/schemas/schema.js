@@ -6,11 +6,11 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 
 // We import object and document schemas
 import author from './author';
-import blockContent from './blockContent';
 import blog from './blog';
 import blogCategory from './blog-category';
 import project from './project';
 import tag from './tag';
+import youtube from './youtube';
 
 // locale
 import { localeString, localeBlock } from '../contentTypes/localeText';
@@ -31,8 +31,6 @@ export default createSchema({
     blogCategory,
     project,
     tag,
-    // When added to this list, object types can be used as
-    // { type: 'typename' } in other document schemas
-    blockContent,
+    youtube,
   ]),
 });

@@ -1,5 +1,7 @@
 import React, { useEffect, useContext } from 'react'
 import Image from 'gatsby-image'
+import getYouTubeId from 'get-youtube-id'
+import YouTube from 'react-youtube'
 import BlockContent from '@sanity/block-content-to-react'
 import {
   TwitterShareButton,
@@ -18,6 +20,7 @@ interface Props {
 }
 
 const SingleBlog = ({ blog, url }: Props) => {
+  // destructure selected blog
   const {
     title,
     description,
@@ -29,13 +32,25 @@ const SingleBlog = ({ blog, url }: Props) => {
     id,
   } = blog
 
+  // global context of likes
   const { allLikes, hasLikes, checkLikes, updateLikes } = useContext(
     likesContext
   )
 
+  // check if the like has already been clicked or not
   useEffect(() => {
     checkLikes(id)
   }, [])
+
+  const serializers = {
+    types: {
+      youtube: ({ node }: any) => {
+        const { url } = node
+        const youtubeId: any = getYouTubeId(url)
+        return <YouTube videoId={youtubeId} />
+      },
+    },
+  }
 
   return (
     <article className="single-blog">
@@ -80,6 +95,7 @@ const SingleBlog = ({ blog, url }: Props) => {
       <main className="single-blog__main">
         <BlockContent
           blocks={description}
+          serializers={serializers}
           className="block-content"
           renderContainerOnSingleChild
         />

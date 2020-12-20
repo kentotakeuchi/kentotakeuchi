@@ -34,7 +34,7 @@ const createSinglePage = async (
   switch (collection) {
     case 'project':
       items = data.project.edges.map(({ node }) => node)
-      basePath = `/${language}/${collection + 's'}`
+      basePath = `/${language}`
       break
     case 'blog':
       items = data.blog.edges.map(({ node }) => node)

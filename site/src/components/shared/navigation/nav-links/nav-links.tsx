@@ -7,14 +7,14 @@ import shuffleText from '../../../../utils/suffle-text'
 
 // DATA
 const HEADER_LINK_LIST = [
-  { name: t`all projects`, slug: 'projects' },
+  { name: t`all projects`, slug: '' },
   { name: t`profile`, slug: 'profile' },
   { name: t`contact`, slug: 'contact' },
   { name: t`blog`, slug: 'blog' },
 ]
 
 const SIDE_DRAWER_LINK_LIST = [
-  { name: t`all projects`, slug: 'projects' },
+  { name: t`all projects`, slug: '' },
   { name: t`profile`, slug: 'profile' },
   { name: t`contact`, slug: 'contact' },
   { name: t`blog`, slug: 'blog' },

@@ -50,7 +50,12 @@ export const localeBlock = {
     title: lang.title,
     name: lang.id,
     type: 'array',
-    of: [{ type: 'block' }],
+    of: [
+      { type: 'block' },
+      {
+        type: 'youtube',
+      },
+    ],
     fieldset: lang.isDefault ? null : 'translations',
   })),
 };
