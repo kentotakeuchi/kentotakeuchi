@@ -47,7 +47,7 @@ const SingleBlog = ({ blog, url }: Props) => {
       youtube: ({ node }: any) => {
         const { url } = node
         const youtubeId: any = getYouTubeId(url)
-        return <YouTube videoId={youtubeId} />
+        return <YouTube videoId={youtubeId} className="single-blog__youtube" />
       },
     },
   }

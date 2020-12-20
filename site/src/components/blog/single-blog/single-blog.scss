@@ -75,16 +75,24 @@
     }
   }
 
-  // description
-  &__main .block-content {
+  // block content
+  &__main > .block-content {
     display: grid;
     row-gap: 1.5ch;
     line-height: 2;
+  }
 
+  // description
+  &__main > .block-content > p {
     @include respond(phone) {
       width: 80%;
       margin: auto;
     }
+  }
+
+  // youtube
+  &__youtube {
+    width: 100%;
   }
 
   // images
