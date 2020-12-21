@@ -1,5 +1,5 @@
 import { setupI18n } from '@lingui/core'
-import { en, ja } from 'make-plural/plurals'
+import { en, ja } from 'make-plural'
 
 import { messages as catalogEn } from '../locales/en/messages'
 import { messages as catalogJa } from '../locales/ja/messages'

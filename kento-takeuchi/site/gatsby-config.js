@@ -96,7 +96,14 @@ module.exports = {
         fileName: `types/graphql-types.ts`,
         codegen: true,
         codegenDelay: 250,
-        alwaysCheck: false,
+        typeCheck: false,
+      },
+    },
+    {
+      resolve: 'gatsby-theme-kento',
+      options: {
+        contentPath: 'events',
+        basePath: '/events',
       },
     },
   ],
