@@ -100,7 +100,7 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-theme-kento',
+      resolve: 'gatsby-theme-soccer',
       options: {
         contentPath: 'events',
         basePath: '/events',
