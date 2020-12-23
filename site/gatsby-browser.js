@@ -23,5 +23,10 @@ export const onRouteUpdate = ({ location, prevLocation }) => {
 
 export const wrapPageElement = ({ element, props }) => {
   console.log({ element, props })
-  return <AppContainer {...props}>{element}</AppContainer>
+
+  // TODO: temp..
+  // check url is for soccer or not
+  const isSoccer = props.location.pathname.includes('soccer')
+
+  return !isSoccer ? <AppContainer {...props}>{element}</AppContainer> : null
 }

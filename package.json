@@ -1,5 +1,9 @@
 {
   "private": true,
+  "scripts": {
+    "start:site": "yarn workspace site start",
+    "start:studio": "yarn workspace studio start"
+  },
   "workspaces": [
     "gatsby-theme-soccer",
     "site",

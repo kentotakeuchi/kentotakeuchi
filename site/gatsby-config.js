@@ -99,12 +99,12 @@ module.exports = {
         typeCheck: false,
       },
     },
-    {
-      resolve: 'gatsby-theme-soccer',
-      options: {
-        contentPath: 'events',
-        basePath: '/events',
-      },
-    },
+    // TODO: temp > give up separating soccer pages from portfolio site with theme..
+    // {
+    //   resolve: 'gatsby-theme-soccer',
+    //   options: {
+    //     basePath: '/soccer',
+    //   },
+    // },
   ],
 }

@@ -1,16 +1,13 @@
-module.exports = ({ contentPath = 'data', basePath = '/' }) => ({
-  plugins: [
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: contentPath,
-      },
-    },
-    {
-      resolve: 'gatsby-transformer-yaml',
-      options: {
-        typeName: 'Event',
-      },
-    },
-  ],
-});
+const withDefaults = require('./utils/default-options');
+
+module.exports = (themeOptions) => {
+  console.log({ themeOptions });
+
+  const options = withDefaults(themeOptions);
+  console.log({ options });
+
+  return {
+    pathPrefix: options.basePath,
+    plugins: [],
+  };
+};
