@@ -1,0 +1,17 @@
+.pagination {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 3rem;
+
+  // prev + next + num
+  & a {
+    font-size: 3rem;
+    text-transform: capitalize;
+  }
+
+  &__num {
+    &--active {
+      text-decoration: underline;
+    }
+  }
+}

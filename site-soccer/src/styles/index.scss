@@ -1,0 +1,131 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './typography.scss';
+
+// FOR DEBUG
+// * {
+//   outline: 2px solid red;
+// }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  // This defines what 1rem is
+  font-size: 62.5%; // 1rem = 10px; 10px/16px = 62.5%
+
+  @include respond(tab-land) {
+    // width < 1200?
+    font-size: 56.25%; // 1rem = 9px, 9/16 = 50%
+  }
+
+  @include respond(tab-port) {
+    // width < 900?
+    font-size: 50%; // 1rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; // 1rem = 12, 12/16
+  }
+}
+
+body {
+  font-family: 'TradeGothicLT', 'Miller Banner', 'Helvetica Neue', Arial,
+    'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+  font-size: $font-size-default;
+  font-weight: $font-weight-default;
+  line-height: 1.5;
+  letter-spacing: 1px;
+
+  color: $text-primary--dark;
+
+  background-color: $bg-primary--dark;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+
+  &:hover,
+  :active {
+  }
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  text-transform: inherit;
+  color: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  background-color: inherit;
+  border: 1px solid;
+}
+
+button {
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  text-transform: inherit;
+  color: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  background-color: inherit;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+// Block content
+.block-content {
+  & a {
+    display: inline-block;
+    color: $color-blue--dark;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  & ul {
+    list-style: disc;
+  }
+}
+
+// Hide something
+.hide {
+  opacity: 0;
+}
+
+// None something
+.none {
+  display: none;
+}
+
+// Color
+.red {
+  background-color: $color-red--dark;
+}
+.green {
+  background-color: $color-green--dark;
+}
+.gray {
+  background-color: $color-gray--dark;
+}
+.blue {
+  background-color: $color-blue--dark;
+}

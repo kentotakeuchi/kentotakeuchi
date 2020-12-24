@@ -1,0 +1,41 @@
+@import '../../../../styles/variables.scss';
+
+.loading-spinner {
+  // font-family: 'FranklinGothicStd-ExtraCond';
+  font-family: 'TradeGothicLTStd-BoldExt';
+  // font-size: 5rem;
+  letter-spacing: 1.5px;
+
+  & > span {
+    display: flex;
+
+    // dot
+    &:not(:first-child) {
+      animation: blink 0.1s ease infinite;
+      animation-delay: calc(0.1s * var(--i));
+    }
+  }
+
+  @keyframes blink {
+    from,
+    to {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1500;
+  top: 0;
+  left: 0;
+  background: rgba($bg-primary--dark, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

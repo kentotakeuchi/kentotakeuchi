@@ -1,0 +1,45 @@
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/mixin.scss';
+
+.prev-next-pagination {
+  display: grid;
+  grid-template-columns: 1fr 30% 1fr;
+  padding: 3rem 0;
+  border-top: 1px solid rgba($text-primary--dark, 0.5);
+  border-bottom: 1px solid rgba($text-primary--dark, 0.5);
+
+  @include respond(phone) {
+    grid-template-columns: none;
+  }
+
+  &__link {
+    align-self: stretch;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+
+    &--prev {
+      @include respond(phone) {
+        display: none;
+      }
+    }
+
+    &--top {
+      margin: -3rem 0;
+      border-right: 1px solid rgba($text-primary--dark, 0.5);
+      border-left: 1px solid rgba($text-primary--dark, 0.5);
+      text-transform: uppercase;
+
+      @include respond(phone) {
+        border: none;
+      }
+    }
+
+    &--next {
+      @include respond(phone) {
+        display: none;
+      }
+    }
+  }
+}

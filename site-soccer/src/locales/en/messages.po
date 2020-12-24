@@ -1,0 +1,48 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language: \n"
+"Language-Team: \n"
+"Content-Type: \n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#: src/components/shared/navigation/nav-links/nav-links.tsx:8
+#: src/components/shared/navigation/nav-links/nav-links.tsx:14
+msgid "all projects"
+msgstr "all projects"
+
+#: src/components/shared/navigation/nav-links/nav-links.tsx:11
+#: src/components/shared/navigation/nav-links/nav-links.tsx:17
+msgid "blog"
+msgstr "blog"
+
+#: src/components/shared/navigation/nav-links/nav-links.tsx:10
+#: src/components/shared/navigation/nav-links/nav-links.tsx:16
+msgid "contact"
+msgstr "contact"
+
+#: src/components/shared/ui-elements/copyright/copyright.tsx:7
+msgid "kento takeuchi"
+msgstr "kento takeuchi"
+
+#: src/components/shared/navigation/pagination/pagination.tsx:56
+msgid "next"
+msgstr "next"
+
+#: src/components/shared/navigation/pagination/pagination.tsx:21
+msgid "prev"
+msgstr "prev"
+
+#: src/components/shared/navigation/nav-links/nav-links.tsx:9
+#: src/components/shared/navigation/nav-links/nav-links.tsx:15
+msgid "profile"
+msgstr "profile"
+
+#: src/components/shared/navigation/prev-next-pagination/prev-next-pagination.tsx:28
+msgid "top"
+msgstr "top"

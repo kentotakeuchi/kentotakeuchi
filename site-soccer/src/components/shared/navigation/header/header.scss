@@ -1,0 +1,33 @@
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/mixin.scss';
+
+.header {
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+  width: 100%;
+
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 10rem;
+  padding: 0 4rem;
+
+  // No header on mobile
+  @include respond(phone) {
+    display: none;
+  }
+
+  &__nav {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    column-gap: 4rem;
+    font-size: 13px;
+    text-transform: uppercase;
+
+    @include respond(phone) {
+    }
+  }
+}

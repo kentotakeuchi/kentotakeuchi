@@ -1,0 +1,51 @@
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/mixin.scss';
+
+.nav-links {
+  &--header {
+    display: flex;
+    column-gap: 2rem;
+
+    @include respond(phone) {
+      display: none;
+    }
+  }
+
+  // &--side-drawer {
+  //   display: grid;
+  //   row-gap: 1rem;
+  //   width: max-content;
+  //   font-weight: $font-weight-active;
+
+  //   & p {
+  //     // font-family: 'FranklinGothicStd-ExtraCond';
+  //     font-family: 'TradeGothicLTStd-BoldExt';
+  //     font-weight: $font-weight-active;
+  //   }
+
+  //   & .nav-links__link--active > p {
+  //     color: $color-primary;
+  //     text-shadow: $text-shadow-default;
+  //     -webkit-text-stroke: 0.1px $color-secondary;
+  //   }
+  // }
+
+  // &--footer {
+  //   display: grid;
+  //   row-gap: 1rem;
+  //   height: max-content;
+  //   text-decoration: underline;
+  //   text-transform: capitalize;
+
+  //   // to make space between "blog" and "shipping-info"
+  //   & li:nth-child(5) {
+  //     margin-bottom: 3rem;
+  //   }
+
+  //   & .nav-links__link--active::before {
+  //     content: '👉🏻';
+  //     position: absolute;
+  //     margin-left: -2.5rem;
+  //   }
+  // }
+}

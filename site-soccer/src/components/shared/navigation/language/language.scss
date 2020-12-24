@@ -1,0 +1,21 @@
+@import '../../../../styles/variables.scss';
+
+.language {
+  display: flex;
+  font-size: 3.5rem;
+  cursor: pointer;
+
+  & img {
+    width: 20px;
+    height: 20px;
+  }
+
+  &--header {
+  }
+
+  &--footer {
+  }
+
+  &--side-drawer {
+  }
+}

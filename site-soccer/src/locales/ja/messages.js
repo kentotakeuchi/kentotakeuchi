@@ -1,0 +1,1 @@
+/*eslint-disable*/module.exports={messages:{"all projects":"all projects","blog":"blog","contact":"contact","kento takeuchi":"kento takeuchi","next":"next","prev":"prev","profile":"profile","top":"top"}};

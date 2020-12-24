@@ -3,7 +3,6 @@
   "scripts": {
     "start:site": "yarn workspace site start",
     "start:site-soccer": "yarn workspace site-soccer start",
-    "build:site-soccer": "yarn workspace site-soccer build",
     "start:studio": "yarn workspace studio start"
   },
   "workspaces": [

@@ -1,0 +1,27 @@
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/mixin.scss';
+
+.sns {
+  display: grid;
+  grid-auto-flow: column;
+  width: max-content;
+
+  & li {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  & li:hover {
+    transform: scale(1.1);
+  }
+
+  &--header {
+  }
+
+  &--footer {
+    column-gap: 2ch;
+  }
+
+  &--side-drawer {
+    column-gap: 2ch;
+  }
+}
