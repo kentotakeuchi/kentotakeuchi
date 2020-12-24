@@ -1,0 +1,11 @@
+[build]
+  functions = "functions"
+
+[dev]
+  command = "yarn develop" # Command to start your dev server
+  port = 8888 # port Netlify Dev runs on
+  autoLaunch = false # disable automatically open web browser
+  # framework = "#custom"
+  # targetPort = 8008 # port the app runs on
+  # functionsPort = 34568
+  # publish = "public" # Folder with the static content for _redirect file
