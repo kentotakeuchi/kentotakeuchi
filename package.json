@@ -5,7 +5,6 @@
     "start:studio": "yarn workspace studio start"
   },
   "workspaces": [
-    "gatsby-theme-soccer",
     "site",
     "studio"
   ]
