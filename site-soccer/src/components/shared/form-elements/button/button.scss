@@ -1,55 +1,56 @@
-// @import '../../../../styles/variables.scss';
+@import '../../../../styles/variables.scss';
 
-// .button {
-//   display: inline-block;
-//   padding: 1rem 2rem;
-//   font-weight: $font-weight-active;
-//   border: 1px solid $color-transparent;
-//   box-shadow: $box-shadow-default;
-//   background: $color-primary;
-//   color: $color-secondary;
-//   text-decoration: none;
-//   text-align: center;
-//   text-transform: uppercase;
-//   transition: all 0.5s;
+.button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-weight: $font-weight-bold;
+  border: 1px solid transparent;
+  border-radius: $border-radius;
+  background: $color-blue--dark;
+  color: $text-primary--dark;
+  // text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.3s;
 
-//   &:hover,
-//   &:active {
-//     border: 1px solid $color-primary;
-//     background: $color-secondary;
-//     color: $color-primary;
-//   }
+  // TODO:
+  // &:hover,
+  // &:active {
+  //   border: 1px solid $color-primary;
+  //   background: $color-secondary;
+  //   color: $color-primary;
+  // }
 
-//   // inverse
-//   &--inverse {
-//     border: 1px solid $color-primary;
-//     background: $color-secondary;
-//     color: $color-primary;
-//   }
+  // inverse
+  // &--inverse {
+  //   border: 1px solid $color-primary;
+  //   background: $color-secondary;
+  //   color: $color-primary;
+  // }
 
-//   &--inverse:hover,
-//   &--inverse:active {
-//     color: $color-secondary;
-//     background: $color-primary;
-//   }
+  // &--inverse:hover,
+  // &--inverse:active {
+  //   color: $color-secondary;
+  //   background: $color-primary;
+  // }
 
-//   // disabled
-//   &:disabled,
-//   &:hover:disabled,
-//   &:active:disabled {
-//     background: $color-grey-light-3;
-//     color: $color-grey-dark;
-//     border-color: $color-grey-light-3;
-//     opacity: 1;
-//     cursor: not-allowed;
-//   }
+  // disabled
+  &:disabled,
+  &:hover:disabled,
+  &:active:disabled {
+    background: $color-gray--dark;
+    color: $color-gray-6--dark;
+    border-color: $color-gray-3--dark;
+    opacity: 1;
+    cursor: not-allowed;
+  }
 
-//   &--small {
-//   }
+  &--small {
+  }
 
-//   &--medium {
-//   }
+  &--medium {
+  }
 
-//   &--big {
-//   }
-// }
+  &--big {
+  }
+}

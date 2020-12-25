@@ -3,7 +3,7 @@
 
 .header {
   position: fixed;
-  bottom: 0;
+  top: 0;
   z-index: 100;
   width: 100%;
 
@@ -12,7 +12,7 @@
   justify-content: space-between;
   align-items: center;
   height: 10rem;
-  padding: 0 4rem;
+  padding: 0 2rem;
 
   // No header on mobile
   @include respond(phone) {

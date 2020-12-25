@@ -40,3 +40,11 @@ export const toggleLocaleHandler = (
     ? navigate(path.replace('en', 'ja'))
     : navigate(path.replace('ja', 'en'))
 }
+
+// get all locale utilities to translate
+export const getAllLocaleUtils = () => {
+  const { i18n } = useLingui()
+  const { locale } = i18n
+
+  return { i18n, locale }
+}

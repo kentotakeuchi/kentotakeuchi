@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 const useImage = () => {
   const data = useStaticQuery(graphql`
     query {
-      meImg: allFile(filter: { relativePath: { eq: "me.jpg" } }) {
+      meImage: allFile(filter: { relativePath: { eq: "me.jpg" } }) {
         edges {
           node {
             relativePath
@@ -18,7 +18,9 @@ const useImage = () => {
       }
     }
   `)
-  const me = data.meImg.edges[0].node.childImageSharp.fluid
+  console.log({ data })
+
+  const me = data.meImage.edges[0].node.childImageSharp.fluid
 
   return {
     me,

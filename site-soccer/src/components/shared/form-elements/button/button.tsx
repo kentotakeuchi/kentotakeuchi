@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { Link } from 'gatsby'
 import './button.scss'
 
-const Button = ({
+interface Props {
+  size?: string
+  type?: 'button' | 'submit' | 'reset' | undefined
+  onClick?: () => void
+  disabled?: boolean
+  inverse?: boolean
+  to?: string
+  className?: string
+}
+
+const Button: FunctionComponent<Props> = ({
   size,
   type,
   onClick,

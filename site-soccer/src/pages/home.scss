@@ -1,0 +1,51 @@
+@import '../styles/variables.scss';
+
+.home-page {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+
+  &__box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 70%;
+    max-width: 80rem;
+    height: 50%;
+    background-color: $bg-secondary--dark;
+    border-radius: 10px;
+
+    & > * {
+      display: grid;
+      place-content: center;
+    }
+  }
+
+  &__left-box {
+    display: grid;
+    row-gap: 1rem;
+
+    // private lesson
+    & > h3 {
+      font-family: 'TradeGothicLTStd-BoldExt';
+      font-size: 3rem;
+      text-transform: capitalize;
+    }
+
+    // lesson info
+    & > ul {
+      display: grid;
+      row-gap: 1rem;
+      list-style: disc;
+      list-style-position: inside;
+    }
+
+    // details link
+    & a {
+      font-style: italic;
+      text-decoration: underline;
+    }
+  }
+
+  &__right-box {
+  }
+}
