@@ -1673,6 +1673,8 @@ export type Query = {
   allSanityImageAsset: SanityImageAssetConnection;
   sanityTag?: Maybe<SanityTag>;
   allSanityTag: SanityTagConnection;
+  youtubeVideo?: Maybe<YoutubeVideo>;
+  allYoutubeVideo: YoutubeVideoConnection;
   siteBuildMetadata?: Maybe<SiteBuildMetadata>;
   allSiteBuildMetadata: SiteBuildMetadataConnection;
   sitePlugin?: Maybe<SitePlugin>;
@@ -2101,6 +2103,32 @@ export type QuerySanityTagArgs = {
 export type QueryAllSanityTagArgs = {
   filter?: Maybe<SanityTagFilterInput>;
   sort?: Maybe<SanityTagSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryYoutubeVideoArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  publishedAt?: Maybe<DateQueryOperatorInput>;
+  title?: Maybe<StringQueryOperatorInput>;
+  description?: Maybe<StringQueryOperatorInput>;
+  videoId?: Maybe<StringQueryOperatorInput>;
+  privacyStatus?: Maybe<StringQueryOperatorInput>;
+  channelId?: Maybe<StringQueryOperatorInput>;
+  channelTitle?: Maybe<StringQueryOperatorInput>;
+  thumbnail?: Maybe<YoutubeVideoThumbnailFilterInput>;
+  originalID?: Maybe<StringQueryOperatorInput>;
+  localThumbnail?: Maybe<FileFilterInput>;
+};
+
+
+export type QueryAllYoutubeVideoArgs = {
+  filter?: Maybe<YoutubeVideoFilterInput>;
+  sort?: Maybe<YoutubeVideoSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
@@ -5266,11 +5294,23 @@ export type SitePageConnectionGroupArgs = {
 };
 
 export type SitePageContext = {
+  limit?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+  totalPages?: Maybe<Scalars['Int']>;
+  currentPage?: Maybe<Scalars['Int']>;
+  pathPrefix?: Maybe<Scalars['String']>;
+  language?: Maybe<Scalars['String']>;
   slug?: Maybe<Scalars['String']>;
   langKey?: Maybe<Scalars['String']>;
 };
 
 export type SitePageContextFilterInput = {
+  limit?: Maybe<IntQueryOperatorInput>;
+  skip?: Maybe<IntQueryOperatorInput>;
+  totalPages?: Maybe<IntQueryOperatorInput>;
+  currentPage?: Maybe<IntQueryOperatorInput>;
+  pathPrefix?: Maybe<StringQueryOperatorInput>;
+  language?: Maybe<StringQueryOperatorInput>;
   slug?: Maybe<StringQueryOperatorInput>;
   langKey?: Maybe<StringQueryOperatorInput>;
 };
@@ -5374,6 +5414,12 @@ export type SitePageFieldsEnum =
   | 'internal___owner'
   | 'internal___type'
   | 'isCreatedByStatefulCreatePages'
+  | 'context___limit'
+  | 'context___skip'
+  | 'context___totalPages'
+  | 'context___currentPage'
+  | 'context___pathPrefix'
+  | 'context___language'
   | 'context___slug'
   | 'context___langKey'
   | 'pluginCreator___id'
@@ -5473,6 +5519,9 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___codegen'
   | 'pluginCreator___pluginOptions___codegenDelay'
   | 'pluginCreator___pluginOptions___typeCheck'
+  | 'pluginCreator___pluginOptions___channelId'
+  | 'pluginCreator___pluginOptions___apiKey'
+  | 'pluginCreator___pluginOptions___maxVideos'
   | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___pluginOptions___allExtensions'
   | 'pluginCreator___pluginOptions___isTSX'
@@ -5720,6 +5769,9 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___codegen'
   | 'pluginOptions___codegenDelay'
   | 'pluginOptions___typeCheck'
+  | 'pluginOptions___channelId'
+  | 'pluginOptions___apiKey'
+  | 'pluginOptions___maxVideos'
   | 'pluginOptions___pathCheck'
   | 'pluginOptions___allExtensions'
   | 'pluginOptions___isTSX'
@@ -5887,6 +5939,9 @@ export type SitePluginPluginOptions = {
   codegen?: Maybe<Scalars['Boolean']>;
   codegenDelay?: Maybe<Scalars['Int']>;
   typeCheck?: Maybe<Scalars['Boolean']>;
+  channelId?: Maybe<Array<Maybe<Scalars['String']>>>;
+  apiKey?: Maybe<Scalars['String']>;
+  maxVideos?: Maybe<Scalars['Int']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
   allExtensions?: Maybe<Scalars['Boolean']>;
   isTSX?: Maybe<Scalars['Boolean']>;
@@ -5942,6 +5997,9 @@ export type SitePluginPluginOptionsFilterInput = {
   codegen?: Maybe<BooleanQueryOperatorInput>;
   codegenDelay?: Maybe<IntQueryOperatorInput>;
   typeCheck?: Maybe<BooleanQueryOperatorInput>;
+  channelId?: Maybe<StringQueryOperatorInput>;
+  apiKey?: Maybe<StringQueryOperatorInput>;
+  maxVideos?: Maybe<IntQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
   allExtensions?: Maybe<BooleanQueryOperatorInput>;
   isTSX?: Maybe<BooleanQueryOperatorInput>;
@@ -6056,4 +6114,338 @@ export type TransformOptions = {
 
 export type WebPOptions = {
   quality?: Maybe<Scalars['Int']>;
+};
+
+export type YoutubeVideo = Node & {
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  publishedAt?: Maybe<Scalars['Date']>;
+  title?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  videoId?: Maybe<Scalars['String']>;
+  privacyStatus?: Maybe<Scalars['String']>;
+  channelId?: Maybe<Scalars['String']>;
+  channelTitle?: Maybe<Scalars['String']>;
+  thumbnail?: Maybe<YoutubeVideoThumbnail>;
+  originalID?: Maybe<Scalars['String']>;
+  localThumbnail?: Maybe<File>;
+};
+
+
+export type YoutubeVideoPublishedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type YoutubeVideoConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<YoutubeVideoEdge>;
+  nodes: Array<YoutubeVideo>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<YoutubeVideoGroupConnection>;
+};
+
+
+export type YoutubeVideoConnectionDistinctArgs = {
+  field: YoutubeVideoFieldsEnum;
+};
+
+
+export type YoutubeVideoConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  field: YoutubeVideoFieldsEnum;
+};
+
+export type YoutubeVideoEdge = {
+  next?: Maybe<YoutubeVideo>;
+  node: YoutubeVideo;
+  previous?: Maybe<YoutubeVideo>;
+};
+
+export type YoutubeVideoFieldsEnum = 
+  | 'id'
+  | 'parent___id'
+  | 'parent___parent___id'
+  | 'parent___parent___parent___id'
+  | 'parent___parent___parent___children'
+  | 'parent___parent___children'
+  | 'parent___parent___children___id'
+  | 'parent___parent___children___children'
+  | 'parent___parent___internal___content'
+  | 'parent___parent___internal___contentDigest'
+  | 'parent___parent___internal___description'
+  | 'parent___parent___internal___fieldOwners'
+  | 'parent___parent___internal___ignoreType'
+  | 'parent___parent___internal___mediaType'
+  | 'parent___parent___internal___owner'
+  | 'parent___parent___internal___type'
+  | 'parent___children'
+  | 'parent___children___id'
+  | 'parent___children___parent___id'
+  | 'parent___children___parent___children'
+  | 'parent___children___children'
+  | 'parent___children___children___id'
+  | 'parent___children___children___children'
+  | 'parent___children___internal___content'
+  | 'parent___children___internal___contentDigest'
+  | 'parent___children___internal___description'
+  | 'parent___children___internal___fieldOwners'
+  | 'parent___children___internal___ignoreType'
+  | 'parent___children___internal___mediaType'
+  | 'parent___children___internal___owner'
+  | 'parent___children___internal___type'
+  | 'parent___internal___content'
+  | 'parent___internal___contentDigest'
+  | 'parent___internal___description'
+  | 'parent___internal___fieldOwners'
+  | 'parent___internal___ignoreType'
+  | 'parent___internal___mediaType'
+  | 'parent___internal___owner'
+  | 'parent___internal___type'
+  | 'children'
+  | 'children___id'
+  | 'children___parent___id'
+  | 'children___parent___parent___id'
+  | 'children___parent___parent___children'
+  | 'children___parent___children'
+  | 'children___parent___children___id'
+  | 'children___parent___children___children'
+  | 'children___parent___internal___content'
+  | 'children___parent___internal___contentDigest'
+  | 'children___parent___internal___description'
+  | 'children___parent___internal___fieldOwners'
+  | 'children___parent___internal___ignoreType'
+  | 'children___parent___internal___mediaType'
+  | 'children___parent___internal___owner'
+  | 'children___parent___internal___type'
+  | 'children___children'
+  | 'children___children___id'
+  | 'children___children___parent___id'
+  | 'children___children___parent___children'
+  | 'children___children___children'
+  | 'children___children___children___id'
+  | 'children___children___children___children'
+  | 'children___children___internal___content'
+  | 'children___children___internal___contentDigest'
+  | 'children___children___internal___description'
+  | 'children___children___internal___fieldOwners'
+  | 'children___children___internal___ignoreType'
+  | 'children___children___internal___mediaType'
+  | 'children___children___internal___owner'
+  | 'children___children___internal___type'
+  | 'children___internal___content'
+  | 'children___internal___contentDigest'
+  | 'children___internal___description'
+  | 'children___internal___fieldOwners'
+  | 'children___internal___ignoreType'
+  | 'children___internal___mediaType'
+  | 'children___internal___owner'
+  | 'children___internal___type'
+  | 'internal___content'
+  | 'internal___contentDigest'
+  | 'internal___description'
+  | 'internal___fieldOwners'
+  | 'internal___ignoreType'
+  | 'internal___mediaType'
+  | 'internal___owner'
+  | 'internal___type'
+  | 'publishedAt'
+  | 'title'
+  | 'description'
+  | 'videoId'
+  | 'privacyStatus'
+  | 'channelId'
+  | 'channelTitle'
+  | 'thumbnail___url'
+  | 'thumbnail___width'
+  | 'thumbnail___height'
+  | 'originalID'
+  | 'localThumbnail___sourceInstanceName'
+  | 'localThumbnail___absolutePath'
+  | 'localThumbnail___relativePath'
+  | 'localThumbnail___extension'
+  | 'localThumbnail___size'
+  | 'localThumbnail___prettySize'
+  | 'localThumbnail___modifiedTime'
+  | 'localThumbnail___accessTime'
+  | 'localThumbnail___changeTime'
+  | 'localThumbnail___birthTime'
+  | 'localThumbnail___root'
+  | 'localThumbnail___dir'
+  | 'localThumbnail___base'
+  | 'localThumbnail___ext'
+  | 'localThumbnail___name'
+  | 'localThumbnail___relativeDirectory'
+  | 'localThumbnail___dev'
+  | 'localThumbnail___mode'
+  | 'localThumbnail___nlink'
+  | 'localThumbnail___uid'
+  | 'localThumbnail___gid'
+  | 'localThumbnail___rdev'
+  | 'localThumbnail___ino'
+  | 'localThumbnail___atimeMs'
+  | 'localThumbnail___mtimeMs'
+  | 'localThumbnail___ctimeMs'
+  | 'localThumbnail___atime'
+  | 'localThumbnail___mtime'
+  | 'localThumbnail___ctime'
+  | 'localThumbnail___birthtime'
+  | 'localThumbnail___birthtimeMs'
+  | 'localThumbnail___blksize'
+  | 'localThumbnail___blocks'
+  | 'localThumbnail___publicURL'
+  | 'localThumbnail___childImageSharp___fixed___base64'
+  | 'localThumbnail___childImageSharp___fixed___tracedSVG'
+  | 'localThumbnail___childImageSharp___fixed___aspectRatio'
+  | 'localThumbnail___childImageSharp___fixed___width'
+  | 'localThumbnail___childImageSharp___fixed___height'
+  | 'localThumbnail___childImageSharp___fixed___src'
+  | 'localThumbnail___childImageSharp___fixed___srcSet'
+  | 'localThumbnail___childImageSharp___fixed___srcWebp'
+  | 'localThumbnail___childImageSharp___fixed___srcSetWebp'
+  | 'localThumbnail___childImageSharp___fixed___originalName'
+  | 'localThumbnail___childImageSharp___resolutions___base64'
+  | 'localThumbnail___childImageSharp___resolutions___tracedSVG'
+  | 'localThumbnail___childImageSharp___resolutions___aspectRatio'
+  | 'localThumbnail___childImageSharp___resolutions___width'
+  | 'localThumbnail___childImageSharp___resolutions___height'
+  | 'localThumbnail___childImageSharp___resolutions___src'
+  | 'localThumbnail___childImageSharp___resolutions___srcSet'
+  | 'localThumbnail___childImageSharp___resolutions___srcWebp'
+  | 'localThumbnail___childImageSharp___resolutions___srcSetWebp'
+  | 'localThumbnail___childImageSharp___resolutions___originalName'
+  | 'localThumbnail___childImageSharp___fluid___base64'
+  | 'localThumbnail___childImageSharp___fluid___tracedSVG'
+  | 'localThumbnail___childImageSharp___fluid___aspectRatio'
+  | 'localThumbnail___childImageSharp___fluid___src'
+  | 'localThumbnail___childImageSharp___fluid___srcSet'
+  | 'localThumbnail___childImageSharp___fluid___srcWebp'
+  | 'localThumbnail___childImageSharp___fluid___srcSetWebp'
+  | 'localThumbnail___childImageSharp___fluid___sizes'
+  | 'localThumbnail___childImageSharp___fluid___originalImg'
+  | 'localThumbnail___childImageSharp___fluid___originalName'
+  | 'localThumbnail___childImageSharp___fluid___presentationWidth'
+  | 'localThumbnail___childImageSharp___fluid___presentationHeight'
+  | 'localThumbnail___childImageSharp___sizes___base64'
+  | 'localThumbnail___childImageSharp___sizes___tracedSVG'
+  | 'localThumbnail___childImageSharp___sizes___aspectRatio'
+  | 'localThumbnail___childImageSharp___sizes___src'
+  | 'localThumbnail___childImageSharp___sizes___srcSet'
+  | 'localThumbnail___childImageSharp___sizes___srcWebp'
+  | 'localThumbnail___childImageSharp___sizes___srcSetWebp'
+  | 'localThumbnail___childImageSharp___sizes___sizes'
+  | 'localThumbnail___childImageSharp___sizes___originalImg'
+  | 'localThumbnail___childImageSharp___sizes___originalName'
+  | 'localThumbnail___childImageSharp___sizes___presentationWidth'
+  | 'localThumbnail___childImageSharp___sizes___presentationHeight'
+  | 'localThumbnail___childImageSharp___gatsbyImageData'
+  | 'localThumbnail___childImageSharp___original___width'
+  | 'localThumbnail___childImageSharp___original___height'
+  | 'localThumbnail___childImageSharp___original___src'
+  | 'localThumbnail___childImageSharp___resize___src'
+  | 'localThumbnail___childImageSharp___resize___tracedSVG'
+  | 'localThumbnail___childImageSharp___resize___width'
+  | 'localThumbnail___childImageSharp___resize___height'
+  | 'localThumbnail___childImageSharp___resize___aspectRatio'
+  | 'localThumbnail___childImageSharp___resize___originalName'
+  | 'localThumbnail___childImageSharp___id'
+  | 'localThumbnail___childImageSharp___parent___id'
+  | 'localThumbnail___childImageSharp___parent___children'
+  | 'localThumbnail___childImageSharp___children'
+  | 'localThumbnail___childImageSharp___children___id'
+  | 'localThumbnail___childImageSharp___children___children'
+  | 'localThumbnail___childImageSharp___internal___content'
+  | 'localThumbnail___childImageSharp___internal___contentDigest'
+  | 'localThumbnail___childImageSharp___internal___description'
+  | 'localThumbnail___childImageSharp___internal___fieldOwners'
+  | 'localThumbnail___childImageSharp___internal___ignoreType'
+  | 'localThumbnail___childImageSharp___internal___mediaType'
+  | 'localThumbnail___childImageSharp___internal___owner'
+  | 'localThumbnail___childImageSharp___internal___type'
+  | 'localThumbnail___id'
+  | 'localThumbnail___parent___id'
+  | 'localThumbnail___parent___parent___id'
+  | 'localThumbnail___parent___parent___children'
+  | 'localThumbnail___parent___children'
+  | 'localThumbnail___parent___children___id'
+  | 'localThumbnail___parent___children___children'
+  | 'localThumbnail___parent___internal___content'
+  | 'localThumbnail___parent___internal___contentDigest'
+  | 'localThumbnail___parent___internal___description'
+  | 'localThumbnail___parent___internal___fieldOwners'
+  | 'localThumbnail___parent___internal___ignoreType'
+  | 'localThumbnail___parent___internal___mediaType'
+  | 'localThumbnail___parent___internal___owner'
+  | 'localThumbnail___parent___internal___type'
+  | 'localThumbnail___children'
+  | 'localThumbnail___children___id'
+  | 'localThumbnail___children___parent___id'
+  | 'localThumbnail___children___parent___children'
+  | 'localThumbnail___children___children'
+  | 'localThumbnail___children___children___id'
+  | 'localThumbnail___children___children___children'
+  | 'localThumbnail___children___internal___content'
+  | 'localThumbnail___children___internal___contentDigest'
+  | 'localThumbnail___children___internal___description'
+  | 'localThumbnail___children___internal___fieldOwners'
+  | 'localThumbnail___children___internal___ignoreType'
+  | 'localThumbnail___children___internal___mediaType'
+  | 'localThumbnail___children___internal___owner'
+  | 'localThumbnail___children___internal___type'
+  | 'localThumbnail___internal___content'
+  | 'localThumbnail___internal___contentDigest'
+  | 'localThumbnail___internal___description'
+  | 'localThumbnail___internal___fieldOwners'
+  | 'localThumbnail___internal___ignoreType'
+  | 'localThumbnail___internal___mediaType'
+  | 'localThumbnail___internal___owner'
+  | 'localThumbnail___internal___type';
+
+export type YoutubeVideoFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  publishedAt?: Maybe<DateQueryOperatorInput>;
+  title?: Maybe<StringQueryOperatorInput>;
+  description?: Maybe<StringQueryOperatorInput>;
+  videoId?: Maybe<StringQueryOperatorInput>;
+  privacyStatus?: Maybe<StringQueryOperatorInput>;
+  channelId?: Maybe<StringQueryOperatorInput>;
+  channelTitle?: Maybe<StringQueryOperatorInput>;
+  thumbnail?: Maybe<YoutubeVideoThumbnailFilterInput>;
+  originalID?: Maybe<StringQueryOperatorInput>;
+  localThumbnail?: Maybe<FileFilterInput>;
+};
+
+export type YoutubeVideoGroupConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<YoutubeVideoEdge>;
+  nodes: Array<YoutubeVideo>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
+export type YoutubeVideoSortInput = {
+  fields?: Maybe<Array<Maybe<YoutubeVideoFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type YoutubeVideoThumbnail = {
+  url?: Maybe<Scalars['String']>;
+  width?: Maybe<Scalars['Int']>;
+  height?: Maybe<Scalars['Int']>;
+};
+
+export type YoutubeVideoThumbnailFilterInput = {
+  url?: Maybe<StringQueryOperatorInput>;
+  width?: Maybe<IntQueryOperatorInput>;
+  height?: Maybe<IntQueryOperatorInput>;
 };

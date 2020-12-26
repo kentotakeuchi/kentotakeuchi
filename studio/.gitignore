@@ -76,3 +76,6 @@ yarn-error.log
 
 # sanity.json
 sanity.json
+
+# dummy ts file to remove tsconfig error
+dummy.ts

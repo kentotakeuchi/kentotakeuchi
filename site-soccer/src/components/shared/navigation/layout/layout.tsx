@@ -1,4 +1,5 @@
 import React, { FunctionComponent, useEffect } from 'react'
+import { PageProps } from 'gatsby'
 
 import useScroll from '../../../../hooks/scroll-hook'
 import useSideDrawer from '../../../../hooks/side-drawer-hook'
@@ -11,15 +12,17 @@ import NavLinks from '../nav-links/nav-links'
 import Language from '../language/language'
 import Burger from '../burger/burger'
 import Footer from '../footer/footer'
-import SNS from '../sns/sns'
+// import SNS from '../sns/sns'
 import Brand from '../brand/brand'
 import Copyright from '../../ui-elements/copyright/copyright'
 
 interface Props {
-  pathname: string
+  location: Location
 }
 
-const Layout: FunctionComponent<Props> = ({ children, pathname }) => {
+const Layout: FunctionComponent<Props> = ({ children, location }) => {
+  const { pathname } = location
+
   // Hooks
   const { isShow, setIsShow, scrollDownHideUpShow } = useScroll()
   const {
@@ -28,9 +31,10 @@ const Layout: FunctionComponent<Props> = ({ children, pathname }) => {
     closeDrawerHandler,
   } = useSideDrawer()
 
+  // set scroll event to know current Y position
   scrollDownHideUpShow()
 
-  // Show header after page transition
+  // show header after page transition
   useEffect(() => {
     setIsShow(false)
   }, [])

@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import './footer.scss'
 
-const Footer = ({ children }) => {
+const Footer: FunctionComponent = ({ children }) => {
   return <footer className="footer">{children}</footer>
 }
 

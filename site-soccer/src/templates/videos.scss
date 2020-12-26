@@ -1,0 +1,9 @@
+.videos-page {
+  padding: 15rem 2rem 5rem 2rem;
+
+  &__video-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem 3rem;
+  }
+}

@@ -6,13 +6,13 @@ import './nav-links.scss'
 
 // DATA
 const HEADER_LINK_LIST = [
-  { name: t`video`, slug: 'video' },
+  { name: t`video`, slug: 'videos' },
   { name: t`about`, slug: 'about' },
   { name: t`contact`, slug: 'contact' },
 ]
 
 const SIDE_DRAWER_LINK_LIST = [
-  { name: t`video`, slug: 'video' },
+  { name: t`video`, slug: 'videos' },
   { name: t`about`, slug: 'about' },
   { name: t`contact`, slug: 'contact' },
 ]

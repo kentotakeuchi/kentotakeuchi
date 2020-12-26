@@ -5,11 +5,14 @@ import Layout from './shared/navigation/layout/layout'
 import useI18n from '../hooks/i18n-hook'
 
 const AppContainer: FunctionComponent<any> = props => {
+  console.log({ props })
+
   // store a current language
   const curLang = props.pageContext.langKey || props.pageContext.language
 
   // set up i18n stuff
   const { i18n } = useI18n(curLang)
+  console.log({ i18n })
 
   return (
     <I18nProvider i18n={i18n}>

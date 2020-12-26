@@ -89,7 +89,7 @@ module.exports = {
       resolve: `gatsby-plugin-ts`,
       options: {
         tsLoader: {
-          logLevel: "warn",
+          logLevel: 'warn',
         },
         forkTsCheckerPlugin: {
           eslint: true,
@@ -100,12 +100,14 @@ module.exports = {
         typeCheck: false,
       },
     },
-    // TODO: temp > give up separating soccer pages from portfolio site with theme..
-    // {
-    //   resolve: 'gatsby-theme-soccer',
-    //   options: {
-    //     basePath: '/soccer',
-    //   },
-    // },
+    // TODO: change fetching channels into playlists
+    {
+      resolve: `gatsby-source-youtube-v2`,
+      options: {
+        channelId: [process.env.YOUTUBE_CHANNEL_ID],
+        apiKey: process.env.YOUTUBE_API_KEY,
+        maxVideos: 50, // Defaults to 50
+      },
+    },
   ],
 }

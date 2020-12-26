@@ -2,12 +2,13 @@
 @import '../../../../styles/mixin.scss';
 
 .footer {
-  position: absolute;
-  bottom: 0;
+  // position: absolute;
+  // bottom: 0;
 
   display: grid;
   grid-auto-flow: column;
   column-gap: 2rem;
+  margin-top: 5rem;
   padding: 2rem;
   width: 100%;
 

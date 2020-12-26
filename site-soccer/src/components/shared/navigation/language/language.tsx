@@ -1,7 +1,10 @@
 import React from 'react'
 import { useLingui } from '@lingui/react'
 import './language.scss'
-import { toggleLocaleHandler } from '../../../../hooks/i18n-hook'
+import {
+  toggleLocaleHandler,
+  getAllLocaleUtils,
+} from '../../../../hooks/i18n-hook'
 import flag_us from '../../../../asset/images/united-states.png'
 import flag_ja from '../../../../asset/images/japan.png'
 
@@ -11,8 +14,7 @@ interface Props {
 }
 
 const Language = ({ place, path }: Props) => {
-  const { i18n } = useLingui()
-  const { locale } = i18n
+  const { i18n, locale } = getAllLocaleUtils()
 
   return (
     <ul className={`language language--${place}`}>
