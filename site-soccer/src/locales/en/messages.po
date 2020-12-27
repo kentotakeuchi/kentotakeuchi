@@ -11,24 +11,66 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#: src/pages/index.en.tsx:37
+#: src/pages/index.ja.tsx:33
+msgid "Details about our lesson"
+msgstr "Details about our lesson"
+
+#: src/pages/index.en.tsx:33
+#: src/pages/index.ja.tsx:31
+msgid "Duration: 2hours"
+msgstr "Duration: 2hours"
+
+#: src/pages/index.tsx:17
+msgid "Home"
+msgstr "Home"
+
+#: src/pages/index.en.tsx:34
+#: src/pages/index.ja.tsx:32
+msgid "Location: TBD"
+msgstr "Location: TBD"
+
+#: src/pages/index.en.tsx:32
+#: src/pages/index.ja.tsx:30
+msgid "Price: $10/h"
+msgstr "Price: $10/h"
+
+#: src/pages/index.tsx:18
+msgid "Redirecting to home.."
+msgstr "Redirecting to home.."
+
+#: src/components/shared/navigation/nav-links/nav-links.tsx:9
+#: src/components/shared/navigation/nav-links/nav-links.tsx:14
+msgid "about"
+msgstr "about"
+
 #: src/components/shared/navigation/nav-links/nav-links.tsx:8
 #: src/components/shared/navigation/nav-links/nav-links.tsx:14
-msgid "all projects"
-msgstr "all projects"
+#~ msgid "all projects"
+#~ msgstr "all projects"
 
 #: src/components/shared/navigation/nav-links/nav-links.tsx:11
 #: src/components/shared/navigation/nav-links/nav-links.tsx:17
-msgid "blog"
-msgstr "blog"
+#~ msgid "blog"
+#~ msgstr "blog"
 
 #: src/components/shared/navigation/nav-links/nav-links.tsx:10
-#: src/components/shared/navigation/nav-links/nav-links.tsx:16
+#: src/components/shared/navigation/nav-links/nav-links.tsx:15
 msgid "contact"
 msgstr "contact"
+
+#: src/pages/index.en.tsx:44
+#: src/pages/index.ja.tsx:37
+msgid "contact us"
+msgstr "contact us"
 
 #: src/components/shared/ui-elements/copyright/copyright.tsx:7
 msgid "kento takeuchi"
 msgstr "kento takeuchi"
+
+#: src/pages/index.en.tsx:49
+msgid "kento<0/>takeuchi<1/>kento<2/>takeuchi<3/>kento<4/>takeuchi<5/>kento<6/>takeuchi<7/>kento<8/>takeuchi<9/>kento<10/>takeuchi<11/>"
+msgstr "kento<0/>takeuchi<1/>kento<2/>takeuchi<3/>kento<4/>takeuchi<5/>kento<6/>takeuchi<7/>kento<8/>takeuchi<9/>kento<10/>takeuchi<11/>"
 
 #: src/components/shared/navigation/pagination/pagination.tsx:56
 msgid "next"
@@ -38,11 +80,21 @@ msgstr "next"
 msgid "prev"
 msgstr "prev"
 
+#: src/pages/index.en.tsx:30
+#: src/pages/index.ja.tsx:28
+msgid "private lesson"
+msgstr "private lesson"
+
 #: src/components/shared/navigation/nav-links/nav-links.tsx:9
 #: src/components/shared/navigation/nav-links/nav-links.tsx:15
-msgid "profile"
-msgstr "profile"
+#~ msgid "profile"
+#~ msgstr "profile"
 
 #: src/components/shared/navigation/prev-next-pagination/prev-next-pagination.tsx:28
-msgid "top"
-msgstr "top"
+#~ msgid "top"
+#~ msgstr "top"
+
+#: src/components/shared/navigation/nav-links/nav-links.tsx:8
+#: src/components/shared/navigation/nav-links/nav-links.tsx:13
+msgid "video"
+msgstr "video"

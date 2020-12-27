@@ -1,3 +1,5 @@
+@import '../styles/mixin.scss';
+
 .videos-page {
   padding: 15rem 2rem 5rem 2rem;
 
@@ -5,5 +7,9 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 5rem 3rem;
+
+    @include respond(tab-land) {
+      gap: 8rem 3rem;
+    }
   }
 }

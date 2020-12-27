@@ -39,10 +39,29 @@
       list-style-position: inside;
     }
 
+    // details link wrapper
+    & li:last-child {
+      list-style: none;
+      display: grid;
+      grid-auto-flow: column;
+      justify-content: start;
+      column-gap: 0.7rem;
+    }
+
     // details link
     & a {
       font-style: italic;
       text-decoration: underline;
+    }
+    & a:hover {
+      text-decoration: none;
+    }
+    // arrow icon
+    & a + .icon {
+      transition: all 0.2s;
+    }
+    & a:hover + .icon {
+      transform: translateX(0.5rem) translateY(8px);
     }
   }
 
