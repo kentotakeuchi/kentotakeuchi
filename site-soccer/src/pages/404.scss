@@ -1,0 +1,12 @@
+.not-found-page {
+  padding: 15rem 2rem 5rem 2rem;
+
+  // back to home
+  & a {
+    font-style: italic;
+    text-decoration: underline;
+  }
+  & a:hover {
+    text-decoration: none;
+  }
+}

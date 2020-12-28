@@ -11,12 +11,25 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#: src/pages/404.en.tsx:10
+#: src/pages/404.ja.tsx:10
+msgid "404: Page not found"
+msgstr "404: Page not found"
+
 #: src/pages/index.en.tsx:49
 #: src/pages/index.ja.tsx:49
 msgid "<0>Hi there, I'm Kento.</0><1>If you're interested in my lesson or have any questions, feel free to reach me out!</1>"
 msgstr "<0>Hi there, I'm Kento.</0><1>If you're interested in my lesson or have any questions, feel free to reach me out!</1>"
 
-#: src/pages/contact.en.tsx:10
+#: src/pages/404.en.tsx:13
+#: src/pages/404.ja.tsx:13
+#: src/pages/contact-success.en.tsx:13
+#: src/pages/contact-success.ja.tsx:13
+msgid "Back to home"
+msgstr "Back to home"
+
+#: src/pages/contact.en.tsx:11
+#: src/pages/contact.ja.tsx:11
 msgid "Contact"
 msgstr "Contact"
 
@@ -39,7 +52,12 @@ msgstr "Home"
 msgid "Location: TBD"
 msgstr "Location: TBD"
 
-#: src/components/shared/form-elements/input/input.tsx:18
+#: src/pages/404.en.tsx:12
+#: src/pages/404.ja.tsx:12
+msgid "Oops.. Page not found"
+msgstr "Oops.. Page not found"
+
+#: src/components/shared/form-elements/input/input.tsx:19
 msgid "Please select one"
 msgstr "Please select one"
 
@@ -51,6 +69,16 @@ msgstr "Price: $10/h"
 #: src/pages/index.tsx:18
 msgid "Redirecting to home.."
 msgstr "Redirecting to home.."
+
+#: src/pages/contact-success.en.tsx:10
+#: src/pages/contact-success.ja.tsx:10
+msgid "Successfully submitted"
+msgstr "Successfully submitted"
+
+#: src/pages/contact-success.en.tsx:12
+#: src/pages/contact-success.ja.tsx:12
+msgid "Successfully submitted!"
+msgstr "Successfully submitted!"
 
 #: src/components/shared/navigation/nav-links/nav-links.tsx:9
 #: src/components/shared/navigation/nav-links/nav-links.tsx:14
@@ -77,19 +105,23 @@ msgstr "contact"
 msgid "contact us"
 msgstr "contact us"
 
-#: src/pages/contact.en.tsx:25
+#: src/pages/contact.en.tsx:26
+#: src/pages/contact.ja.tsx:26
 msgid "email"
 msgstr "email"
 
-#: src/pages/contact.en.tsx:26
+#: src/pages/contact.en.tsx:32
+#: src/pages/contact.ja.tsx:32
 msgid "feel free to ask anything or share your thought with me!"
 msgstr "feel free to ask anything or share your thought with me!"
 
-#: src/pages/contact.en.tsx:23
+#: src/pages/contact.en.tsx:24
+#: src/pages/contact.ja.tsx:24
 msgid "first name"
 msgstr "first name"
 
-#: src/pages/contact.en.tsx:23
+#: src/pages/contact.en.tsx:24
+#: src/pages/contact.ja.tsx:24
 msgid "kento"
 msgstr "kento"
 
@@ -101,11 +133,18 @@ msgstr "kento takeuchi"
 #~ msgid "kento<0/>takeuchi<1/>kento<2/>takeuchi<3/>kento<4/>takeuchi<5/>kento<6/>takeuchi<7/>kento<8/>takeuchi<9/>kento<10/>takeuchi<11/>"
 #~ msgstr "kento<0/>takeuchi<1/>kento<2/>takeuchi<3/>kento<4/>takeuchi<5/>kento<6/>takeuchi<7/>kento<8/>takeuchi<9/>kento<10/>takeuchi<11/>"
 
-#: src/pages/contact.en.tsx:24
+#: src/pages/contact.en.tsx:25
+#: src/pages/contact.ja.tsx:25
 msgid "last name"
 msgstr "last name"
 
-#: src/pages/contact.en.tsx:26
+#: src/pages/contact.en.tsx:27
+#: src/pages/contact.ja.tsx:27
+msgid "level"
+msgstr "level"
+
+#: src/pages/contact.en.tsx:32
+#: src/pages/contact.ja.tsx:32
 msgid "message"
 msgstr "message"
 
@@ -127,11 +166,13 @@ msgstr "private lesson"
 #~ msgid "profile"
 #~ msgstr "profile"
 
-#: src/pages/contact.en.tsx:27
+#: src/pages/contact.en.tsx:33
+#: src/pages/contact.ja.tsx:33
 msgid "submit"
 msgstr "submit"
 
-#: src/pages/contact.en.tsx:24
+#: src/pages/contact.en.tsx:25
+#: src/pages/contact.ja.tsx:25
 msgid "takeuchi"
 msgstr "takeuchi"
 
