@@ -11,15 +11,13 @@
   // text-decoration: none;
   text-align: center;
   text-transform: uppercase;
-  transition: all 0.3s;
+  transition: all 0.2s;
 
   // TODO:
-  // &:hover,
-  // &:active {
-  //   border: 1px solid $color-primary;
-  //   background: $color-secondary;
-  //   color: $color-primary;
-  // }
+  &:hover,
+  &:active {
+    filter: brightness(0.9);
+  }
 
   // inverse
   // &--inverse {

@@ -11,13 +11,22 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#: src/pages/index.en.tsx:49
+#: src/pages/index.ja.tsx:49
+msgid "<0>Hi there, I'm Kento.</0><1>If you're interested in my lesson or have any questions, feel free to reach me out!</1>"
+msgstr "<0>はじめまして、私は竹内健人と申します。</0><1>もし興味があれば、気軽に連絡下さい。お待ちしております！</1>"
+
+#: src/pages/contact.en.tsx:10
+msgid "Contact"
+msgstr "お問い合わせ"
+
 #: src/pages/index.en.tsx:37
-#: src/pages/index.ja.tsx:33
+#: src/pages/index.ja.tsx:37
 msgid "Details about our lesson"
 msgstr "レッスンの詳細へ"
 
 #: src/pages/index.en.tsx:33
-#: src/pages/index.ja.tsx:31
+#: src/pages/index.ja.tsx:33
 msgid "Duration: 2hours"
 msgstr "時間: 2時間"
 
@@ -26,12 +35,16 @@ msgid "Home"
 msgstr "ホーム"
 
 #: src/pages/index.en.tsx:34
-#: src/pages/index.ja.tsx:32
+#: src/pages/index.ja.tsx:34
 msgid "Location: TBD"
 msgstr "場所: 未定"
 
+#: src/components/shared/form-elements/input/input.tsx:18
+msgid "Please select one"
+msgstr "一つ選択して下さい"
+
 #: src/pages/index.en.tsx:32
-#: src/pages/index.ja.tsx:30
+#: src/pages/index.ja.tsx:32
 msgid "Price: $10/h"
 msgstr "価格: $10/1時間"
 
@@ -50,17 +63,41 @@ msgid "contact"
 msgstr "お問い合わせ"
 
 #: src/pages/index.en.tsx:44
-#: src/pages/index.ja.tsx:37
+#: src/pages/index.ja.tsx:44
 msgid "contact us"
 msgstr "問い合わせる"
+
+#: src/pages/contact.en.tsx:25
+msgid "email"
+msgstr "メールアドレス"
+
+#: src/pages/contact.en.tsx:26
+msgid "feel free to ask anything or share your thought with me!"
+msgstr "気軽に質問、あなたの思いをお聞かせ下さい！"
+
+#: src/pages/contact.en.tsx:23
+msgid "first name"
+msgstr "名"
+
+#: src/pages/contact.en.tsx:23
+msgid "kento"
+msgstr "健人"
 
 #: src/components/shared/ui-elements/copyright/copyright.tsx:7
 msgid "kento takeuchi"
 msgstr "竹内健人"
 
 #: src/pages/index.en.tsx:49
-msgid "kento<0/>takeuchi<1/>kento<2/>takeuchi<3/>kento<4/>takeuchi<5/>kento<6/>takeuchi<7/>kento<8/>takeuchi<9/>kento<10/>takeuchi<11/>"
-msgstr "テスト"
+#~ msgid "kento<0/>takeuchi<1/>kento<2/>takeuchi<3/>kento<4/>takeuchi<5/>kento<6/>takeuchi<7/>kento<8/>takeuchi<9/>kento<10/>takeuchi<11/>"
+#~ msgstr "テスト"
+
+#: src/pages/contact.en.tsx:24
+msgid "last name"
+msgstr "姓"
+
+#: src/pages/contact.en.tsx:26
+msgid "message"
+msgstr "メッセージ"
 
 #: src/components/shared/navigation/pagination/pagination.tsx:56
 msgid "next"
@@ -71,9 +108,17 @@ msgid "prev"
 msgstr "前"
 
 #: src/pages/index.en.tsx:30
-#: src/pages/index.ja.tsx:28
+#: src/pages/index.ja.tsx:30
 msgid "private lesson"
 msgstr "プライベートレッスン"
+
+#: src/pages/contact.en.tsx:27
+msgid "submit"
+msgstr "送信する"
+
+#: src/pages/contact.en.tsx:24
+msgid "takeuchi"
+msgstr "竹内"
 
 #: src/components/shared/navigation/nav-links/nav-links.tsx:8
 #: src/components/shared/navigation/nav-links/nav-links.tsx:13

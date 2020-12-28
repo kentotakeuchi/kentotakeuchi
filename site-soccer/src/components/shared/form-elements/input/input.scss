@@ -1,55 +1,64 @@
-// @import '../../../../styles/variables.scss';
+@import '../../../../styles/variables.scss';
 
-// .form-control {
-//   & label,
-//   & input,
-//   & textarea {
-//     display: block;
-//   }
+.form-control {
+  & label,
+  & input,
+  & textarea {
+    display: block;
+  }
 
-//   & label {
-//     font-weight: 600;
-//     text-transform: capitalize;
-//     margin-bottom: 0.5rem;
-//   }
+  & label {
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-bottom: 0.5rem;
+  }
 
-//   & input,
-//   & textarea,
-//   & select {
-//     width: 100%;
-//     border: 1px solid rgba($color-primary, 0.5);
-//     background: transparent;
-//     box-shadow: $box-shadow-light;
-//   }
+  & input,
+  & textarea,
+  & select {
+    width: 100%;
+    border: 1px solid rgba($text-primary--dark, 0.5);
+    background: transparent;
+  }
 
-//   & input {
-//     padding: 1rem 1rem;
-//   }
+  & input {
+    padding: 1rem 1rem;
+  }
 
-//   & textarea {
-//     width: 100%;
-//     border: 1px solid rgba($color-primary, 0.5);
-//     background: transparent;
-//     padding: 1rem 1rem;
-//   }
+  & textarea {
+    width: 100%;
+    border: 1px solid rgba($text-primary--dark, 0.5);
+    background: transparent;
+    padding: 1rem 1rem;
+  }
 
-//   & input:focus,
-//   & textarea:focus {
-//     outline: none;
-//     background: rgba($color-primary, 0.1);
-//     border-color: $color-primary;
-//   }
+  & select {
+    padding: 1rem;
 
-//   & input::placeholder,
-//   & textarea::placeholder {
-//     color: rgba($color-primary, 0.5);
-//     text-transform: lowercase;
-//   }
+    // TODO: why can't change text color?
+    & > option:first-child {
+      color: rgba($text-primary--dark, 0.5);
+    }
+  }
 
-//   input:-webkit-autofill,
-//   input:-webkit-autofill:hover,
-//   input:-webkit-autofill:focus {
-//     -webkit-box-shadow: 0 0 0px 1000px white inset;
-//     -webkit-text-fill-color: inherit;
-//   }
-// }
+  & input:focus,
+  & textarea:focus,
+  & select:focus {
+    outline: none;
+    background: rgba($text-primary--dark, 0.1);
+    border-color: $text-primary--dark;
+  }
+
+  & input::placeholder,
+  & textarea::placeholder {
+    color: rgba($text-primary--dark, 0.5);
+    text-transform: lowercase;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    -webkit-text-fill-color: inherit;
+  }
+}

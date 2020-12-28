@@ -39,30 +39,11 @@ const HomePage = ({ data, ...props }: any) => {
       </div>
       <Ticker>
         <Trans>
-          kento
-          <span />
-          takeuchi
-          <span />
-          kento
-          <span />
-          takeuchi
-          <span />
-          kento
-          <span />
-          takeuchi
-          <span />
-          kento
-          <span />
-          takeuchi
-          <span />
-          kento
-          <span />
-          takeuchi
-          <span />
-          kento
-          <span />
-          takeuchi
-          <span />
+          <p>Hi there, I'm Kento.</p>
+          <p>
+            If you're interested in my lesson or have any questions, feel free
+            to reach me out!
+          </p>
         </Trans>
       </Ticker>
     </>
