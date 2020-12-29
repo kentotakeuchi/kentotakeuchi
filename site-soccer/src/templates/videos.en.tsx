@@ -1,36 +1,34 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, PageProps } from 'gatsby'
+import { t } from '@lingui/macro'
 import './videos.scss'
 import SEO from '../components/seo'
 import Pagination from '../components/shared/navigation/pagination/pagination'
 import Card from '../components/shared/ui-elements/card/card'
-import { YoutubeVideoEdge } from '../../types/graphql-types'
+import { getAllLocaleUtils } from '../hooks/i18n-hook'
+import { Query } from '../../types/graphql-types'
+import { PageContextType } from '../../types/custom-types'
 
-// TODO:
-interface Props {
-  data: any
-  pageContext: {
-    language: string
-  }
-}
-
-const VideosPage: React.FC<Props> = ({ data, pageContext }) => {
-  const { language } = pageContext
+const VideosPage: React.FC<PageProps<Query, PageContextType>> = ({
+  data,
+  pageContext,
+}) => {
   const videos = data.allYoutubeVideo.edges
 
-  console.log({ videos })
+  const { i18n, locale } = getAllLocaleUtils()
 
   return (
     <>
-      <SEO title={language === 'en' ? 'Videos' : '動画'} lang={language} />
+      <SEO title={i18n._(t`Contact`)} lang={locale} />
       <div className="videos-page">
         <ul className="videos-page__video-list">
-          {videos.map(({ node: v }: YoutubeVideoEdge) => (
+          {videos.map(({ node: v }) => (
             <li key={v.id}>
               <Card item={v} place="videos-page" />
             </li>
           ))}
         </ul>
+        <Pagination context={pageContext} />
       </div>
     </>
   )

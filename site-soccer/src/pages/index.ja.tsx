@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, PageProps } from 'gatsby'
 import { t, Trans } from '@lingui/macro'
 import './home.scss'
 import SEO from '../components/seo'
@@ -7,15 +7,20 @@ import { getAllLocaleUtils } from '../hooks/i18n-hook'
 import Button from '../components/shared/form-elements/button/button'
 import Icon from '../components/shared/ui-elements/icon/icon'
 import Ticker from '../components/shared/ui-elements/ticker/ticker'
+import { Query } from '../../types/graphql-types'
+import { PageContextType } from '../../types/custom-types'
 
-const HomePage = ({ data, ...props }: any) => {
+const HomePage: React.FC<PageProps<Query, PageContextType>> = ({
+  data,
+  ...props
+}) => {
   console.log({ data, props })
 
   const { i18n, locale } = getAllLocaleUtils()
 
   return (
     <>
-      <SEO title={locale === 'en' ? 'Home' : 'ホーム'} lang={locale} />
+      <SEO title={i18n._(t`Home`)} lang={locale} />
       <div className="home-page">
         <div className="home-page__box">
           <div className="home-page__left-box">
@@ -39,10 +44,9 @@ const HomePage = ({ data, ...props }: any) => {
       </div>
       <Ticker>
         <Trans>
-          <p>Hi there, I'm Kento.</p>
           <p>
-            If you're interested in my lesson or have any questions, feel free
-            to reach me out!
+            Hi there, I'm Kento. If you're interested in my lesson or have any
+            questions, feel free to reach me out!
           </p>
         </Trans>
       </Ticker>

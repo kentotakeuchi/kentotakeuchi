@@ -6,6 +6,8 @@
   height: 100vh;
 
   &__box {
+    position: relative;
+
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 70%;

@@ -1,15 +1,13 @@
 import React from 'react'
 import SEO from '../components/seo'
 import { navigate } from 'gatsby'
-import { useLingui } from '@lingui/react'
 import { t } from '@lingui/macro'
 
+import { getAllLocaleUtils } from '../hooks/i18n-hook'
 import useHasMounted from '../hooks/client-only-hook'
 
-// IF user comes from "/" --> redirect to /en
 const Redirect = () => {
-  const { i18n } = useLingui()
-  const { locale } = i18n
+  const { i18n, locale } = getAllLocaleUtils()
 
   const hasMounted = useHasMounted()
   if (!hasMounted) {
