@@ -89,8 +89,20 @@
 
   &__main {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5ch 5ch;
-    line-height: 2;
+    row-gap: 5ch;
+    line-height: 1.8;
+  }
+
+  &__paragraph {
+    display: grid;
+    row-gap: 1.5ch;
+  }
+
+  &__paragraph > h3 {
+    font-size: 3rem;
+  }
+
+  &__paragraph > ul {
+    list-style: disc;
   }
 }
