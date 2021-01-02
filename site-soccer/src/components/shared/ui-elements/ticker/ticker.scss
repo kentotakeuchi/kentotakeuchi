@@ -1,10 +1,19 @@
 @import '../../../../styles/variables.scss';
+@import '../../../../styles/mixin.scss';
 
 .ticker {
   position: absolute;
   bottom: 5rem;
   width: 100%;
+  white-space: nowrap;
   overflow: hidden;
+
+  // TODO: temp..
+  @include respond(tab-port) {
+  }
+
+  @include respond(phone) {
+  }
 
   &__scroll {
   }
@@ -14,17 +23,9 @@
     grid-auto-flow: column;
     // column-gap: 1ch;
     font-family: 'Date Stamp';
+    font-size: 2rem;
     color: $color-apple2--dark;
     text-transform: uppercase;
-    animation: ticker 40s linear infinite;
-  }
-}
-
-@keyframes ticker {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
+    animation: ticker 30s linear infinite;
   }
 }

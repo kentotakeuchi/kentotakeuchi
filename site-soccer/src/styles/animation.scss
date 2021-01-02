@@ -1,3 +1,5 @@
+@import './mixin.scss';
+
 @keyframes show {
   0% {
     transform: translateY(-100%);
@@ -13,5 +15,38 @@
   }
   100% {
     transform: translateY(-100%);
+  }
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+// TODO: temp..
+@include respond(tab-port) {
+  @keyframes ticker {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-180%);
+    }
+  }
+}
+
+// TODO: temp..
+@include respond(phone) {
+  @keyframes ticker {
+    0% {
+      transform: translateX(110%);
+    }
+    100% {
+      transform: translateX(-320%);
+    }
   }
 }

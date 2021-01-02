@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, PageProps } from 'gatsby'
 import { t, Trans } from '@lingui/macro'
-import './home.scss'
+import './index.scss'
 import SEO from '../components/seo'
 import { getAllLocaleUtils } from '../hooks/i18n-hook'
 import Button from '../components/shared/form-elements/button/button'

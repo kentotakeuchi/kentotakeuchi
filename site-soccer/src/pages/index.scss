@@ -1,9 +1,15 @@
 @import '../styles/variables.scss';
+@import '../styles/mixin.scss';
 
 .home-page {
   display: grid;
   place-items: center;
   height: 100vh;
+
+  @include respond(phone) {
+    // display: block;
+    // padding: 15rem 2rem 5rem;
+  }
 
   &__box {
     position: relative;
@@ -16,6 +22,21 @@
     background-color: $bg-secondary--dark;
     border-radius: 10px;
 
+    @include respond(tab-land) {
+      grid-template-columns: none;
+      grid-template-rows: 70% 1fr;
+      width: 60%;
+      height: 70%;
+    }
+
+    @include respond(phone) {
+      grid-template-rows: none;
+      width: 100%;
+      height: 60%;
+      background-color: initial;
+    }
+
+    // left-box and right-box
     & > * {
       display: grid;
       place-content: center;
@@ -23,14 +44,21 @@
   }
 
   &__left-box {
-    display: grid;
     row-gap: 1rem;
+
+    @include respond(tab-land) {
+      row-gap: 3rem;
+    }
 
     // private lesson
     & > h3 {
       font-family: 'TradeGothicLTStd-BoldExt';
       font-size: 3rem;
       text-transform: capitalize;
+
+      @include respond(tab-land) {
+        font-size: 4rem;
+      }
     }
 
     // lesson info
@@ -39,6 +67,11 @@
       row-gap: 1rem;
       list-style: disc;
       list-style-position: inside;
+
+      @include respond(tab-land) {
+        row-gap: 2rem;
+        font-size: 2rem;
+      }
     }
 
     // details link wrapper
@@ -68,5 +101,17 @@
   }
 
   &__right-box {
+    .button {
+      // font-family: 'TradeGothicLTStd-BoldExt';
+      font-family: 'FranklinGothicStd-ExtraCond';
+      font-size: 2.5rem;
+      padding: 1.5rem 5rem 1rem;
+      letter-spacing: 2px;
+
+      @include respond(tab-land) {
+        font-size: 3rem;
+        padding: 1.5rem 10rem 1rem;
+      }
+    }
   }
 }
