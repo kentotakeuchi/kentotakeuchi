@@ -12,15 +12,10 @@ import NavLinks from '../nav-links/nav-links'
 import Language from '../language/language'
 import Burger from '../burger/burger'
 import Footer from '../footer/footer'
-// import SNS from '../sns/sns'
 import Brand from '../brand/brand'
 import Copyright from '../../ui-elements/copyright/copyright'
 
-interface Props {
-  location: Location
-}
-
-const Layout: FunctionComponent<Props> = ({ children, location }) => {
+const Layout: FunctionComponent<PageProps> = ({ children, location }) => {
   const { pathname } = location
 
   // Hooks

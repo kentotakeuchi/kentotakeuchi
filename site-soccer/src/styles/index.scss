@@ -1,6 +1,7 @@
 @import './variables.scss';
 @import './mixin.scss';
 @import './typography.scss';
+@import './animation.scss';
 
 // FOR DEBUG
 // * {
@@ -106,9 +107,10 @@ button {
   }
 }
 
-// Hide something
+// Hide something with animation
 .hide {
-  opacity: 0;
+  animation: hide 0.2s linear;
+  transform: translateY(-100%);
 }
 
 // None something
