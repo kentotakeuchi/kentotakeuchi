@@ -57,7 +57,7 @@
       text-transform: capitalize;
 
       @include respond(tab-land) {
-        font-size: 4rem;
+        font-size: 3.5rem;
       }
     }
 
@@ -110,7 +110,7 @@
 
       @include respond(tab-land) {
         font-size: 3rem;
-        padding: 1.5rem 10rem 1rem;
+        padding: 1.5rem 8rem 1rem;
       }
     }
   }

@@ -1,5 +1,15 @@
 @import './mixin.scss';
 
+// Hide something with animation
+.hide {
+  animation: hide 0.2s linear;
+  transform: translateY(-100%);
+}
+.hide--mobile {
+  animation: hide 0.2s linear;
+  transform: translateY(calc(-100% + -3rem));
+}
+
 @keyframes show {
   0% {
     transform: translateY(-100%);

@@ -30,7 +30,7 @@ const HomePage: React.FC<PageProps<Query, PageContextType>> = ({
               <li>{i18n._(t`Duration: 2hours`)}</li>
               <li>{i18n._(t`Location: TBD`)}</li>
               <li>
-                <Link to={`./about`}>
+                <Link to={`./about#lesson-details`}>
                   {i18n._(t`Details about our lesson`)}
                 </Link>
                 <Icon width={20} height={20} id="icon-arrow" />

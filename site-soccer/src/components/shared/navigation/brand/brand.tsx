@@ -6,15 +6,15 @@ import useSiteMetadata from '../../../../hooks/site-metadata-hook'
 import { getAllLocaleUtils } from '../../../../hooks/i18n-hook'
 
 interface Props {
-  place: string
+  className?: string
 }
 
-const Brand = ({ place }: Props) => {
+const Brand = ({ className }: Props) => {
   const { i18n, locale } = getAllLocaleUtils()
   const { titleJa, titleEn } = useSiteMetadata()
 
   return (
-    <div className={`brand`}>
+    <div className={`brand ${className ? className : ''}`}>
       <Link to={`/${locale}`}>
         <h1 className={`brand__title`}>
           {locale === 'en' ? titleEn : titleJa}

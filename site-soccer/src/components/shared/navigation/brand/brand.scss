@@ -2,6 +2,8 @@
 @import '../../../../styles/mixin.scss';
 
 .brand {
+  animation: show 0.2s linear;
+
   &__title {
     font-family: 'TradeGothicLTStd-BoldExt';
     font-size: 2rem;

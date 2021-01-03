@@ -12,6 +12,7 @@ msgstr ""
 "Plural-Forms: \n"
 
 #: src/pages/about.en.tsx:104
+#: src/pages/about.ja.tsx:104
 msgid "*1 It is for free (but after pandemic..)"
 msgstr "*1 無料です（パンデミック終息後..）"
 
@@ -21,8 +22,14 @@ msgid "404: Page not found"
 msgstr "404: ページが見つかりませんでした"
 
 #: src/pages/about.en.tsx:20
+#: src/pages/about.ja.tsx:20
 msgid "<0><1><2>Position: </2>CDM, CAM, FW</1></0><3><4><5>Strength: </5>Neat touch, Turn, Prediction, Hardworking, Agility</4></3><6><7><8>Weakness: </8>Long kick, Scoring ability</7></6><9><10><11>I like: </11>Ronaldinho, Zidan, FC.Barcelona, Real Madrid</10></9><12><13><14>Residence: </14>Santa Clara</13></12><15><16><17>Language: </17>Japanese, English(not fluent)</16></15>"
 msgstr "<0><1><2>ポジション: </2>CDM, CAM, FW</1></0><3><4><5>強み: </5>細かいタッチ, ターン, 予測, ハードワーク, 俊敏性</4></3><6><7><8>弱み: </8>ロングキック, 決定力</7></6><9><10><11>好きな人物・チーム: </11>ロナウジーニョ, ジダン, バルセロナ, レアル・マドリード</10></9><12><13><14>居住地: </14>サンタクララ</13></12><15><16><17>言語: </17>日本語, 英語(流暢ではない)</16></15>"
+
+#: src/pages/index.en.tsx:49
+#: src/pages/index.ja.tsx:49
+msgid "<0>Hi there, I'm Kento. If you're interested in my lesson or have any questions, feel free to reach me out!</0>"
+msgstr "こんにちは、竹内健人と申します。もし私のレッスンに興味がある、もしくは質問があれば、気軽にご連絡下さい！"
 
 #: src/pages/index.en.tsx:49
 #: src/pages/index.ja.tsx:49
@@ -30,11 +37,12 @@ msgstr "<0><1><2>ポジション: </2>CDM, CAM, FW</1></0><3><4><5>強み: </5>�
 #~ msgstr "<0>はじめまして、私は竹内健人と申します。</0><1>もし興味があれば、気軽に連絡下さい。お待ちしております！</1>"
 
 #: src/pages/about.en.tsx:13
-#: src/pages/about.ja.tsx:12
+#: src/pages/about.ja.tsx:13
 msgid "About"
 msgstr "私について"
 
 #: src/pages/about.en.tsx:68
+#: src/pages/about.ja.tsx:68
 msgid "After came to U.S., I had belonged to Japanese team in San Francisco premier league and several local teams in South Bay. I currently have played as CDM or CAM in Chinese team."
 msgstr "渡米後、サンフランシスコプレミアリーグの日本人選手を中心としたチームとサウスベイの複数の地元のチームに所属。現在は中国人を中心としたチームでトップ下とボランチとしてプレー。"
 
@@ -46,6 +54,7 @@ msgid "Back to home"
 msgstr "ホームへ戻る"
 
 #: src/pages/about.en.tsx:85
+#: src/pages/about.ja.tsx:85
 msgid "Basic -> Judgement -> Pattern"
 msgstr "基本 -> 判断 -> パターン"
 
@@ -71,10 +80,12 @@ msgid "Enjoy improving together"
 msgstr "上手くなることを楽しもう"
 
 #: src/pages/about.en.tsx:87
+#: src/pages/about.ja.tsx:87
 msgid "First of all, one of my friend and I will show up the lesson. He is not supposed to be a coach, but he might be able to give you a feedback."
 msgstr "まず初めに、レッスンには私の友人と私が参加します。私の友人はコーチとしての参加ではありませんが、何か気づいたことがあれば、フィードバックしてくれると思います。"
 
 #: src/pages/about.en.tsx:62
+#: src/pages/about.ja.tsx:62
 msgid "Hi there, I am Kento Takeuchi who is satisfied with my life as long as my family and friends are fine and I am able to play soccer. I have been in the bay area three years."
 msgstr "こんにちは、私は竹内健人と申します。家族、友人が健康で、サッカーができる限り基本的に幸せな人間です。ベイエリアで暮らし始めて3年になります。"
 
@@ -85,26 +96,32 @@ msgid "Home"
 msgstr "ホーム"
 
 #: src/pages/about.en.tsx:74
+#: src/pages/about.ja.tsx:74
 msgid "I had been thinking of start my private lesson since I noticed that many people are enthusiastic about improving their soccer skills, but do not know how to properly train."
 msgstr "サッカーを上手くなることに対して情熱的だが、正しいトレーニング方法がわからないという人が多いことに気づいてから、個人レッスンを始めようと思っていました。"
 
 #: src/pages/about.en.tsx:77
+#: src/pages/about.ja.tsx:77
 msgid "I have been assisting my friends to improve their skills. However, I hesitated to start my lesson officially because I do not have remarkable background and am not sociable person."
 msgstr "これまで友人のスキルアップのお手伝いをしてきました。しかし、目立った経歴もなく、社交的でもないので、正式にレッスンを始めるのを躊躇していました。"
 
 #: src/pages/about.en.tsx:99
+#: src/pages/about.ja.tsx:99
 msgid "In a nutshell, my lesson is planned to train your muscle memory so that you can deal with a variety of situations properly. Therefore, you might be able to expect repetition. I am aware that it sounds not fun, but solid fundamental skills take you next level and help you scale your ability."
 msgstr "要は、私のレッスンはゲームの中で、様々な状況に適切に対応するために、マッスルメモリーを鍛えることを主な目的として設計しています。よって、反復練習に多くの時間を費やします。一見つまらなく感じるかもしれませんが、しっかりした基礎と、適切な状況判断をする力が身につけば、あなたのスキルアップを加速してくれると信じています。"
 
 #: src/pages/about.en.tsx:96
+#: src/pages/about.ja.tsx:96
 msgid "In addition, experience players have a lot of patterns in response with particular situations. The more patterns you have, the less effort you can play. Therefore, if you have certain skills, I am going to put some drills, which could happen in real game scenarios, to increase your patterns."
 msgstr "また、優れた選手は特定のシチュエーションに対応したパターンを多く持っています。パターンが多ければ多いほど、考えることなくスムーズにプレーが出来るようになります。したがって、あなたがある程度スキルを持っている場合、私はあなたのパターンを増やすために、実際のゲームのシナリオで発生しうるいくつかの練習メニューを提案する予定です。"
 
 #: src/pages/about.en.tsx:93
+#: src/pages/about.ja.tsx:93
 msgid "It might sound boring for someone and intimidating for the others. However you feel those words, basic and judgement skills are essential ones in order to perform well consistently in a real game. Since you do not have much time to think of controlling a ball or judging in the game, you have to keep quality of basic without thinking and judge quickly."
 msgstr "ある人にとってはつまらなく、他の人には怖気づかせるように感じるかもしれません。しかし、実際の試合で安定したパフォーマンスを発揮するためには、基礎力、判断力が必要不可欠です。実際のゲームの中では、ボールをコントロールしたり、判断したりすることを考えている時間はあまりないので、考えることに気を取られることなく、プレーの質を保ちつつ、素早く判断しなければなりません。"
 
 #: src/pages/about.en.tsx:17
+#: src/pages/about.ja.tsx:17
 msgid "Kento Takeuchi"
 msgstr "竹内健人"
 
@@ -114,6 +131,7 @@ msgid "Location: TBD"
 msgstr "場所: 未定"
 
 #: src/pages/about.en.tsx:80
+#: src/pages/about.ja.tsx:80
 msgid "Nonetheless, I have found some fulfillment of my own to assist my friends, and realized my friends have been improving their basic skills and performances in an actual game. That is why I start my private lesson."
 msgstr "それでも、友人のスキルアップのお手伝いをする過程で、自分が人から求められている、役に立てている、ということに充実感を見出し、さらに友人が実際にゲームの中でパフォーマンスを向上させていることに気づきました。そこで、個人レッスンを始めることを決心しました。"
 
@@ -136,10 +154,12 @@ msgid "Redirecting to home.."
 msgstr "ホームへリダイレクトします.."
 
 #: src/pages/about.en.tsx:60
+#: src/pages/about.ja.tsx:60
 msgid "Self-introduction"
 msgstr "自己紹介"
 
 #: src/pages/about.en.tsx:18
+#: src/pages/about.ja.tsx:18
 msgid "Soccer Advocate"
 msgstr "サッカー推奨者"
 
@@ -154,54 +174,67 @@ msgid "Successfully submitted!"
 msgstr "送信が完了しました！"
 
 #: src/pages/about.en.tsx:111
+#: src/pages/about.ja.tsx:111
 msgid "Those who are eager to improve your skills, but do not know how to properly train."
 msgstr "スキルアップに意欲はあるが、適切なトレーニング方法がわからない方"
 
 #: src/pages/about.en.tsx:134
+#: src/pages/about.ja.tsx:134
 msgid "Those who are humble and have capability to listen"
 msgstr "謙虚で人の話を聞く能力がある方"
 
 #: src/pages/about.en.tsx:139
+#: src/pages/about.ja.tsx:139
 msgid "Those who are willing to challenge a new thing even if it is outside their comfort zone."
 msgstr "自分の居心地の良い範囲外であっても、新しいことにチャレンジする意欲のある方"
 
 #: src/pages/about.en.tsx:126
+#: src/pages/about.ja.tsx:126
 msgid "Those who do not mind doing basic drills over and over."
 msgstr "基礎練習を繰り返し行うことに抵抗のない方"
 
 #: src/pages/about.en.tsx:130
+#: src/pages/about.ja.tsx:130
 msgid "Those who enjoy improving itself."
 msgstr "上手くなることを楽しめる方"
 
 #: src/pages/about.en.tsx:121
+#: src/pages/about.ja.tsx:121
 msgid "Those who would like to focus on improving basic skills."
 msgstr "基礎を徹底的に磨きたい方"
 
 #: src/pages/about.en.tsx:116
+#: src/pages/about.ja.tsx:116
 msgid "Those who would like to improve one of the following: first touch, turn, juggling or 1on1. (because of my strength)"
 msgstr "ファーストタッチ、ターン、リフティング、1対1のいずれかのスキルを伸ばしたい方。(私が得意だからです)"
 
 #: src/pages/about.en.tsx:90
+#: src/pages/about.ja.tsx:90
 msgid "We are mainly focusing on \"basic\" and \"judgement\" in my lesson. In my definition, basic means that you can properly trap, pass and kick even if you are under pressure or tired. Judgement means that you can pick an appropriate choice from multiple possibilities under dynamic situations."
 msgstr "このレッスンは、「基礎」と「判断」を中心にトレーニングします。私の定義では、基礎とは、プレッシャーや疲れがあっても、トラップ、パス、キックがきちんとできること。判断とは、常に変わる状況の中で、複数の可能性の中から適切な選択ができるということです。"
 
 #: src/pages/about.en.tsx:84
+#: src/pages/about.ja.tsx:84
 msgid "What you can expect in my lesson?"
 msgstr "私のレッスンの中で期待できること？"
 
 #: src/pages/about.en.tsx:65
+#: src/pages/about.ja.tsx:65
 msgid "When I was in Japan, I belonged to a local team in Tokyo which included a professional coach and ex-professional players. I played as forward in the team and became a top scorer in a local league at once."
 msgstr "私は日本にいた頃、プロのコーチと元プロの選手が所属していた東京のローカルチームに所属していました。そのチームでフォワードとしてプレーし、一度、地元リーグの得点王になりました。"
 
 #: src/pages/about.en.tsx:107
+#: src/pages/about.ja.tsx:107
 msgid "Who benefits from my lesson?"
 msgstr "私のレッスンから多くを得られる方？"
 
 #: src/pages/about.en.tsx:72
+#: src/pages/about.ja.tsx:72
 msgid "Why I start private lesson?"
 msgstr "プライベートレッスンを始める理由？"
 
 #: src/pages/about.en.tsx:102
+#: src/pages/about.ja.tsx:102
 msgid "[BONUS]: This is a totally option. I regularly have a game with my teammates(+ their kids!). So, if you are interested in playing together, let's play with us.*1 There are two reasons why I suggest it. Firstly, this is a great chance for me to understand your strength and weakness. Therefore, I can provide you with more customized drills. Secondary, you can check my play in the game. Although I am not an ex-professional player, I believe it might be useful for you if you are beginner or intermediate level."
 msgstr "【BONUS】: これは完全にオプションです。私は定期的にチームメイト(+その子達！)とゲームをしています。なので、興味のある方は一緒にプレーしましょう！※1 私がこれをお勧めする理由は2つあります。1つ目は、あなたの長所と短所を理解する絶好の機会だからです。あなたのプレーを実際のゲームの中で観察することで、よりあなたに適した練習メニューを提供することができます。二つめは、私のプレーを試合で確認できることです。私は元プロ選手ではありませんが、初心者や中級者の方には参考になると思います。"
 
@@ -216,6 +249,7 @@ msgid "contact"
 msgstr "お問い合わせ"
 
 #: src/pages/about.en.tsx:145
+#: src/pages/about.ja.tsx:145
 #: src/pages/index.en.tsx:44
 #: src/pages/index.ja.tsx:44
 msgid "contact us"
@@ -241,10 +275,9 @@ msgstr "名"
 msgid "kento"
 msgstr "健人"
 
-#: src/components/shared/ui-elements/copyright/copyright.tsx:7
+#: src/components/shared/ui-elements/copyright/copyright.tsx:8
 #: src/pages/about.en.tsx:56
-#: src/pages/about.ja.tsx:16
-#: src/pages/about.ja.tsx:30
+#: src/pages/about.ja.tsx:56
 msgid "kento takeuchi"
 msgstr "竹内健人"
 

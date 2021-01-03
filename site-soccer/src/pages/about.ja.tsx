@@ -95,7 +95,7 @@ const aboutPage = () => {
               )}
             </p>
           </div>
-          <div className="about-page__paragraph">
+          <div className="about-page__paragraph" id="lesson-details">
             <h3>{i18n._(t`What you can expect in my lesson?`)}</h3>
             <h4>{i18n._(t`Basic -> Judgement -> Pattern`)}</h4>
             <p>

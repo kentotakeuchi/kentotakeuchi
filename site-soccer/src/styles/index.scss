@@ -93,6 +93,10 @@ button {
   }
 }
 
+p {
+  font-size: 16px;
+}
+
 // Block content
 .block-content {
   & a {
@@ -105,12 +109,6 @@ button {
   & ul {
     list-style: disc;
   }
-}
-
-// Hide something with animation
-.hide {
-  animation: hide 0.2s linear;
-  transform: translateY(-100%);
 }
 
 // None something

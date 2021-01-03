@@ -42,8 +42,12 @@ const Layout: FunctionComponent<PageProps> = ({ children, location }) => {
 
   return (
     <>
-      {mq?.matches && <Brand place="layout" />}
-      <Burger onClick={openDrawerHandler} isOpen={drawerIsOpen} />
+      {mq?.matches && <Brand className={isShow ? 'hide--mobile' : ''} />}
+      <Burger
+        onClick={openDrawerHandler}
+        isOpen={drawerIsOpen}
+        className={isShow ? 'hide--mobile' : ''}
+      />
 
       <SideDrawer show={drawerIsOpen} onCancel={closeDrawerHandler}>
         <nav className="side-drawer__nav">
@@ -55,9 +59,8 @@ const Layout: FunctionComponent<PageProps> = ({ children, location }) => {
         </div>
       </SideDrawer>
 
-      {/* TODO: add animation */}
       <Header className={isShow ? 'hide' : ''}>
-        <Brand place="header" />
+        <Brand />
         <nav className="header__nav">
           <NavLinks place="header" />
           <Language place="header" path={pathname} />

@@ -33,7 +33,6 @@
     align-content: start;
 
     @include respond(phone) {
-      text-align: center;
     }
   }
 
@@ -128,6 +127,11 @@
 
   &__paragraph > ul {
     list-style: disc;
+
+    @include respond(phone) {
+      // list-style-position: inside;
+      padding-left: 16px;
+    }
   }
 
   // button
