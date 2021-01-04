@@ -1,10 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import '../styles/pages/blogs.scss'
+import './blogs.scss'
 import SEO from '../components/shared/seo'
 import Pagination from '../components/shared/navigation/pagination/pagination'
 import Card from '../components/shared/ui-elements/card/card'
-// import { LikesContext } from '../context/likes-context'
 import { SanityBlogGroupConnection } from '../../graphql-types'
 import { TemplatePageContextProps } from '../types/types'
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLingui } from '@lingui/react'
 import { t } from '@lingui/macro'
-import '../styles/pages/contact.scss'
+import './contact.scss'
 import SEO from '../components/shared/seo'
 import Icon from '../components/shared/ui-elements/icon/icon'
 

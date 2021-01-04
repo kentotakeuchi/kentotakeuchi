@@ -1,5 +1,5 @@
-@import '../variables.scss';
-@import '../mixin.scss';
+@import '../styles/variables.scss';
+@import '../styles/mixin.scss';
 
 .profile-page {
   display: grid;
@@ -18,14 +18,11 @@
     grid-template-columns: repeat(2, 1fr);
     column-gap: 5rem;
     border-bottom: 1px solid $text-secondary--dark;
-    height: 50rem;
 
     @include respond(phone) {
       grid-template-columns: none;
-      grid-template-rows: 70% 30%;
       row-gap: 5rem;
-      height: calc(100vh - 10rem);
-      padding-bottom: 2rem;
+      padding-bottom: 5rem;
     }
   }
 
@@ -35,14 +32,20 @@
     text-transform: capitalize;
 
     @include respond(phone) {
-      text-align: center;
     }
   }
 
   // name
   &__text-wrapper > h1 {
     font-family: 'TradeGothicLTStd-BoldExt';
-    font-size: 4rem;
+    font-size: 3.5rem;
+  }
+
+  // my title
+  &__text-wrapper > h3 {
+    font-family: 'TradeGothicLTStd-BoldExt';
+    font-size: 2rem;
+    -webkit-text-stroke: 1px $color-gray-6--dark;
   }
 
   // skills
@@ -52,13 +55,17 @@
   }
 
   &__header > .gatsby-image-wrapper {
+    height: 50rem;
     border: 5px solid $text-primary--dark;
     filter: sepia(0.7);
     position: relative;
 
     @include respond(phone) {
       grid-row: 1 / 2;
-      height: 100%;
+      width: 100%;
+      max-width: 40rem;
+      height: 60rem;
+      margin: auto;
     }
 
     &::after {
@@ -71,12 +78,17 @@
     }
   }
 
+  // description
   &__main {
     display: grid;
-    row-gap: 1.5ch;
+    row-gap: 2ch;
     width: 80%;
     max-width: 60rem;
     margin: auto;
     line-height: 2;
+
+    @include respond(phone) {
+      width: 100%;
+    }
   }
 }

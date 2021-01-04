@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import '../styles/pages/project.scss'
+import './project.scss'
 import SEO from '../components/shared/seo'
 import SingleProject from '../components/project/single-project/single-project'
 import { SanityProject } from '../../types/graphql-types'

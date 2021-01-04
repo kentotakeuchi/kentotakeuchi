@@ -12,8 +12,7 @@
   width: 100%;
 
   @include respond(phone) {
-    grid-auto-flow: row;
-    row-gap: 5rem;
+    display: none;
   }
 
   // ©

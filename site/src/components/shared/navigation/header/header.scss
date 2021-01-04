@@ -13,6 +13,7 @@
   align-items: center;
   height: 10rem;
   padding: 0 4rem;
+  animation: show 0.2s linear;
 
   // No header on mobile
   @include respond(phone) {

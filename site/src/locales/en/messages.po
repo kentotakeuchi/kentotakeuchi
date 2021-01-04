@@ -13,17 +13,22 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/pages/profile.en.tsx:20
-#: src/pages/profile.ja.tsx:20
+#: src/pages/profile.en.tsx:27
+#: src/pages/profile.ja.tsx:27
 msgid "<0>JavaScript / </0><1>TypeScript / </1><2>React / </2><3>Gatsby / </3><4>Node.js / </4><5>soccer / </5><6>Surfing</6>"
 msgstr "<0>JavaScript / </0><1>TypeScript / </1><2>React / </2><3>Gatsby / </3><4>Node.js / </4><5>soccer / </5><6>Surfing</6>"
+
+#: src/pages/profile.en.tsx:20
+#: src/pages/profile.ja.tsx:20
+msgid "<0>web developer | </0><1/><2>soccer player & coach</2>"
+msgstr "<0>web developer | </0><1/><2>soccer player & coach</2>"
 
 #: src/pages/about.en.tsx:13
 #~ msgid "About"
 #~ msgstr "About"
 
-#: src/pages/profile.en.tsx:35
-#: src/pages/profile.ja.tsx:35
+#: src/pages/profile.en.tsx:42
+#: src/pages/profile.ja.tsx:42
 msgid "Born in Yamaguchi in 1984. Graduated from Doshisha University in Kyoto with a degree in economics. Spent 8 years working as a sales person at various supermarkets in Tokyo and pursued his passion for soccer and surfing. Came to the U.S. and completed the Certificate Program in Computer Programming of University of California, Santa Cruz, Silicon Valley Extension in 2018."
 msgstr "Born in Yamaguchi in 1984. Graduated from Doshisha University in Kyoto with a degree in economics. Spent 8 years working as a sales person at various supermarkets in Tokyo and pursued his passion for soccer and surfing. Came to the U.S. and completed the Certificate Program in Computer Programming of University of California, Santa Cruz, Silicon Valley Extension in 2018."
 
@@ -38,8 +43,8 @@ msgstr "Contact"
 msgid "Go back to home"
 msgstr "Go back to home"
 
-#: src/pages/profile.en.tsx:44
-#: src/pages/profile.ja.tsx:44
+#: src/pages/profile.en.tsx:51
+#: src/pages/profile.ja.tsx:51
 msgid "His family, friends and people he meets are his greatest source of support, without which he couldn't grow and challenge himself to the fullest extent. His passion for his career drives him to excel in his professional endeavors."
 msgstr "His family, friends and people he meets are his greatest source of support, without which he couldn't grow and challenge himself to the fullest extent. His passion for his career drives him to excel in his professional endeavors."
 
@@ -51,18 +56,18 @@ msgstr "Home"
 #~ msgid "JavaScript/TypeScript/React/Gatsby/Node.js/Soccer/Surfing"
 #~ msgstr "JavaScript/TypeScript/React/Gatsby/Node.js/Soccer/Surfing"
 
-#: src/pages/profile.en.tsx:38
-#: src/pages/profile.ja.tsx:38
+#: src/pages/profile.en.tsx:45
+#: src/pages/profile.ja.tsx:45
 msgid "Kento, JavaScript web developer, has worked hard to do useful things for others with his current skills. As of now, a new project is created and developed as a result of his aspiration to grow as a professional web developer. Recently, he has learned new tools and knowledge related to web development, and also random stuffs in order to broaden his possibility to support others."
 msgstr "Kento, JavaScript web developer, has worked hard to do useful things for others with his current skills. As of now, a new project is created and developed as a result of his aspiration to grow as a professional web developer. Recently, he has learned new tools and knowledge related to web development, and also random stuffs in order to broaden his possibility to support others."
 
-#: src/templates/blog.en.tsx:71
-#: src/templates/blog.ja.tsx:71
+#: src/templates/blog.en.tsx:79
+#: src/templates/blog.ja.tsx:79
 msgid "No item found.."
 msgstr "No item found.."
 
-#: src/pages/profile.en.tsx:41
-#: src/pages/profile.ja.tsx:41
+#: src/pages/profile.en.tsx:48
+#: src/pages/profile.ja.tsx:48
 msgid "Outside of his professional career, Kento is an enthusiastic soccer player. Playing soccer seriously helps him not only to work on his technical skills, but also reminds him of the importance of respecting others while teaching himself discipline and finding joy in his life. He used to belong to a soccer team consisting of mainly Japanese players in the San Francisco Premier League, and currently belongs to two multinational local soccer teams in Santa Clara and Hayward."
 msgstr "Outside of his professional career, Kento is an enthusiastic soccer player. Playing soccer seriously helps him not only to work on his technical skills, but also reminds him of the importance of respecting others while teaching himself discipline and finding joy in his life. He used to belong to a soccer team consisting of mainly Japanese players in the San Francisco Premier League, and currently belongs to two multinational local soccer teams in Santa Clara and Hayward."
 
@@ -94,13 +99,12 @@ msgstr "all projects"
 msgid "blog"
 msgstr "blog"
 
-#: src/components/project/single-project/single-project.tsx:25
+#: src/components/project/single-project/single-project.tsx:26
 msgid "client"
 msgstr "client"
 
-#: src/pages/index.en.tsx:45
-#: src/pages/index.ja.tsx:45
-#: src/pages/projects.en.tsx:46
+#: src/pages/index.en.tsx:50
+#: src/pages/index.ja.tsx:50
 msgid "client work"
 msgstr "client work"
 
@@ -109,20 +113,19 @@ msgstr "client work"
 msgid "contact"
 msgstr "contact"
 
-#: src/components/shared/navigation/layout/layout.tsx:48
-#: src/components/shared/navigation/layout/layout.tsx:66
+#: src/components/shared/ui-elements/copyright/copyright.tsx:14
 #: src/pages/profile.en.tsx:17
-#: src/pages/profile.en.tsx:31
+#: src/pages/profile.en.tsx:38
 #: src/pages/profile.ja.tsx:17
-#: src/pages/profile.ja.tsx:31
+#: src/pages/profile.ja.tsx:38
 msgid "kento takeuchi"
 msgstr "kento takeuchi"
 
-#: src/components/shared/navigation/pagination/pagination.tsx:55
+#: src/components/shared/navigation/pagination/pagination.tsx:56
 msgid "next"
 msgstr "next"
 
-#: src/components/shared/navigation/pagination/pagination.tsx:20
+#: src/components/shared/navigation/pagination/pagination.tsx:21
 msgid "prev"
 msgstr "prev"
 
@@ -131,12 +134,12 @@ msgstr "prev"
 msgid "profile"
 msgstr "profile"
 
-#: src/templates/blog.en.tsx:68
-#: src/templates/blog.ja.tsx:68
+#: src/templates/blog.en.tsx:76
+#: src/templates/blog.ja.tsx:76
 msgid "related articles"
 msgstr "related articles"
 
-#: src/components/project/single-project/single-project.tsx:26
+#: src/components/project/single-project/single-project.tsx:27
 msgid "tools"
 msgstr "tools"
 
@@ -144,9 +147,9 @@ msgstr "tools"
 msgid "top"
 msgstr "top"
 
-#: src/pages/profile.en.tsx:18
-#~ msgid "web developer"
-#~ msgstr "web developer"
+#: src/components/shared/navigation/brand/brand.tsx:29
+msgid "web developer"
+msgstr "web developer"
 
 #: src/pages/profile.ja.tsx:18
 #~ msgid "web developer | soccer player"
@@ -154,8 +157,8 @@ msgstr "top"
 
 #: src/pages/profile.en.tsx:18
 #: src/pages/profile.ja.tsx:18
-msgid "web developer | soccer player & coach"
-msgstr "web developer | soccer player & coach"
+#~ msgid "web developer | soccer player & coach"
+#~ msgstr "web developer | soccer player & coach"
 
 #: src/pages/profile.en.tsx:18
 #~ msgid "web developer | soccer player&coach"

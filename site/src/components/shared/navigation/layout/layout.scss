@@ -5,7 +5,7 @@
     margin: 10rem 2rem 10rem;
 
     @include respond(phone) {
-      margin: 15rem 2rem 10rem;
+      margin: 15rem 2rem 5rem;
     }
   }
 }

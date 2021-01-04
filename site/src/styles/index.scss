@@ -1,40 +1,7 @@
 @import './variables.scss';
 @import './mixin.scss';
 @import './typography.scss';
-
-// TODO: remove unnecessary ones..
-// FONTS
-@font-face {
-  font-family: 'TradeGothicLT';
-  src: local('TradeGothicLT'), url('../asset/fonts/Trade_Gothic_LT.ttf');
-  format: ('truetype');
-}
-
-@font-face {
-  font-family: 'FranklinGothicStd-ExtraCond';
-  src: local('FranklinGothicStd-ExtraCond'),
-    url('../asset/fonts/Franklin\ Gothic\ Std\ Extra\ Condensed.otf');
-  format: ('opentype');
-}
-
-@font-face {
-  font-family: 'TradeGothicLTStd-BoldExt';
-  src: local('TradeGothicLTStd-BoldExt'),
-    url('../asset/fonts/TradeGothicLTStd-BoldExt.otf');
-  format: ('opentype');
-}
-
-@font-face {
-  font-family: 'Miller Banner';
-  src: local('Miller Banner'), url('../asset/fonts/Miller-Banner-Roman-01.ttf');
-  format: ('truetype');
-}
-
-@font-face {
-  font-family: 'Date Stamp';
-  src: local('Date Stamp'), url('../asset/fonts/Date-Stamp.otf');
-  format: ('opentype');
-}
+@import './animation.scss';
 
 // GLOBAL STYLE
 
@@ -129,18 +96,7 @@ button {
 }
 
 p {
-  // font-weight: $font-weight-default;
-}
-
-// Gatsby image
-.gatsby-image-wrapper {
-  // box-shadow: $box-shadow-default;
-  // border-radius: 10px;
-}
-
-// Traditional image
-img {
-  // border-radius: 10px;
+  font-size: 16px;
 }
 
 // Block content
@@ -154,12 +110,11 @@ img {
 
   & ul {
     list-style: disc;
-  }
-}
 
-// Hide something
-.hide {
-  opacity: 0;
+    @include respond(phone) {
+      list-style-position: inside;
+    }
+  }
 }
 
 // None something

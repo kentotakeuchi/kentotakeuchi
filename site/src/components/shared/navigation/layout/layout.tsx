@@ -45,8 +45,14 @@ const Layout: FunctionComponent<Props> = ({ children, pathname }) => {
   return (
     <>
       <BG />
-      {mq?.matches && <Brand place="layout" />}
-      <Burger onClick={openDrawerHandler} isOpen={drawerIsOpen} />
+      {mq?.matches && (
+        <Brand place="layout" className={isShow ? 'hide--mobile' : ''} />
+      )}
+      <Burger
+        onClick={openDrawerHandler}
+        isOpen={drawerIsOpen}
+        className={isShow ? 'hide--mobile' : ''}
+      />
 
       <SideDrawer show={drawerIsOpen} onCancel={closeDrawerHandler}>
         <nav className="side-drawer__nav">

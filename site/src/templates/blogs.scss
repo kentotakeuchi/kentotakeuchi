@@ -1,10 +1,10 @@
-@import '../mixin.scss';
+@import '../styles/mixin.scss';
 
 .blogs-page {
   margin-top: 20rem;
 
   display: grid;
-  row-gap: 10rem;
+  row-gap: 5rem;
 
   &__list {
     display: grid;

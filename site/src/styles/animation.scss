@@ -1,0 +1,87 @@
+@import './mixin.scss';
+
+// Hide something with animation
+.hide {
+  animation: hide 0.2s linear;
+  transform: translateY(100%);
+}
+.hide--mobile {
+  animation: hide 0.2s linear;
+  transform: translateY(calc(-100% + -3rem));
+}
+
+// show
+@keyframes show {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@include respond(phone) {
+  @keyframes show {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
+  }
+}
+
+// hide
+@keyframes hide {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@include respond(phone) {
+  @keyframes hide {
+    0% {
+      transform: translateY(0%);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+}
+
+// ticker
+@keyframes ticker {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+// TODO: temp..
+@include respond(tab-port) {
+  @keyframes ticker {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-180%);
+    }
+  }
+}
+
+// TODO: temp..
+@include respond(phone) {
+  @keyframes ticker {
+    0% {
+      transform: translateX(110%);
+    }
+    100% {
+      transform: translateX(-320%);
+    }
+  }
+}

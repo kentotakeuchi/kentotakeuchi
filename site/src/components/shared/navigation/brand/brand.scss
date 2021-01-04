@@ -1,10 +1,13 @@
+@import '../../../../styles/variables.scss';
 @import '../../../../styles/mixin.scss';
 
 .brand {
+  animation: show 0.2s linear;
+
   &__title {
-    // font-family: 'TradeGothicLTStd-BoldExt';
-    font-size: 16px;
-    // text-transform: uppercase;
+    font-family: 'TradeGothicLTStd-BoldExt';
+    font-size: 2rem;
+    text-transform: uppercase;
     line-height: 1.2;
   }
 
@@ -15,7 +18,18 @@
     z-index: 1000;
 
     &__title {
-      font-size: 20px;
+      font-size: 1.6rem;
+    }
+  }
+
+  &__sub {
+    font-family: 'TradeGothicLTStd-BoldExt';
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    -webkit-text-stroke: 1px $color-gray-6--dark;
+
+    @include respond(phone) {
+      font-size: 1.4rem;
     }
   }
 }

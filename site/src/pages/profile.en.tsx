@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'gatsby-image'
 import { useLingui } from '@lingui/react'
 import { t, Trans } from '@lingui/macro'
-import '../styles/pages/profile.scss'
+import './profile.scss'
 import SEO from '../components/shared/seo'
 import useImage from '../hooks/image-hook'
 
@@ -19,7 +19,14 @@ const ProfilePage = () => {
         <header className="profile-page__header">
           <div className="profile-page__text-wrapper">
             <h1>{i18n._(t`kento takeuchi`)}</h1>
-            <h3>{i18n._(t`web developer | soccer player & coach`)}</h3>
+            {/* <h3>{i18n._(t`web developer | soccer player & coach`)}</h3> */}
+            <h3>
+              <Trans>
+                <span>web developer | </span>
+                <br />
+                <span>soccer player & coach</span>
+              </Trans>
+            </h3>
             <p>
               <Trans>
                 <span>JavaScript / </span>

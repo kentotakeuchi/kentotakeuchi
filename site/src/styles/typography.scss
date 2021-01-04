@@ -1,30 +1,33 @@
-// // stroke text
-// .stroke-text {
-//   -webkit-text-stroke: 1px $color-primary;
-// }
+// TODO: remove unnecessary ones..
+// FONTS
+@font-face {
+  font-family: 'TradeGothicLT';
+  src: local('TradeGothicLT'), url('../asset/fonts/Trade_Gothic_LT.ttf');
+  format: ('truetype');
+}
 
-// // 3d text
-// .waku-text {
-//   color: $color-grey-light;
-//   text-shadow: $text-shadow-default;
-//   -webkit-text-stroke: 0.5px $color-primary;
-//   transition: all 0.3s;
+@font-face {
+  font-family: 'FranklinGothicStd-ExtraCond';
+  src: local('FranklinGothicStd-ExtraCond'),
+    url('../asset/fonts/Franklin\ Gothic\ Std\ Extra\ Condensed.otf');
+  format: ('opentype');
+}
 
-//   &:hover {
-//     color: $color-primary;
-//     text-shadow: $text-shadow-default;
-//     -webkit-text-stroke: 0.1px $color-secondary;
-//   }
-// }
+@font-face {
+  font-family: 'TradeGothicLTStd-BoldExt';
+  src: local('TradeGothicLTStd-BoldExt'),
+    url('../asset/fonts/TradeGothicLTStd-BoldExt.otf');
+  format: ('opentype');
+}
 
-// .waku-text--inverse {
-//   color: $color-primary;
-//   text-shadow: $text-shadow-default-inverse;
-//   -webkit-text-stroke: 0.5px $color-secondary;
-//   transition: all 0.3s;
+@font-face {
+  font-family: 'Miller Banner';
+  src: local('Miller Banner'), url('../asset/fonts/Miller-Banner-Roman-01.ttf');
+  format: ('truetype');
+}
 
-//   &:hover {
-//     color: $color-secondary;
-//     text-shadow: $text-shadow-default;
-//   }
-// }
+@font-face {
+  font-family: 'Date Stamp';
+  src: local('Date Stamp'), url('../asset/fonts/Date-Stamp.otf');
+  format: ('opentype');
+}

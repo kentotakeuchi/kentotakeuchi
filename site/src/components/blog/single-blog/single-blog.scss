@@ -12,6 +12,7 @@
 
   @include respond(phone) {
     width: 100%;
+    margin-top: 0;
     margin-bottom: 0rem;
   }
 
@@ -85,7 +86,7 @@
   // description
   &__main > .block-content > p {
     @include respond(phone) {
-      width: 80%;
+      width: 100%;
       margin: auto;
     }
   }

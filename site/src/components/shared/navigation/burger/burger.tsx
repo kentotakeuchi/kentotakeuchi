@@ -4,11 +4,17 @@ import './burger.scss'
 interface Props {
   onClick: () => void
   isOpen: boolean
+  className?: string
 }
 
-const Burger = ({ onClick, isOpen }: Props) => {
+const Burger = ({ onClick, isOpen, className }: Props) => {
   return (
-    <button className={`burger ${isOpen && 'burger--open'}`} onClick={onClick}>
+    <button
+      className={`burger ${isOpen && 'burger--open'} ${
+        className ? className : ''
+      }`}
+      onClick={onClick}
+    >
       <span className="burger__icon" />
     </button>
   )
