@@ -33,8 +33,9 @@ const ProfilePage = () => {
                 <span>TypeScript / </span>
                 <span>React / </span>
                 <span>Gatsby / </span>
+                <span>Next.js / </span>
                 <span>Node.js / </span>
-                <span>soccer / </span>
+                <span>Soccer / </span>
                 <span>Surfing</span>
               </Trans>
             </p>

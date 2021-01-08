@@ -23,7 +23,7 @@
   },
   "include": [
     "src/**/*", "graphql-types.ts", "functions/**/*" // *** The files TypeScript should type check ***
-  ],
+, "sanity-client.ts"  ],
   "exclude": ["node_modules", "build"], // *** The files to not type check ***
   // "outDir": "./build"    /* this won't be used by ts-loader */
 }

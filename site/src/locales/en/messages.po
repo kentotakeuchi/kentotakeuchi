@@ -15,8 +15,18 @@ msgstr ""
 
 #: src/pages/profile.en.tsx:27
 #: src/pages/profile.ja.tsx:27
-msgid "<0>JavaScript / </0><1>TypeScript / </1><2>React / </2><3>Gatsby / </3><4>Node.js / </4><5>soccer / </5><6>Surfing</6>"
-msgstr "<0>JavaScript / </0><1>TypeScript / </1><2>React / </2><3>Gatsby / </3><4>Node.js / </4><5>soccer / </5><6>Surfing</6>"
+msgid "<0>JavaScript / </0><1>TypeScript / </1><2>React / </2><3>Gatsby / </3><4>Next.js / </4><5>Node.js / </5><6>Soccer / </6><7>Surfing</7>"
+msgstr "<0>JavaScript / </0><1>TypeScript / </1><2>React / </2><3>Gatsby / </3><4>Next.js / </4><5>Node.js / </5><6>Soccer / </6><7>Surfing</7>"
+
+#: src/pages/profile.en.tsx:27
+#: src/pages/profile.ja.tsx:27
+#~ msgid "<0>JavaScript / </0><1>TypeScript / </1><2>React / </2><3>Gatsby / </3><4>Next.js / </4><5>Node.js / </5><6>soccer / </6><7>Surfing</7>"
+#~ msgstr "<0>JavaScript / </0><1>TypeScript / </1><2>React / </2><3>Gatsby / </3><4>Next.js / </4><5>Node.js / </5><6>soccer / </6><7>Surfing</7>"
+
+#: src/pages/profile.en.tsx:27
+#: src/pages/profile.ja.tsx:27
+#~ msgid "<0>JavaScript / </0><1>TypeScript / </1><2>React / </2><3>Gatsby / </3><4>Node.js / </4><5>soccer / </5><6>Surfing</6>"
+#~ msgstr "<0>JavaScript / </0><1>TypeScript / </1><2>React / </2><3>Gatsby / </3><4>Node.js / </4><5>soccer / </5><6>Surfing</6>"
 
 #: src/pages/profile.en.tsx:20
 #: src/pages/profile.ja.tsx:20
@@ -27,8 +37,8 @@ msgstr "<0>web developer | </0><1/><2>soccer player & coach</2>"
 #~ msgid "About"
 #~ msgstr "About"
 
-#: src/pages/profile.en.tsx:42
-#: src/pages/profile.ja.tsx:42
+#: src/pages/profile.en.tsx:43
+#: src/pages/profile.ja.tsx:43
 msgid "Born in Yamaguchi in 1984. Graduated from Doshisha University in Kyoto with a degree in economics. Spent 8 years working as a sales person at various supermarkets in Tokyo and pursued his passion for soccer and surfing. Came to the U.S. and completed the Certificate Program in Computer Programming of University of California, Santa Cruz, Silicon Valley Extension in 2018."
 msgstr "Born in Yamaguchi in 1984. Graduated from Doshisha University in Kyoto with a degree in economics. Spent 8 years working as a sales person at various supermarkets in Tokyo and pursued his passion for soccer and surfing. Came to the U.S. and completed the Certificate Program in Computer Programming of University of California, Santa Cruz, Silicon Valley Extension in 2018."
 
@@ -43,8 +53,8 @@ msgstr "Contact"
 msgid "Go back to home"
 msgstr "Go back to home"
 
-#: src/pages/profile.en.tsx:51
-#: src/pages/profile.ja.tsx:51
+#: src/pages/profile.en.tsx:52
+#: src/pages/profile.ja.tsx:52
 msgid "His family, friends and people he meets are his greatest source of support, without which he couldn't grow and challenge himself to the fullest extent. His passion for his career drives him to excel in his professional endeavors."
 msgstr "His family, friends and people he meets are his greatest source of support, without which he couldn't grow and challenge himself to the fullest extent. His passion for his career drives him to excel in his professional endeavors."
 
@@ -56,8 +66,8 @@ msgstr "Home"
 #~ msgid "JavaScript/TypeScript/React/Gatsby/Node.js/Soccer/Surfing"
 #~ msgstr "JavaScript/TypeScript/React/Gatsby/Node.js/Soccer/Surfing"
 
-#: src/pages/profile.en.tsx:45
-#: src/pages/profile.ja.tsx:45
+#: src/pages/profile.en.tsx:46
+#: src/pages/profile.ja.tsx:46
 msgid "Kento, JavaScript web developer, has worked hard to do useful things for others with his current skills. As of now, a new project is created and developed as a result of his aspiration to grow as a professional web developer. Recently, he has learned new tools and knowledge related to web development, and also random stuffs in order to broaden his possibility to support others."
 msgstr "Kento, JavaScript web developer, has worked hard to do useful things for others with his current skills. As of now, a new project is created and developed as a result of his aspiration to grow as a professional web developer. Recently, he has learned new tools and knowledge related to web development, and also random stuffs in order to broaden his possibility to support others."
 
@@ -66,8 +76,8 @@ msgstr "Kento, JavaScript web developer, has worked hard to do useful things for
 msgid "No item found.."
 msgstr "No item found.."
 
-#: src/pages/profile.en.tsx:48
-#: src/pages/profile.ja.tsx:48
+#: src/pages/profile.en.tsx:49
+#: src/pages/profile.ja.tsx:49
 msgid "Outside of his professional career, Kento is an enthusiastic soccer player. Playing soccer seriously helps him not only to work on his technical skills, but also reminds him of the importance of respecting others while teaching himself discipline and finding joy in his life. He used to belong to a soccer team consisting of mainly Japanese players in the San Francisco Premier League, and currently belongs to two multinational local soccer teams in Santa Clara and Hayward."
 msgstr "Outside of his professional career, Kento is an enthusiastic soccer player. Playing soccer seriously helps him not only to work on his technical skills, but also reminds him of the importance of respecting others while teaching himself discipline and finding joy in his life. He used to belong to a soccer team consisting of mainly Japanese players in the San Francisco Premier League, and currently belongs to two multinational local soccer teams in Santa Clara and Hayward."
 
@@ -115,9 +125,9 @@ msgstr "contact"
 
 #: src/components/shared/ui-elements/copyright/copyright.tsx:14
 #: src/pages/profile.en.tsx:17
-#: src/pages/profile.en.tsx:38
+#: src/pages/profile.en.tsx:39
 #: src/pages/profile.ja.tsx:17
-#: src/pages/profile.ja.tsx:38
+#: src/pages/profile.ja.tsx:39
 msgid "kento takeuchi"
 msgstr "kento takeuchi"
 

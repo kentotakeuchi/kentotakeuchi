@@ -1,11 +1,7 @@
-const sanityClient = require('@sanity/client')
+const sanityClient = require('./sanity-client.js')
 
-const client = sanityClient({
-  projectId: process.env.SANITY_PROJECT_ID,
-  dataset: 'production',
-  useCdn: false,
+sanityClient.config({
   token: process.env.SANITY_UPDATE_LIKES_TOKEN,
-  // useProjectHostname: false,
 })
 
 exports.handler = async ({ headers, body }) => {
@@ -14,14 +10,14 @@ exports.handler = async ({ headers, body }) => {
   try {
     let response
     if (mode === 'inc') {
-      response = await client
+      response = await sanityClient
         .patch(id)
         .inc({
           likes: 1,
         })
         .commit()
     } else {
-      response = await client
+      response = await sanityClient
         .patch(id)
         .dec({
           likes: 1,

@@ -29,7 +29,6 @@
   &__text-wrapper {
     display: grid;
     align-content: start;
-    text-transform: capitalize;
 
     @include respond(phone) {
     }
@@ -39,6 +38,7 @@
   &__text-wrapper > h1 {
     font-family: 'TradeGothicLTStd-BoldExt';
     font-size: 3.5rem;
+    text-transform: capitalize;
   }
 
   // my title
@@ -46,6 +46,7 @@
     font-family: 'TradeGothicLTStd-BoldExt';
     font-size: 2rem;
     -webkit-text-stroke: 1px $color-gray-6--dark;
+    text-transform: capitalize;
   }
 
   // skills
