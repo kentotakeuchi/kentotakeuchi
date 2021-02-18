@@ -14,5 +14,7 @@
     "site-soccer": "yarn workspace @kentotakeuchi/site-soccer",
     "studio": "yarn workspace @kentotakeuchi/studio"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
 }
