@@ -9,12 +9,25 @@
     "new-version": "lerna version --conventional-commits --yes",
     "diff": "lerna diff",
     "ls": "lerna ls",
-    "bootstrap": "lerna bootstrap",
+    "bootstrap": "lerna bootstrap --use-workspaces",
+    "build": "lerna exec --parallel -- babel --root-mode upward src -d lib --ignore **/*.stories.js,**/*.spec.js",
+    "dev": "start-storybook -p 5555",
     "site": "yarn workspace @kentotakeuchi/site",
     "site-soccer": "yarn workspace @kentotakeuchi/site-soccer",
     "studio": "yarn workspace @kentotakeuchi/studio"
   },
   "devDependencies": {
-    "lerna": "^3.22.1"
+    "@babel/cli": "^7.12.16",
+    "@babel/core": "^7.12.16",
+    "@babel/preset-env": "^7.12.16",
+    "@babel/preset-react": "^7.12.13",
+    "@storybook/addon-docs": "^6.1.18",
+    "@storybook/preset-create-react-app": "^3.1.6",
+    "@storybook/react": "^6.1.18",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-styled-components": "^1.12.0",
+    "lerna": "^3.22.1",
+    "webpack": "^5.22.0"
   }
 }
