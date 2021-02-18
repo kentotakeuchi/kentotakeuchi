@@ -1,15 +1,18 @@
 {
+  "name": "@kentotakeuchi/root",
   "private": true,
-  "scripts": {
-    "start:site": "yarn workspace site start",
-    "start:site-soccer": "yarn workspace site-soccer start",
-    "extract:site-soccer": "yarn workspace site-soccer extract",
-    "compile:site-soccer": "yarn workspace site-soccer compile",
-    "start:studio": "yarn workspace studio start"
-  },
   "workspaces": [
-    "site",
-    "site-soccer",
-    "studio"
-  ]
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "lerna run test --since",
+    "new-version": "lerna version --conventional-commits --yes",
+    "diff": "lerna diff",
+    "ls": "lerna ls",
+    "bootstrap": "lerna bootstrap",
+    "site": "yarn workspace @kentotakeuchi/site",
+    "site-soccer": "yarn workspace @kentotakeuchi/site-soccer",
+    "studio": "yarn workspace @kentotakeuchi/studio"
+  },
+  "devDependencies": {}
 }
